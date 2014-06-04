@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+
+-->
+<project name="bonInitS3">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	
+	<!-- Add the BON in the S3 bootclasspath -->
+	<target name="init/bon/s3" extensionOf="init/execution" if="onS3">
+		<fail unless="s3.libs.dir"/>
+		<augment id="s3.bootclasspath.path">
+			<fileset dir="${s3.libs.dir}" includes="bon-*.jar"/>
+		</augment>
+	</target>
+	
+</project>

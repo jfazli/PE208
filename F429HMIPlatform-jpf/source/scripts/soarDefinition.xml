@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2012-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="soar.definition">
+
+	<dirname file="${ant.file.soar.definition}" property="ant.dir.soar.definition"/>
+	<loadproperties srcfile="${ant.dir.soar.definition}/soar.properties" prefix="soar"/>
+		
+	<path id="soar.classpath.path">
+		<pathelement location="${microjvm.dir}/soar/SOAR.jar"/>
+	</path>
+	<taskdef name="soarTask" classname="${soar.classname}" classpathref="soar.classpath.path"/>
+	
+	<presetdef name="soar">
+		<soarTask
+			verbose="${soar.verbose.level}"
+			
+			expertMode="${soar.expertMode}"
+			debugMode="${soar.debugMode}"
+			
+			onlyInfoFile="${soar.only.info.file}"
+			
+			mainclass="${application.main.class}"
+			
+			toDir="${soar.output.dir}"
+			rootName="${soar.root.name}"
+			
+			toAddInVmImage="${overall.requires}"
+			immutables="${overall.immutables}"
+			resources="${overall.resources}"
+			
+			niFiles="${overall.soar.ni.files}"
+			ni="${soar.ni}"
+			
+		    enableAOTCompiler="${soar.aot.compiler}"
+			
+			jpfFile="${application.allocation.policy.file}"
+			cpuVariant="${compiler.cpu}"
+			endianness="${arch.endianness}"
+			symbolPrefix="${arch.symbol.prefix}"
+			floatingRepresentation="${decimal.impl}"
+			
+			disableStringCompaction="${soar.disableStringCompaction}"
+		>
+			<classpath>				
+				<pathelement path="${overall.soar.bootclasspath}"/>
+				<pathelement path="${overall.classpath}"/>
+			</classpath>
+		</soarTask>
+	</presetdef>
+
+</project>
+	
+	

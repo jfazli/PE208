@@ -1,0 +1,36 @@
+<!--
+  IS2T linker file
+ 
+  Copyright 2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+	
+	<!-- Icetea HEAP -->
+	<defSymbol name="_java_vmthread_native_size" value="296"/>	
+	<defSymbol name="_icetea_heap_size" value="1032+(_java_max_nb_standaloneEngines*_java_vmthread_native_size)"/> 
+	<defSection name="HEAP_ICETEA" size="_icetea_heap_size" align="8" rootSection="true"/>
+	<defSection name="ICETEA_HEAP" start="0" size="0x7fffffff" align="8" rootSection="true"/>
+	<memoryLayout ranges="ICETEA_HEAP">
+		<sectionRef name="HEAP_*"/>
+	</memoryLayout>
+	
+	<!--
+		Define round robin period. Since a symbol cannot be null, real period is _java_round_robin_period - 1.
+		Set 0 to disable the round robin.
+	-->
+	<defSymbol name="_java_round_robin_period" value="20+1" rootSymbol="true"/>
+	
+		
+	<defSymbol name="_jvm_sharedMemory_size" value="256" rootSymbol="true"/>
+	
+	<!-- 
+		ARMCC compiler problem workaround : 
+		A native touches the _java_Ljava_util_Hashtable symbol only if the class hashtable is embedded. 
+		The problem is that armcc compiler try to resolve the symbol even if the native is not embedded.
+		The solution is to define this symbol but set it as weak symbol in order to use the right one
+		when the class Hashtable is really embedded.
+	-->
+	<defSymbol name="_java_Ljava_util_Hashtable" value="0" weak="true" rootSymbol="true"/>
+
+</lscFragment>

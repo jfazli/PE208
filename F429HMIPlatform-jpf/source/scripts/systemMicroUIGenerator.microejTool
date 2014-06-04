@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT file
+	Copyright 2012-2013 IS2T. All rights reserved.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<!--
+	Input properties
+-->
+<project name="Static MicroUI Initializer" default="s3">
+	
+	<description>Initialize MicroUI library and generates MicroUI Event Generators IDs.</description>
+
+	<typedef file="${platform.dir}/../build/scripts/buildSystemMicroUI.antlib" format="xml"/>
+	
+	<!-- 
+		MicroEJ is JRE based.
+		Connect to JDT compiler if available 
+	-->
+	<condition property="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter">
+		<available classname="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+	</condition>
+	
+	<target name="s3">
+		<MicroUIConfiguration
+			configurationFile="${system.microui.definition}"
+			jpfProject="${platform.dir}/.."
+		/>		
+	</target>
+
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT script.
+	Copyright 2012 IS2T. All rights reserved.
+  	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<project name="checkCompiler">
+		
+	<!--
+		Checks if the compiler is available and have the right version
+	-->
+	<macrodef name="microej.checkCompiler">
+		<sequential>
+			<!--
+				No check done 
+			-->
+		</sequential>
+	</macrodef>
+
+</project>

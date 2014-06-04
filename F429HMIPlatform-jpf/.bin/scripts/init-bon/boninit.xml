@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2011-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+    
+  Input properties:
+  	- ej.bon.immortalAfterInit
+  	- ej.bon.vendor.url
+  	- ej.bon.vendor
+  	- ej.bon.version
+  	
+-->
+<project name="bonInit">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/microejAntlib.xml" />
+
+	<target name="init/bon" extensionOf="init/execution" depends="init/s3/bon">
+		<echo message="B-ON init" level="verbose"/>
+		<!-- CLASSPATH -->
+		<augment id="init.application.classpath">
+			<fileset dir="${vm.dir}/javaLibs" includes="bon-*.jar" />
+		</augment>
+
+		<!-- PROPERTIES -->
+		<augment id="init.properties">
+			<propertyref name="ej.bon.immortalAfterInit"/>
+			<propertyref name="ej.bon.vendor.url"/>
+			<propertyref name="ej.bon.vendor"/>
+			<propertyref name="ej.bon.version"/>
+		</augment>
+		
+	</target>
+
+	<target name="init/s3/bon" if="onS3">
+		<!-- 
+			Default properties if the MemPage isn't provided by the Workbench Extension (pure simJPF)
+		-->
+		<property name="memories.enabled" value="false"/>
+		<property name="${jpf.property.header}core.memory.immortal.size" value="0"/>
+		<property name="${jpf.property.header}ej.bon.immutable.sector.size" value="2048"/>
+		<property name="${jpf.property.header}ej.bon.immutable.sectors" value="0"/>
+		<property name="${jpf.property.header}ej.bon.immutable.blocks" value="0"/>
+
+		<!-- remap JPF specific property names to standard one -->
+		<nestedProperty output="jpf.core.memory.immortal.size" input="${jpf.property.header}core.memory.immortal.size" />
+		<nestedProperty output="jpf.ej.bon.immutable.sector.size" input="${jpf.property.header}ej.bon.immutable.sector.size" />
+		<nestedProperty output="jpf.ej.bon.immutable.sectors" input="${jpf.property.header}ej.bon.immutable.sectors" />
+		<nestedProperty output="jpf.ej.bon.immutable.blocks" input="${jpf.property.header}ej.bon.immutable.blocks" />
+		
+		<augment id="init.properties">
+			<propertyref name="jpf.core.memory.immortal.size"/>
+			<propertyref name="jpf.ej.bon.immutable.sector.size"/>
+			<propertyref name="jpf.ej.bon.immutable.sectors"/>
+			<propertyref name="jpf.ej.bon.immutable.blocks"/>
+		</augment>
+	</target>
+	
+	<target name="mkdirs/bon" extensionOf="launch/mkdirs" depends="mkdirs/s3/bon"/>
+	
+	<target name="mkdirs/s3/bon" if="onS3">
+		<property name="s3.bon.outputDir" value="${application.output.dir}/bon"/>
+		<mkdir dir="${s3.bon.outputDir}"/>
+	</target>
+	
+</project>

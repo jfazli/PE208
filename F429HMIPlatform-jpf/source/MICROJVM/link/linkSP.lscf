@@ -1,0 +1,12 @@
+<!--
+  IS2T linker file
+ 
+  Copyright 2012 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+
+	<!-- Defines the shieldedplug section. -->
+	<defSection name=".shieldedplug" symbolPrefix="shieldedplug" symbolTags="database" rootSection="true"/>
+	
+</lscFragment>

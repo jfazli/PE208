@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2011-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="frontPanelInit">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/init-microui/microuiinit.xml" />
+	
+	<target name="init/frontpanel/check" extensionOf="init/context" depends="init/microui/check" if="onS3">
+		<condition property="initFrontPanel" value="true">
+			<istrue value="${usesMICROUI}"/>
+		</condition>
+	</target>
+	
+	<target name="init/frontpanel" extensionOf="init/execution" if="initFrontPanel">
+		
+		<echo message="Front Panel init" level="verbose" />
+		
+		<!-- load extra options -->
+		<property file="${jpf.dir}/mocks/frontpanel.options"/>	<!-- optional -->
+		
+		<!-- optional options (may be already set in frontpanel.file) -->
+		<property name="frontpanel.file" value=""/>
+		<property name="decoder.png.enabled" value="true" description="'true' to enabled the internal PNG decoders (simple and interlaced)"/>
+		<property name="decoder.bmpm.enabled" value="true" description="'true' to enabled the internal BMP monochrom decoder"/>
+		
+		<!-- MOCK CLASSPATH -->
+		<augment id="s3.mock.includes">
+			<fileset dir="${jpf.dir}/mocks" includes="mockFP*.jar"/>
+		</augment>
+		
+		<!-- PROPERTIES -->
+		<property name="ej.duik.parser.xml" value="${frontpanel.file}"/>
+		<property name="com.is2t.microbsp.microui.image.decoder.png" value="${decoder.png.enabled}"/>
+		<property name="com.is2t.microbsp.microui.image.decoder.bmpm" value="${decoder.bmpm.enabled}"/>
+		<nestedProperty output="com.is2t.microbsp.microui.io.display.nbOffscreens.0" input="${jpf.property.header}mui.images.size" />
+		<nestedProperty output="com.is2t.microbsp.microui.io.display.nbFlyingImages.0" input="${jpf.property.header}mui.flying.images.size" />
+		<nestedProperty output="com.is2t.microbsp.microui.io.display.nbFonts" input="${jpf.property.header}mui.fonts.size" />
+		
+	</target>
+	
+</project>

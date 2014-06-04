@@ -1,0 +1,1515 @@
+<soar_information>
+	<!--clinit order-->
+	<clinit_order>
+		<init rank="0" descriptor="java/lang/Thread"></init>
+		<init rank="1" descriptor="com/is2t/vm/support/util/EncodingConversion"></init>
+		<init rank="2" descriptor="java/lang/System"></init>
+		<init rank="3" descriptor="java/lang/Runtime"></init>
+		<init rank="4" descriptor="ej/microui/EventGenerator"></init>
+		<init rank="5" descriptor="ej/microui/io/Screen"></init>
+		<init rank="6" descriptor="ej/microui/io/Display"></init>
+		<init rank="7" descriptor="ej/microui/Pump"></init>
+		<init rank="8" descriptor="ej/microui/MicroUI"></init>
+		<init rank="9" descriptor="ej/mwt/Desktop$ExtendedPointer"></init>
+		<init rank="10" descriptor="Page/MainMenu"></init>
+		<init rank="11" descriptor="Page/Welcome"></init>
+		<init rank="12" descriptor="ej/mwt/MWT"></init>
+		<init rank="13" descriptor="Theme/Skin"></init>
+		<init rank="14" descriptor="ej/microui/io/Viewable"></init>
+		<init rank="15" descriptor="Page/GestionPage"></init>
+		<init rank="16" descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer"></init>
+		<init rank="17" descriptor="Widget/Renderer/TemperatureLabelRenderer"></init>
+		<init rank="18" descriptor="Widget/Renderer/WirelessAnimationRenderer"></init>
+		<init rank="19" descriptor="Widget/Renderer/PoeleAnimationRenderer"></init>
+		<init rank="20" descriptor="Widget/Renderer/PictureRenderer"></init>
+		<init rank="21" descriptor="Widget/Renderer/LabelRenderer"></init>
+		<init rank="22" descriptor="Main"></init>
+	</clinit_order>
+	<!--Stack Groups-->
+	<stackgroups></stackgroups>
+	<!--selected methods-->
+	<selected_methods>
+		<method descriptor="ej/microui/io/Displayable.performAction(I)V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/Watchdog.pause()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/Watchdog.run()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/Watchdog.stop()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/rendering/Renderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="0" stacksize="36"></method>
+		<method descriptor="ej/microui/io/Displayable.paint(Lej/microui/io/GraphicsContext;)V" codesize="0" stacksize="28"></method>
+		<method descriptor="Widget/InductionModel.performAction(I)V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/Renderable.isShown()Z" codesize="0" stacksize="20"></method>
+		<method descriptor="Widget/InductionModel.performAction(ILjava/lang/Object;)V" codesize="0" stacksize="28"></method>
+		<method descriptor="ej/mwt/Composite.validate(II)V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/rendering/Theme.populate()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/rendering/WidgetRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="0" stacksize="28"></method>
+		<method descriptor="ej/mwt/rendering/Renderer.getManagedType()Ljava/lang/Class;" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/Renderable.getRenderer()Lej/mwt/rendering/Renderer;" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/Renderable.computeScore(Lej/mwt/rendering/Renderer;)I" codesize="0" stacksize="28"></method>
+		<method descriptor="ej/microui/Watchdog.start()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/rendering/WidgetRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="0" stacksize="28"></method>
+		<method descriptor="ej/error/ErrorMessages.category()Ljava/lang/String;" codesize="0" stacksize="20"></method>
+		<method descriptor="Widget/NavigationElement.getContent()Lej/mwt/Widget;" codesize="0" stacksize="20"></method>
+		<method descriptor="com/is2t/vm/support/util/EncodingConversion.getMaxBytesPerChar()I" codesize="0" stacksize="20"></method>
+		<method descriptor="com/is2t/vm/support/util/EncodingConversion.encode([C[II[BII)I" codesize="0" stacksize="44"></method>
+		<method descriptor="java/io/Writer.write([CII)V" codesize="0" stacksize="28"></method>
+		<method descriptor="Utilities/Animator.update()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/io/DisplayableVisitor.generate(Lej/microui/io/ComponentView;Lej/microui/Rectangle;)Lej/microui/Rectangle;" codesize="0" stacksize="36"></method>
+		<method descriptor="Utilities/Animator.begin()V" codesize="0" stacksize="20"></method>
+		<method descriptor="Utilities/Animator.end()V" codesize="0" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.breakRun()V" codesize="0" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.opYield()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/Renderable.repaint(IIII)V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/mwt/Renderable.handleEvent(I)Z" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Font.getIdentifiers()[I" codesize="0" stacksize="20"></method>
+		<method descriptor="java/lang/Object.wait(J)V" codesize="0" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.opSleep(J)V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/bon/TimerTask.run()V" codesize="0" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/SystemMicroUI.init()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Font.basicCharsWidth([CII)I" codesize="0" stacksize="28"></method>
+		<method descriptor="java/lang/Runnable.run()V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/io/ComponentView.paint(Lej/microui/io/GraphicsContext;)V" codesize="0" stacksize="28"></method>
+		<method descriptor="ej/microui/Pump.execute(I)V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/Listener.performAction(I)V" codesize="0" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/touch/CalibrationSaver.restore(I)Z" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/io/ImageOutOfMemoryVisitor.run()I" codesize="0" stacksize="20"></method>
+		<method descriptor="java/lang/Math.max(II)I" codesize="0" stacksize="20"></method>
+		<method descriptor="java/lang/Math.min(II)I" codesize="0" stacksize="20"></method>
+		<method descriptor="java/io/OutputStream.write(I)V" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/Pump.read()I" codesize="0" stacksize="20"></method>
+		<method descriptor="com/jfa/observer/Observer.update(LnativeIhm/NativeData;)V" codesize="0" stacksize="28"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/touch/CalibrationSaver.save(I)Z" codesize="0" stacksize="20"></method>
+		<method descriptor="java/lang/Math.abs(I)I" codesize="0" stacksize="20"></method>
+		<method descriptor="ej/microui/Listener.performAction(ILjava/lang/Object;)V" codesize="0" stacksize="28"></method>
+		<method descriptor="ej/mwt/Panel.becameInactive()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/NoWatchdog.stop()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/NoWatchdog.start()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/MicroUI.errorLog([BII)V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/MicroUI.systemBeep()V" codesize="6" stacksize="12"></method>
+		<method descriptor="Page/GestionPage.performAction(I)V" codesize="6" stacksize="12"></method>
+		<method descriptor="java/lang/String.toString()Ljava/lang/String;" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/mwt/Desktop$PanelsContainer.paint(Lej/microui/io/GraphicsContext;)V" codesize="6" stacksize="12"></method>
+		<method descriptor="Page/MainMenu.getContent()Lej/mwt/Widget;" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakReference.initialize()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/mwt/Panel.paint(Lej/microui/io/GraphicsContext;)V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/NoWatchdog.run()V" codesize="6" stacksize="12"></method>
+		<method descriptor="java/lang/Object.&amp;lt;init&amp;gt;()V" codesize="6" stacksize="12"></method>
+		<method descriptor="com/is2t/microbsp/microui/SystemMicroUI.systemStart()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/io/DisplayPump.displayWatchdogKill(I)V" codesize="6" stacksize="12"></method>
+		<method descriptor="Widget/Picture.begin()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/io/DisplayPump.displayDropEvent(I)V" codesize="6" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation.begin()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/FIFOPump.fifoDropNewEvent()V" codesize="6" stacksize="12"></method>
+		<method descriptor="com/is2t/vm/support/io/NullOutputStream.write(I)V" codesize="6" stacksize="12"></method>
+		<method descriptor="Page/Welcome$1.performAction(I)V" codesize="6" stacksize="12"></method>
+		<method descriptor="Composite/PlaqueComposite.add(Lej/mwt/Widget;)V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Viewable.paintFromComponentView(Lej/microui/io/GraphicsContext;Lej/microui/io/ComponentView;IIII)V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Displayable.hideNotify()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/mwt/Panel.becameActive()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/NoWatchdog.pause()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Displayable.showNotify()V" codesize="6" stacksize="12"></method>
+		<method descriptor="Widget/WirelessAnimation.performAction(I)V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/MicroUI.systemStart()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/EventGenerator.convert(Lej/microui/Pump;I)V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/mwt/Widget.paint(Lej/microui/io/GraphicsContext;)V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/microui/MicroUI.init()V" codesize="6" stacksize="12"></method>
+		<method descriptor="ej/mwt/Desktop.getStyle()I" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/mwt/Widget.handleEvent(I)Z" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/mwt/Desktop.handleEvent(I)Z" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/mwt/rendering/Renderer.getManagedStyle()I" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/mwt/rendering/Renderer.getMargin()I" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/mwt/rendering/Renderer.getPadding()I" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/microui/Command.getEventType()I" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/microui/FIFOPump.dropOnFull()Z" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/mwt/Widget.getStyle()I" codesize="7" stacksize="12"></method>
+		<method descriptor="java/lang/Thread.yield()V" codesize="7" stacksize="12"></method>
+		<method descriptor="ej/mwt/Panel.getStyle()I" codesize="7" stacksize="12"></method>
+		<method descriptor="java/lang/Thread.getName()Ljava/lang/String;" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/Picture.getAnimation()LUtilities/Animation;" codesize="8" stacksize="12"></method>
+		<method descriptor="Utilities/Animation.getStep()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/Picture.setSelectionListener(Lej/microui/Listener;)V" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/WirelessAnimation.setStateImageOn(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/WirelessAnimation.setStateImageOff(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="ist/support/util/EncUS_ASCII.getMaxBytesPerChar()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/TemperatureLabel.setValue(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Screen.getEventHandler()Lej/microui/Listener;" codesize="8" stacksize="12"></method>
+		<method descriptor="java/lang/Throwable.getMessage()Ljava/lang/String;" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Pointer.getY()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/Picture.getImage()Lej/microui/io/Image;" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/Picture.getTypeAnimation()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/DisplayPump.getMaxSize()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/ButtonAnimation.getPath()Ljava/lang/String;" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/ButtonAnimation.setPath(Ljava/lang/String;)V" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/ButtonAnimation.getState()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Buttons.getEventType()I" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.getSelectionMode()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/Label.getText()Ljava/lang/String;" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/WirelessAnimation.getImageOn()Lej/microui/io/Image;" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/ButtonAnimation.setState(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/DisplayPump.dropOnFull()Z" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/EventGenerator.setListener(Lej/microui/Listener;)V" codesize="8" stacksize="12"></method>
+		<method descriptor="java/util/Vector.size()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/mwt/Composite.getPrevious(I)I" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.setSelectionMode(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/Label.getAlignment()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/EventGenerator.getID()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Pointer.getX()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation.setTypeAnimation(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/DisplayFont.getFontSystemAttributes()I" codesize="8" stacksize="12"></method>
+		<method descriptor="java/lang/ref/Reference.get()Ljava/lang/Object;" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/WirelessAnimation.getStateImageOn()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/Immortal.getStringOffset(Ljava/lang/String;)I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/ComponentView.getY()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/ImmortalArrayAction.action([CIIII)I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.getClipHeight()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/InductionModel.setListener(Lej/microui/Listener;)V" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/ComponentView.getHeight()I" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.getCommunicationUart()I" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.getSelectionFoyer()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.getClipWidth()I" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.setCommunicationUart(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/ComponentView.getWidth()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/WirelessAnimation.getImageOff()Lej/microui/io/Image;" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/PuissancePlaqueLabel.setValue(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation.getChoixAnimation()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Displayable.getDisplay()Lej/microui/io/Display;" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.getAutorisationAppli()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation.setChoixFoyer(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="Composite/PlaqueComposite.getBackground()Ljava/lang/String;" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/mwt/rendering/RenderingContext.getState()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation.getChoixFoyer()I" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.getPuissanceFoyer()I" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.setPuissanceFoyer(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.setSelectionFoyer(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation.getAnimation()LUtilities/Animation;" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation.getImage()Lej/microui/io/Image;" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.getTemperaturePoele()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/mwt/Panel.getFocus()Lej/mwt/Widget;" codesize="8" stacksize="12"></method>
+		<method descriptor="java/lang/String.length()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/mwt/Widget.getParent()Lej/mwt/Composite;" codesize="8" stacksize="12"></method>
+		<method descriptor="Page/GestionPage.getWidget()Lej/mwt/Widget;" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/mwt/Widget.getPanel()Lej/mwt/Panel;" codesize="8" stacksize="12"></method>
+		<method descriptor="java/lang/Integer.hashCode()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/io/ComponentView.getX()I" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.setAutorisationAppli(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="nativeIhm/NativeData.setTemperaturePoele(I)V" codesize="8" stacksize="12"></method>
+		<method descriptor="java/lang/StringBuffer.length()I" codesize="8" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation.getTypeAnimation()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/mwt/Widget.getPreferredWidth()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/mwt/Widget.getPreferredHeight()I" codesize="8" stacksize="12"></method>
+		<method descriptor="ej/microui/FIFOPump.getMaxSize()I" codesize="9" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Pointer.getEventType()I" codesize="9" stacksize="12"></method>
+		<method descriptor="ej/microui/io/DisplayPump.createEvent(II)I" codesize="10" stacksize="12"></method>
+		<method descriptor="Page/MainMenu.access$5(LPage/MainMenu;)LWidget/ButtonAnimation;" codesize="10" stacksize="12"></method>
+		<method descriptor="Page/MainMenu.access$4(LPage/MainMenu;)LWidget/WirelessAnimation;" codesize="10" stacksize="12"></method>
+		<method descriptor="ej/microui/io/CompositeView.fillBackground(Z)V" codesize="10" stacksize="12"></method>
+		<method descriptor="Page/MainMenu.access$2(LPage/MainMenu;)LWidget/PuissancePlaqueLabel;" codesize="10" stacksize="12"></method>
+		<method descriptor="ej/microui/Immortal.getStringChars(Ljava/lang/String;II)[C" codesize="10" stacksize="12"></method>
+		<method descriptor="Page/MainMenu.access$3(LPage/MainMenu;)LWidget/PoeleAnimation;" codesize="10" stacksize="12"></method>
+		<method descriptor="Page/MainMenu.access$1(LPage/MainMenu;)LWidget/PuissancePlaqueLabel;" codesize="10" stacksize="12"></method>
+		<method descriptor="ej/mwt/Desktop.access$000(Lej/mwt/Desktop;)Lcom/is2t/mwt/RenderableHelper;" codesize="10" stacksize="12"></method>
+		<method descriptor="Page/MainMenu.access$0(LPage/MainMenu;)LWidget/TemperatureLabel;" codesize="10" stacksize="12"></method>
+		<method descriptor="java/lang/Thread.startNative()I" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/bon/CurrentTime.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/mwt/rendering/WidgetRenderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/System.hashCode(Ljava/lang/Object;)I" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/Class.getName()Ljava/lang/String;" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/Runtime.getRuntime()Ljava/lang/Runtime;" codesize="11" stacksize="12"></method>
+		<method descriptor="java/lang/Class.isAssignableFrom(Ljava/lang/Class;)Z" codesize="11" stacksize="28"></method>
+		<method descriptor="java/lang/Runtime.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="nativeIhm/NativeData.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Runtime.gc()V" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/Class.isInterface()Z" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/bon/Immortals.setImmortal(Ljava/lang/Object;)Ljava/lang/Object;" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/Object.getClass()Ljava/lang/Class;" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.charsWidth(I[CII)I" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/mwt/MWT.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/io/OutputStream.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/error/Message.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Object.originalGetClass()Ljava/lang/Class;" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.getFontIdentifiers(I[I)V" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/bon/CurrentTime.get(Z)J" codesize="11" stacksize="28"></method>
+		<method descriptor="nativeIhm/PcomNative.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/ButtonAnimationRenderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Class.forNameNative(Ljava/lang/String;)Ljava/lang/Class;" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/String.equals(Ljava/lang/Object;)Z" codesize="11" stacksize="28"></method>
+		<method descriptor="com/is2t/mwt/err/MWTErrorMessages.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakRefPool.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Class.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/mwt/rendering/Renderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/microui/Watchdog.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.createNewArrayFromType(Ljava/lang/Class;I)Ljava/lang/Object;" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/System.getStackTrace(Ljava/lang/Thread;)[I" codesize="11" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.getPadding()I" codesize="11" stacksize="12"></method>
+		<method descriptor="java/lang/System.getMethodClass(I)Ljava/lang/Class;" codesize="11" stacksize="12"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/System.toStringStackLine([CII)I" codesize="11" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.getPadding()I" codesize="11" stacksize="12"></method>
+		<method descriptor="ej/microui/NoWatchdog.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Math.ceil(D)D" codesize="11" stacksize="28"></method>
+		<method descriptor="com/is2t/tools/GeometryTools.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Math.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/util/Hashtable.getIndexOfKey0(Ljava/lang/Object;)I" codesize="11" stacksize="28"></method>
+		<method descriptor="Widget/Renderer/PoeleAnimationRenderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/microui/MicroUI.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/PoeleAnimationRenderer.&amp;lt;clinit&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/bon/Immortals.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/bon/Immortals.isImmortal(Ljava/lang/Object;)Z" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Screen.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/vm/support/io/NullOutputStream.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/bon/ReferenceQueue.poll(Lej/bon/ReferenceQueue;)Lej/bon/EnqueuedWeakReference;" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.storeException(Ljava/lang/Throwable;)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/vm/support/io/DebugOutputStream.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/vm/support/io/DebugOutputStream.write(I)V" codesize="11" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/PoeleAnimationRenderer.getMargin()I" codesize="11" stacksize="12"></method>
+		<method descriptor="Widget/Renderer/WirelessAnimationRenderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/WirelessAnimationRenderer.&amp;lt;clinit&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/WirelessAnimationRenderer.getMargin()I" codesize="11" stacksize="12"></method>
+		<method descriptor="Theme/Skin.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/vm/support/lang/Systools.charArrayToByteArray([CI[BII)V" codesize="11" stacksize="28"></method>
+		<method descriptor="com/is2t/vm/support/lang/Systools.appendInteger(II[C)I" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NTouchScreenPointer.performAction(IB)Z" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/vm/support/lang/Systools.regionMatches(Ljava/lang/String;ILjava/lang/String;II)Z" codesize="11" stacksize="28"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.drawCircle(IIIIIZ)V" codesize="11" stacksize="20"></method>
+		<method descriptor="ist/support/util/EncUS_ASCII.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.drawRect(IIIIIIZ)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/vm/support/util/EncodingConversion.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/tools/BitFieldHelper.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/bon/Util.throwExceptionInThread(Ljava/lang/RuntimeException;Ljava/lang/Thread;Z)V" codesize="11" stacksize="28"></method>
+		<method descriptor="ej/bon/Util.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/touch/NativeCalibrationSaver.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.currentThread()Ljava/lang/Thread;" codesize="11" stacksize="12"></method>
+		<method descriptor="com/is2t/vm/support/lang/Systools.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/System.getOutputStream()Ljava/io/OutputStream;" codesize="11" stacksize="12"></method>
+		<method descriptor="com/is2t/vm/support/lang/SupportNumber.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NTouchScreenPointer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.activeCount()I" codesize="11" stacksize="20"></method>
+		<method descriptor="Utilities/Utilities.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.getWidth(I)I" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.getHeight(I)I" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/microui/io/DisplayableVisitor.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemInputPump.interrupt()V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.initAndGetNextGraphicsContextId(I)I" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/microui/err/MicroUIErrorMessages.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/microui/Event.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NTouchScreenPointer.calibratePoint(IIII)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemInputPump.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.flushScreen(I)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemInputPump.initialize()Z" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/tools/ToolsErrorMessage.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="ej/microui/io/VisitorComputeXY.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.closeOffScreen(I)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.linkOffscreen(IZ)I" codesize="11" stacksize="20"></method>
+		<method descriptor="java/io/InputStream.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemInputPump.getEvent()I" codesize="11" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/PictureRenderer.getMargin()I" codesize="11" stacksize="12"></method>
+		<method descriptor="ej/microui/Immortal.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.getFontStylesAndFilters(I)I" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.setFlyingImagePosition(III)V" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/microui/io/ImageOutOfMemoryVisitor.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/System.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Object.notify(Z)V" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/microui/MicroUIProperties.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/PictureRenderer.&amp;lt;clinit&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/String.hashCodeNative()I" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/ref/Reference.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.getArraySize(II)I" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.setPriorityNative(I)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.getFontBaseline(I)I" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/System.arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V" codesize="11" stacksize="28"></method>
+		<method descriptor="Widget/Renderer/PictureRenderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/System.initializeProperties([[Ljava/lang/String;)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.getFontHeight(I)I" codesize="11" stacksize="20"></method>
+		<method descriptor="ej/microui/ImmortalArrayAction.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.drawDeformedImage(II[IZ)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.addInternalFont([BII)I" codesize="11" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.getPadding()I" codesize="11" stacksize="12"></method>
+		<method descriptor="ej/mwt/Composite.getWidgetsCount()I" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/Throwable.internalError(Ljava/lang/Throwable;)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.loadImageStream(I[BIII)I" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.showFlyingImage(IZ)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.setClipRect(IIIII)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.setEllipsis(IZ)V" codesize="11" stacksize="20"></method>
+		<method descriptor="Main.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.setAvailableColor(IIII)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/vm/support/err/CLDCErrorMessages.&amp;lt;init&amp;gt;()V" codesize="11" stacksize="16"></method>
+		<method descriptor="java/lang/String.indexOf(II)I" codesize="11" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.interruptNative()V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.changeBackground(IZ)V" codesize="11" stacksize="20"></method>
+		<method descriptor="com/is2t/tools/BitFieldHelper.setBooleanProperty(II)I" codesize="12" stacksize="12"></method>
+		<method descriptor="ej/microui/Pump.getName()Ljava/lang/String;" codesize="12" stacksize="12"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemInputPump.getName()Ljava/lang/String;" codesize="12" stacksize="12"></method>
+		<method descriptor="ej/microui/err/MicroUIErrorMessages.category()Ljava/lang/String;" codesize="12" stacksize="12"></method>
+		<method descriptor="com/is2t/mwt/err/MWTErrorMessages.category()Ljava/lang/String;" codesize="12" stacksize="12"></method>
+		<method descriptor="com/is2t/vm/support/err/CLDCErrorMessages.category()Ljava/lang/String;" codesize="12" stacksize="12"></method>
+		<method descriptor="ej/microui/io/DisplayPump.createViewPaintPartEvent()I" codesize="12" stacksize="12"></method>
+		<method descriptor="ej/microui/FIFOPump.getName()Ljava/lang/String;" codesize="12" stacksize="12"></method>
+		<method descriptor="ej/microui/io/DisplayPump.createPaintAllViewEvent()I" codesize="12" stacksize="12"></method>
+		<method descriptor="ej/microui/FIFOPump.getNextEventToRead()I" codesize="12" stacksize="16"></method>
+		<method descriptor="ej/microui/io/DisplayPump.getName()Ljava/lang/String;" codesize="12" stacksize="12"></method>
+		<method descriptor="ej/microui/io/FlyingImage.createRepaintEvent()I" codesize="12" stacksize="12"></method>
+		<method descriptor="com/is2t/tools/ToolsErrorMessage.category()Ljava/lang/String;" codesize="12" stacksize="12"></method>
+		<method descriptor="Page/MainMenu$1.&amp;lt;init&amp;gt;(LPage/MainMenu;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/mwt/Panel$1.&amp;lt;init&amp;gt;(Lej/mwt/Panel;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/microui/io/VisitorPaint.&amp;lt;init&amp;gt;(Lej/microui/io/GraphicsContext;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Viewable.&amp;lt;clinit&amp;gt;()V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/mwt/Desktop$1.&amp;lt;init&amp;gt;(Lej/mwt/Desktop;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/mwt/Desktop$ExtendedPointer.&amp;lt;init&amp;gt;(Lej/microui/io/Pointer;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="java/lang/ref/WeakReference.&amp;lt;init&amp;gt;(Ljava/lang/Object;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/mwt/Widget.lostFocus()V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Font.&amp;lt;init&amp;gt;(I)V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Font$1.&amp;lt;init&amp;gt;(Lej/microui/io/Font;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="java/io/Writer.&amp;lt;init&amp;gt;()V" codesize="13" stacksize="16"></method>
+		<method descriptor="ej/mwt/Widget.gainFocus()V" codesize="13" stacksize="16"></method>
+		<method descriptor="Widget/PoeleAnimation$1.&amp;lt;init&amp;gt;(LWidget/PoeleAnimation;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="Page/Welcome$1.&amp;lt;init&amp;gt;(LPage/Welcome;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="com/is2t/mwt/RenderableHelper.&amp;lt;init&amp;gt;(Lej/mwt/Renderable;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="Widget/Picture$1.&amp;lt;init&amp;gt;(LWidget/Picture;)V" codesize="13" stacksize="16"></method>
+		<method descriptor="java/lang/Object.equals(Ljava/lang/Object;)Z" codesize="14" stacksize="12"></method>
+		<method descriptor="com/is2t/tools/BitFieldHelper.getIntProperty(III)I" codesize="14" stacksize="12"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.setSystemClip(IIII)V" codesize="14" stacksize="12"></method>
+		<method descriptor="Widget/Picture$1.run()V" codesize="15" stacksize="16"></method>
+		<method descriptor="ej/microui/MicroUI.errorLog(Z)V" codesize="15" stacksize="16"></method>
+		<method descriptor="ej/mwt/Desktop.getPanelsContainer()Lej/microui/io/CompositeView;" codesize="15" stacksize="12"></method>
+		<method descriptor="Widget/PoeleAnimation$1.run()V" codesize="15" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Display$1.&amp;lt;init&amp;gt;(Lej/microui/io/Display;Z)V" codesize="15" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Displayable.becomeCurrent()V" codesize="15" stacksize="16"></method>
+		<method descriptor="Utilities/Animation.isRunning()Z" codesize="15" stacksize="12"></method>
+		<method descriptor="ej/microui/FIFOPump.performAction(ILjava/lang/Object;)V" codesize="15" stacksize="20"></method>
+		<method descriptor="ej/bon/TimerTask.&amp;lt;init&amp;gt;()V" codesize="16" stacksize="24"></method>
+		<method descriptor="ej/mwt/Widget.setPreferredSize(II)V" codesize="16" stacksize="12"></method>
+		<method descriptor="ej/microui/BasicWatchdog.stop()V" codesize="16" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Display.isShown(Lej/microui/io/Displayable;)Z" codesize="16" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.isAlive()Z" codesize="16" stacksize="12"></method>
+		<method descriptor="Composite/Renderer/PlaqueCompositeRenderer.&amp;lt;init&amp;gt;()V" codesize="16" stacksize="20"></method>
+		<method descriptor="ej/microui/MicroUI.&amp;lt;clinit&amp;gt;()V" codesize="17" stacksize="12"></method>
+		<method descriptor="com/is2t/microbsp/microui/SystemMicroUI.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="20"></method>
+		<method descriptor="java/lang/InstantiationException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/mwt/Composite.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/IllegalAccessError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/InterruptedException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/NullPointerException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/ArithmeticException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/Error.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/UnsatisfiedLinkError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/VirtualMachineError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/Exception.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/IllegalMonitorStateException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/RuntimeException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="com/is2t/microej/microui/SystemMicroUIImpl.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/IllegalAccessException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/Throwable.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/NoClassDefFoundError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/Object.notify()V" codesize="17" stacksize="20"></method>
+		<method descriptor="java/lang/ClassNotFoundException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/NumberFormatException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/IndexOutOfBoundsException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/microui/EventGenerator.&amp;lt;clinit&amp;gt;()V" codesize="17" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Buttons.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="20"></method>
+		<method descriptor="java/lang/AbstractMethodError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="Widget/InductionModel.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/IllegalThreadStateException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/Class.newInstance()Ljava/lang/Object;" codesize="17" stacksize="20"></method>
+		<method descriptor="java/lang/ArrayIndexOutOfBoundsException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.execClinit(I)V" codesize="17" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Font.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="20"></method>
+		<method descriptor="java/lang/MainThread.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/microui/io/OutOfEventsException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/microui/WatchdogException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/LinkageError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="Composite/ScreenP.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/microui/Command.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/mwt/Dialog.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.drawChars(IIII[CIIIZ)V" codesize="17" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Screen.&amp;lt;clinit&amp;gt;()V" codesize="17" stacksize="12"></method>
+		<method descriptor="java/lang/OutOfMemoryError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Image$1.&amp;lt;init&amp;gt;(Lej/microui/io/Display;[BI)V" codesize="17" stacksize="16"></method>
+		<method descriptor="Theme/ClassicTheme.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/bon/IllegalStateException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/mwt/Desktop.showNotify()V" codesize="17" stacksize="16"></method>
+		<method descriptor="ej/microui/MicroUIException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/StringIndexOutOfBoundsException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="Widget/PoeleAnimation.end()V" codesize="17" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay.drawRegion(IIIIIIIIIZZ)V" codesize="17" stacksize="20"></method>
+		<method descriptor="java/lang/ClassCastException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/StackOverflowError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/IllegalArgumentException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/SystemCommand.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/ArrayStoreException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/NegativeArraySizeException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/ExceptionInInitializerError.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/io/IOException.&amp;lt;init&amp;gt;()V" codesize="17" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.&amp;lt;init&amp;gt;(I)V" codesize="18" stacksize="20"></method>
+		<method descriptor="java/lang/Object.wait()V" codesize="18" stacksize="24"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemInputPump.callConverterConvert(ILej/microui/EventGenerator;)V" codesize="18" stacksize="24"></method>
+		<method descriptor="ej/mwt/Desktop.repaint()V" codesize="19" stacksize="16"></method>
+		<method descriptor="java/lang/InstantiationException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/ExceptionInInitializerError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/NoClassDefFoundError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/io/IOException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/OutOfMemoryError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/microui/MicroUIProperties.getProperty(Ljava/lang/String;)Ljava/lang/String;" codesize="19" stacksize="16"></method>
+		<method descriptor="java/lang/IllegalAccessException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/MainThread.run()V" codesize="19" stacksize="16"></method>
+		<method descriptor="java/lang/Throwable.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="16"></method>
+		<method descriptor="ej/bon/Timer.&amp;lt;init&amp;gt;()V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/IllegalMonitorStateException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/bon/IllegalStateException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/microui/MicroUIException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/IllegalAccessError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/SystemMicroUI.errorLog(Ljava/lang/Throwable;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/InterruptedException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/microui/io/ExplicitFlush.flush()V" codesize="19" stacksize="16"></method>
+		<method descriptor="ej/mwt/Desktop$1.run()V" codesize="19" stacksize="16"></method>
+		<method descriptor="ej/mwt/Desktop$ExtendedPointer.&amp;lt;clinit&amp;gt;()V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/ArithmeticException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Displayable.becomeHidden()V" codesize="19" stacksize="24"></method>
+		<method descriptor="java/lang/ArrayStoreException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Displayable.&amp;lt;init&amp;gt;(Lej/microui/io/Display;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/mwt/Panel.show(Lej/mwt/Desktop;)V" codesize="19" stacksize="24"></method>
+		<method descriptor="ej/mwt/Panel$1.run()V" codesize="19" stacksize="16"></method>
+		<method descriptor="com/is2t/tools/BitFieldHelper.getBooleanProperty(II)Z" codesize="19" stacksize="12"></method>
+		<method descriptor="java/lang/VirtualMachineError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="Main.&amp;lt;clinit&amp;gt;()V" codesize="19" stacksize="20"></method>
+		<method descriptor="com/is2t/tools/BitFieldHelper.unsetBooleanProperty(II)I" codesize="19" stacksize="16"></method>
+		<method descriptor="java/lang/LinkageError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/ClassCastException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/bon/ReferenceQueue.poll()Lej/bon/EnqueuedWeakReference;" codesize="19" stacksize="16"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakReference.delete()V" codesize="19" stacksize="16"></method>
+		<method descriptor="java/lang/Exception.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/IllegalThreadStateException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/IndexOutOfBoundsException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/ClassNotFoundException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/ArrayIndexOutOfBoundsException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="com/is2t/vm/support/InternalLimitsError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="Page/Welcome.&amp;lt;clinit&amp;gt;()V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/microui/io/DisplayPump.crash(Ljava/lang/Throwable;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/UnsatisfiedLinkError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/RuntimeException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/NegativeArraySizeException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/NullPointerException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/AbstractMethodError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/SystemCommand.convert(Lej/microui/Pump;I)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/Error.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite$WidgetInfos.&amp;lt;init&amp;gt;(Lcom/is2t/mwt/composites/BorderComposite;III)V" codesize="19" stacksize="16"></method>
+		<method descriptor="Widget/WirelessAnimation.&amp;lt;init&amp;gt;(Lej/microui/io/Image;)V" codesize="19" stacksize="16"></method>
+		<method descriptor="java/lang/StackOverflowError.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/Object.hashCode()I" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/StringIndexOutOfBoundsException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Image$2.&amp;lt;init&amp;gt;(Lej/microui/io/Display;[BII)V" codesize="19" stacksize="16"></method>
+		<method descriptor="java/lang/NumberFormatException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="ej/microui/FIFOPump.&amp;lt;init&amp;gt;()V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/util/Hashtable.&amp;lt;init&amp;gt;()V" codesize="19" stacksize="20"></method>
+		<method descriptor="java/lang/IllegalArgumentException.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="19" stacksize="20"></method>
+		<method descriptor="Widget/Label.setText(Ljava/lang/String;)V" codesize="19" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemInputPump.read()I" codesize="19" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.runWrapper()V" codesize="20" stacksize="16"></method>
+		<method descriptor="ej/microui/Pump.pump()V" codesize="20" stacksize="24"></method>
+		<method descriptor="ej/microui/FIFOPump.fifoDropOldestEvent()V" codesize="20" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Buttons.supportsExtendedFeatures(I)Z" codesize="20" stacksize="20"></method>
+		<method descriptor="Page/GestionPage.performAction(ILjava/lang/Object;)V" codesize="21" stacksize="24"></method>
+		<method descriptor="ej/mwt/Panel.getRenderer()Lej/mwt/rendering/Renderer;" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/mwt/Panel.isTransparent()Z" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/mwt/Widget.isTransparent()Z" codesize="21" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.&amp;lt;clinit&amp;gt;()V" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Display.setPriority(I)V" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/mwt/Panel.setSize(II)V" codesize="21" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.getFont()Lej/microui/io/DisplayFont;" codesize="21" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.getTextColor()I" codesize="21" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.&amp;lt;clinit&amp;gt;()V" codesize="21" stacksize="16"></method>
+		<method descriptor="Page/MainMenu.&amp;lt;clinit&amp;gt;()V" codesize="21" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.getFont()Lej/microui/io/DisplayFont;" codesize="21" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.getTextColor()I" codesize="21" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.&amp;lt;init&amp;gt;(Lej/microui/io/Display;)V" codesize="21" stacksize="24"></method>
+		<method descriptor="ej/mwt/rendering/Theme.&amp;lt;init&amp;gt;()V" codesize="21" stacksize="24"></method>
+		<method descriptor="ej/microui/io/RepaintView.&amp;lt;init&amp;gt;(Lej/microui/io/ComponentView;IIII)V" codesize="21" stacksize="16"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.sleep(I)V" codesize="21" stacksize="24"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite$Rectangle.&amp;lt;init&amp;gt;(Lcom/is2t/mwt/composites/BorderComposite;IIII)V" codesize="21" stacksize="16"></method>
+		<method descriptor="java/lang/StringBuffer.&amp;lt;init&amp;gt;(I)V" codesize="21" stacksize="20"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.add(Lej/mwt/Widget;)V" codesize="21" stacksize="24"></method>
+		<method descriptor="nativeIhm/ScrutationInfos.addObserver(Lcom/jfa/observer/Observer;)V" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/mwt/MWT.&amp;lt;clinit&amp;gt;()V" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/microui/io/DisplayFont.getHeight()I" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/microui/Pump.setPriority(I)V" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Pointer.reset(II)V" codesize="21" stacksize="24"></method>
+		<method descriptor="ej/microui/Pump.crash(Ljava/lang/Throwable;)V" codesize="21" stacksize="20"></method>
+		<method descriptor="Widget/Label.&amp;lt;init&amp;gt;(Ljava/lang/String;I)V" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/microui/io/ImageOutOfMemoryVisitor.callRun()I" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/microui/io/CompositeView.arrange(Lej/microui/io/ComponentView;I)V" codesize="21" stacksize="24"></method>
+		<method descriptor="Widget/Label.&amp;lt;init&amp;gt;()V" codesize="21" stacksize="24"></method>
+		<method descriptor="ej/bon/Util.throwExceptionInThread(Ljava/lang/RuntimeException;Ljava/lang/Thread;)V" codesize="21" stacksize="24"></method>
+		<method descriptor="ej/bon/EnqueuedWeakReference.&amp;lt;init&amp;gt;(Ljava/lang/Object;Lej/bon/ReferenceQueue;)V" codesize="21" stacksize="20"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.&amp;lt;init&amp;gt;()V" codesize="21" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.&amp;lt;clinit&amp;gt;()V" codesize="21" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.getTextColor()I" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/mwt/rendering/RenderingContext.&amp;lt;init&amp;gt;()V" codesize="21" stacksize="24"></method>
+		<method descriptor="ej/mwt/Widget.revalidate()V" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/mwt/Panel.invalidate()V" codesize="21" stacksize="20"></method>
+		<method descriptor="java/lang/String.&amp;lt;init&amp;gt;()V" codesize="21" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.getFont()Lej/microui/io/DisplayFont;" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/microui/io/DisplayFont.getBaselinePosition()I" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/mwt/Desktop.getRenderer()Lej/mwt/rendering/Renderer;" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/mwt/Desktop.getHeight()I" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.getWidth()I" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Image.getHeight()I" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/mwt/Widget.getRenderer()Lej/mwt/rendering/Renderer;" codesize="21" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.&amp;lt;init&amp;gt;(Ljava/lang/Runnable;)V" codesize="21" stacksize="24"></method>
+		<method descriptor="Widget/Picture.end()V" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Viewable.repaintView(Lej/microui/io/ComponentView;)V" codesize="21" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Image.getWidth()I" codesize="21" stacksize="16"></method>
+		<method descriptor="ej/microui/Event.getData(I)I" codesize="22" stacksize="16"></method>
+		<method descriptor="ej/bon/Util.platformTimeMillis()J" codesize="22" stacksize="20"></method>
+		<method descriptor="nativeIhm/PcomNative.stateButton(I)V" codesize="22" stacksize="20"></method>
+		<method descriptor="nativeIhm/PcomNative.init()V" codesize="22" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Display.getHeight()I" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Display.&amp;lt;clinit&amp;gt;()V" codesize="23" stacksize="12"></method>
+		<method descriptor="java/lang/StringBuffer.&amp;lt;init&amp;gt;()V" codesize="23" stacksize="24"></method>
+		<method descriptor="java/lang/Thread.&amp;lt;clinit&amp;gt;()V" codesize="23" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Displayable.isShown()Z" codesize="23" stacksize="24"></method>
+		<method descriptor="Page/Welcome.getContent()Lej/mwt/Widget;" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Display.getWidth()I" codesize="23" stacksize="20"></method>
+		<method descriptor="java/io/Writer.write([C)V" codesize="23" stacksize="28"></method>
+		<method descriptor="ej/bon/TimerTask.uncaughtException(Lej/bon/Timer;Ljava/lang/Throwable;)V" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.isValidating()Z" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/microui/io/DisplayFont.&amp;lt;init&amp;gt;()V" codesize="23" stacksize="32"></method>
+		<method descriptor="Widget/InductionModel.setData(ILnativeIhm/NativeData;)V" codesize="23" stacksize="24"></method>
+		<method descriptor="ej/microui/io/GraphicsContextWeakReference.&amp;lt;init&amp;gt;(Ljava/lang/Object;Lej/bon/ReferenceQueue;I)V" codesize="23" stacksize="28"></method>
+		<method descriptor="ej/microui/io/GraphicsContext$1.&amp;lt;init&amp;gt;(Lej/microui/io/GraphicsContext;IIIILej/microui/io/DisplayFont;)V" codesize="23" stacksize="16"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakReference.&amp;lt;init&amp;gt;(Ljava/lang/Object;Lej/bon/ReferenceQueue;I)V" codesize="23" stacksize="24"></method>
+		<method descriptor="java/io/PrintStream.println()V" codesize="23" stacksize="20"></method>
+		<method descriptor="java/util/Vector.&amp;lt;init&amp;gt;()V" codesize="23" stacksize="24"></method>
+		<method descriptor="ej/microui/io/DisplayPump.full(I)V" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/microui/FIFOPump.full(I)V" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/microui/io/ImageWeakReference.&amp;lt;init&amp;gt;(Ljava/lang/Object;Lej/bon/ReferenceQueue;I)V" codesize="23" stacksize="28"></method>
+		<method descriptor="ej/microui/Pump.&amp;lt;clinit&amp;gt;()V" codesize="23" stacksize="12"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/touch/NativeCalibrationSaver.save(I)Z" codesize="23" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/touch/NativeCalibrationSaver.restore(I)Z" codesize="23" stacksize="20"></method>
+		<method descriptor="java/lang/Integer.toHexString(I)Ljava/lang/String;" codesize="23" stacksize="24"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/SystemPointer.&amp;lt;init&amp;gt;(III)V" codesize="23" stacksize="28"></method>
+		<method descriptor="java/lang/Integer.toString()Ljava/lang/String;" codesize="23" stacksize="24"></method>
+		<method descriptor="java/lang/Integer.toString(I)Ljava/lang/String;" codesize="23" stacksize="24"></method>
+		<method descriptor="java/lang/String.valueOf(I)Ljava/lang/String;" codesize="23" stacksize="24"></method>
+		<method descriptor="java/lang/Integer.toString(II)Ljava/lang/String;" codesize="23" stacksize="24"></method>
+		<method descriptor="com/is2t/mwt/RenderableHelper.getBooleanProperty(I)Z" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.isVisible()Z" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.requestFocus()V" codesize="23" stacksize="20"></method>
+		<method descriptor="java/lang/String.getBytes()[B" codesize="23" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemInputPump.start()V" codesize="23" stacksize="20"></method>
+		<method descriptor="java/lang/AbstractMethodError.throwAbstractMethodError()V" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Buttons.getAction(I)I" codesize="23" stacksize="16"></method>
+		<method descriptor="ej/microui/EventGenerator.&amp;lt;init&amp;gt;()V" codesize="23" stacksize="20"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.removeAllWidgets()V" codesize="23" stacksize="16"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.&amp;lt;init&amp;gt;()V" codesize="23" stacksize="32"></method>
+		<method descriptor="com/is2t/mwt/composites/GridComposite.&amp;lt;init&amp;gt;(I)V" codesize="23" stacksize="24"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.reset()V" codesize="23" stacksize="24"></method>
+		<method descriptor="ej/mwt/rendering/RenderingContext.newRenderingContext()Lej/mwt/rendering/RenderingContext;" codesize="23" stacksize="16"></method>
+		<method descriptor="Page/GestionPage.SetInitialiseState(I)V" codesize="23" stacksize="24"></method>
+		<method descriptor="ej/mwt/Panel.isValid()Z" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/mwt/Panel.isPacked()Z" codesize="23" stacksize="20"></method>
+		<method descriptor="ej/mwt/Panel.setPacked(Z)V" codesize="23" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Image.&amp;lt;init&amp;gt;()V" codesize="23" stacksize="32"></method>
+		<method descriptor="ej/microui/Event.getType(I)I" codesize="23" stacksize="16"></method>
+		<method descriptor="ej/microui/Event.getGeneratorID(I)I" codesize="23" stacksize="16"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.setFont(Lej/microui/io/DisplayFont;)V" codesize="24" stacksize="16"></method>
+		<method descriptor="ej/microui/Rectangle.&amp;lt;init&amp;gt;(IIIIII)V" codesize="25" stacksize="16"></method>
+		<method descriptor="ej/microui/MicroUI.nextState(Ljava/lang/String;)V" codesize="25" stacksize="16"></method>
+		<method descriptor="ej/microui/io/ExplicitFlush.&amp;lt;init&amp;gt;(Lej/microui/io/Display;III)V" codesize="25" stacksize="32"></method>
+		<method descriptor="Page/Welcome$1.performAction(ILjava/lang/Object;)V" codesize="25" stacksize="24"></method>
+		<method descriptor="ej/mwt/Dialog.&amp;lt;init&amp;gt;(IIII)V" codesize="25" stacksize="32"></method>
+		<method descriptor="ej/mwt/Desktop.&amp;lt;init&amp;gt;()V" codesize="25" stacksize="20"></method>
+		<method descriptor="java/io/OutputStreamWriter.&amp;lt;init&amp;gt;(Ljava/io/OutputStream;)V" codesize="25" stacksize="16"></method>
+		<method descriptor="java/lang/Throwable.fillInStackTrace()V" codesize="25" stacksize="16"></method>
+		<method descriptor="Utilities/Animation.&amp;lt;init&amp;gt;(LUtilities/Animator;Lej/bon/Timer;II)V" codesize="25" stacksize="16"></method>
+		<method descriptor="ej/microui/MicroUI.&amp;lt;init&amp;gt;(Z)V" codesize="25" stacksize="16"></method>
+		<method descriptor="ej/microui/io/ComponentView.&amp;lt;init&amp;gt;(IIII)V" codesize="25" stacksize="32"></method>
+		<method descriptor="ej/mwt/Panel.setBounds(IIII)V" codesize="25" stacksize="32"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.isCalibrated()Z" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Display.clinit()V" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Displayable.isShown(Lej/microui/io/Displayable;)Z" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/microui/io/ComponentView.updateSize(II)V" codesize="25" stacksize="32"></method>
+		<method descriptor="Widget/ButtonAnimation.&amp;lt;init&amp;gt;()V" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/microui/Pump.clinit()V" codesize="25" stacksize="20"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemDisplay.&amp;lt;init&amp;gt;(IIJZ)V" codesize="25" stacksize="36"></method>
+		<method descriptor="ej/microui/io/ComponentView.paintComponentView(Lej/microui/io/GraphicsContext;)V" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/microui/io/CompositeView.paint(Lej/microui/io/GraphicsContext;)V" codesize="25" stacksize="24"></method>
+		<method descriptor="ej/microui/Pump.stop()V" codesize="25" stacksize="24"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.checkBounds([BII)V" codesize="25" stacksize="28"></method>
+		<method descriptor="Widget/InductionModel.notifyListener(I)V" codesize="25" stacksize="24"></method>
+		<method descriptor="Widget/InductionModel.notifyListener(ILnativeIhm/NativeData;)V" codesize="25" stacksize="24"></method>
+		<method descriptor="ej/mwt/Composite.&amp;lt;init&amp;gt;(IIII)V" codesize="25" stacksize="32"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.setEllipsis(Z)V" codesize="25" stacksize="20"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.checkArrayBounds(III)V" codesize="25" stacksize="28"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.checkBounds(III)V" codesize="25" stacksize="28"></method>
+		<method descriptor="ej/bon/ReferenceQueue.&amp;lt;init&amp;gt;()V" codesize="25" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.interrupt()V" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/microui/io/DisplayFont.basicCharsWidth([CII)I" codesize="25" stacksize="28"></method>
+		<method descriptor="ej/microui/FIFOPump.stop()V" codesize="25" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.run()V" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.computeAbsoluteXY()V" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.sendEventToRenderable(Lej/mwt/Renderable;I)V" codesize="25" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.checkPaintFrom(Lej/mwt/Renderable;)Z" codesize="25" stacksize="16"></method>
+		<method descriptor="ej/microui/io/ComponentView.simpleUdpate(IIII)V" codesize="26" stacksize="12"></method>
+		<method descriptor="ej/mwt/Widget.getHeight()I" codesize="26" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.getWidth()I" codesize="26" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Display.getDefaultDisplay()Lej/microui/io/Display;" codesize="26" stacksize="20"></method>
+		<method descriptor="ej/mwt/Panel.isShown()Z" codesize="26" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.isAccessible(Lej/mwt/Panel;)Z" codesize="26" stacksize="16"></method>
+		<method descriptor="ej/mwt/Composite.getNext(I)I" codesize="26" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.isShown()Z" codesize="26" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.requestFocus(I)Z" codesize="26" stacksize="20"></method>
+		<method descriptor="com/is2t/tools/BitFieldHelper.setBooleanProperty(IZI)I" codesize="26" stacksize="12"></method>
+		<method descriptor="com/is2t/mwt/RenderableHelper.setBooleanProperty(I)V" codesize="26" stacksize="20"></method>
+		<method descriptor="com/is2t/mwt/RenderableHelper.unsetBooleanProperty(I)V" codesize="26" stacksize="20"></method>
+		<method descriptor="java/util/Vector.addElement(Ljava/lang/Object;)V" codesize="27" stacksize="24"></method>
+		<method descriptor="java/lang/StringBuffer.toString()Ljava/lang/String;" codesize="27" stacksize="24"></method>
+		<method descriptor="java/io/PrintStream.print([C)V" codesize="27" stacksize="24"></method>
+		<method descriptor="Composite/ScreenP.setWidget(Lej/mwt/Widget;)Z" codesize="27" stacksize="20"></method>
+		<method descriptor="Widget/ButtonAnimation.performAction(I)V" codesize="27" stacksize="20"></method>
+		<method descriptor="java/io/PrintStream.&amp;lt;init&amp;gt;(Ljava/io/OutputStream;)V" codesize="27" stacksize="24"></method>
+		<method descriptor="java/io/PrintStream.print(I)V" codesize="27" stacksize="24"></method>
+		<method descriptor="com/is2t/microbsp/microui/SystemMicroUI.systemBeep()V" codesize="27" stacksize="20"></method>
+		<method descriptor="java/io/PrintStream.write(I)V" codesize="27" stacksize="24"></method>
+		<method descriptor="Widget/PoeleAnimation.performAction(I)V" codesize="27" stacksize="20"></method>
+		<method descriptor="Widget/PuissancePlaqueLabel.performAction(I)V" codesize="27" stacksize="20"></method>
+		<method descriptor="Widget/Label.performAction(I)V" codesize="27" stacksize="20"></method>
+		<method descriptor="Widget/Label.performAction(ILjava/lang/Object;)V" codesize="27" stacksize="20"></method>
+		<method descriptor="com/is2t/vm/support/util/EncodingConversion.&amp;lt;clinit&amp;gt;()V" codesize="27" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.repaint(IIII)V" codesize="27" stacksize="32"></method>
+		<method descriptor="Utilities/Animation.stop()V" codesize="27" stacksize="20"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite$Sizes.&amp;lt;init&amp;gt;(Lcom/is2t/mwt/composites/BorderComposite;IIIIII)V" codesize="27" stacksize="16"></method>
+		<method descriptor="ej/microui/io/DisplayPump.handleWatchDog(Lej/microui/WatchdogException;I)V" codesize="27" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Image.&amp;lt;init&amp;gt;(Lej/microui/io/Display;IZZ)V" codesize="27" stacksize="36"></method>
+		<method descriptor="ej/microui/io/ImageFromPathWeakReference.initialize()V" codesize="27" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Font$1.action([CIIII)I" codesize="27" stacksize="28"></method>
+		<method descriptor="java/lang/Runtime.&amp;lt;clinit&amp;gt;()V" codesize="27" stacksize="20"></method>
+		<method descriptor="Page/GestionPage.&amp;lt;clinit&amp;gt;()V" codesize="27" stacksize="20"></method>
+		<method descriptor="Widget/TemperatureLabel.performAction(I)V" codesize="27" stacksize="20"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakRefPool.clinit()V" codesize="27" stacksize="20"></method>
+		<method descriptor="Composite/PlaqueComposite.performAction(I)V" codesize="27" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Display.getNewExplicitFlush()Lej/microui/io/ExplicitFlush;" codesize="27" stacksize="20"></method>
+		<method descriptor="nativeIhm/PcomNative.DataReaded([I[C[C[C[C[C)V" codesize="27" stacksize="60"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.&amp;lt;init&amp;gt;(Lej/microui/io/Display;III)V" codesize="27" stacksize="36"></method>
+		<method descriptor="ej/mwt/Widget.getWidgetAt(II)Lej/mwt/Widget;" codesize="27" stacksize="24"></method>
+		<method descriptor="com/is2t/mwt/RenderableHelper.setBooleanProperty(ZI)V" codesize="28" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Pointer.isDragged(I)Z" codesize="28" stacksize="16"></method>
+		<method descriptor="ej/microui/io/ImageFromPathWeakReference.&amp;lt;init&amp;gt;(Ljava/lang/Object;Lej/bon/ReferenceQueue;ILej/microui/io/Display;Ljava/lang/String;)V" codesize="28" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Pointer.isMoved(I)Z" codesize="28" stacksize="16"></method>
+		<method descriptor="ej/mwt/Composite.requestFocus()V" codesize="29" stacksize="24"></method>
+		<method descriptor="ej/mwt/Widget.paintComponentView(Lej/microui/io/GraphicsContext;)V" codesize="29" stacksize="24"></method>
+		<method descriptor="Widget/TemperatureLabel.&amp;lt;init&amp;gt;(Ljava/lang/String;ILjava/lang/String;)V" codesize="29" stacksize="20"></method>
+		<method descriptor="com/is2t/tools/BitFieldHelper.setIntProperty(IIII)I" codesize="29" stacksize="16"></method>
+		<method descriptor="ej/microui/io/ExplicitFlush.&amp;lt;init&amp;gt;()V" codesize="29" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Viewable.repaintView(Lej/microui/io/ComponentView;IIII)V" codesize="29" stacksize="36"></method>
+		<method descriptor="ej/mwt/Panel.paintComponentView(Lej/microui/io/GraphicsContext;)V" codesize="29" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Image.createImage(Ljava/lang/String;I)Lej/microui/io/Image;" codesize="29" stacksize="24"></method>
+		<method descriptor="ej/mwt/Panel.computeScore(Lej/mwt/rendering/Renderer;)I" codesize="29" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Display.callSerially(Ljava/lang/Runnable;)V" codesize="29" stacksize="24"></method>
+		<method descriptor="ej/mwt/Desktop.computeScore(Lej/mwt/rendering/Renderer;)I" codesize="29" stacksize="24"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemInputPump.getConverterFromInputEvent(I)Lej/microui/EventGenerator;" codesize="29" stacksize="20"></method>
+		<method descriptor="java/lang/ArrayIndexOutOfBoundsException.&amp;lt;init&amp;gt;(I)V" codesize="29" stacksize="28"></method>
+		<method descriptor="java/lang/StringBuffer.append(Ljava/lang/Object;)Ljava/lang/StringBuffer;" codesize="29" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Pointer.&amp;lt;init&amp;gt;(III)V" codesize="29" stacksize="20"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.copy([Ljava/lang/Object;Ljava/lang/Class;)[Ljava/lang/Object;" codesize="29" stacksize="28"></method>
+		<method descriptor="ej/mwt/Widget.computeScore(Lej/mwt/rendering/Renderer;)I" codesize="29" stacksize="24"></method>
+		<method descriptor="ej/microui/Pump.startAll()V" codesize="29" stacksize="24"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.getInternalFromPlace(I)I" codesize="29" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Display$1.run()I" codesize="29" stacksize="24"></method>
+		<method descriptor="ej/microui/io/DisplayPump.buildFullEvent(II)I" codesize="30" stacksize="16"></method>
+		<method descriptor="ej/microui/io/ComponentView.getAbsoluteX()I" codesize="30" stacksize="20"></method>
+		<method descriptor="Widget/PuissancePlaqueLabel.&amp;lt;init&amp;gt;(Ljava/lang/String;ILjava/lang/String;I)V" codesize="30" stacksize="20"></method>
+		<method descriptor="ej/microui/io/ComponentView.getAbsoluteY()I" codesize="30" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/WirelessAnimationRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="31" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/WirelessAnimationRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="31" stacksize="20"></method>
+		<method descriptor="java/io/PrintStream.print(C)V" codesize="31" stacksize="24"></method>
+		<method descriptor="ej/microui/io/FlyingImage.repaint()V" codesize="31" stacksize="24"></method>
+		<method descriptor="ej/microui/io/DisplayPump.sendDisplayEventWithEventData(ILjava/lang/Object;)V" codesize="31" stacksize="28"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.&amp;lt;init&amp;gt;(IIII)V" codesize="31" stacksize="32"></method>
+		<method descriptor="ej/microui/io/DisplayPump.run()V" codesize="31" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/PoeleAnimationRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="31" stacksize="20"></method>
+		<method descriptor="ej/mwt/Panel.&amp;lt;init&amp;gt;(IIII)V" codesize="31" stacksize="32"></method>
+		<method descriptor="ej/mwt/Panel.&amp;lt;init&amp;gt;()V" codesize="31" stacksize="32"></method>
+		<method descriptor="java/lang/String.valueOf(Ljava/lang/Object;)Ljava/lang/String;" codesize="31" stacksize="16"></method>
+		<method descriptor="Widget/Renderer/PoeleAnimationRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="31" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/PictureRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="31" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/PictureRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="31" stacksize="20"></method>
+		<method descriptor="ej/microui/io/ComponentView.repaint()V" codesize="31" stacksize="28"></method>
+		<method descriptor="ej/microui/io/ImageFromPathWeakReference.delete()V" codesize="31" stacksize="24"></method>
+		<method descriptor="ej/mwt/Widget.&amp;lt;init&amp;gt;(IIII)V" codesize="31" stacksize="32"></method>
+		<method descriptor="ej/mwt/rendering/RenderingContext.computeScore(II)I" codesize="31" stacksize="16"></method>
+		<method descriptor="ej/microui/io/Display.sendFlyImagePaintMessage(Lej/microui/io/GraphicsContext;Lej/microui/io/FlyingImage;)V" codesize="31" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Viewable.setComponentView(Lej/microui/io/ComponentView;)V" codesize="33" stacksize="24"></method>
+		<method descriptor="ej/mwt/Widget.repaint()V" codesize="33" stacksize="36"></method>
+		<method descriptor="ej/microui/Command.done(I)V" codesize="33" stacksize="28"></method>
+		<method descriptor="ej/mwt/Panel.repaint()V" codesize="33" stacksize="36"></method>
+		<method descriptor="ej/microui/Pump.run()V" codesize="33" stacksize="24"></method>
+		<method descriptor="Page/GestionPage.&amp;lt;init&amp;gt;()V" codesize="33" stacksize="24"></method>
+		<method descriptor="java/lang/StringBuffer.append([CII)Ljava/lang/StringBuffer;" codesize="33" stacksize="36"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakReference.nativeIDToString(Ljava/lang/StringBuffer;)Z" codesize="33" stacksize="24"></method>
+		<method descriptor="java/lang/Thread.&amp;lt;init&amp;gt;(Ljava/lang/Runnable;Ljava/lang/String;)V" codesize="33" stacksize="16"></method>
+		<method descriptor="ej/mwt/Composite.checkFrom(I)V" codesize="34" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Display.addPendingFlush()V" codesize="34" stacksize="24"></method>
+		<method descriptor="java/lang/String.hashCode()I" codesize="34" stacksize="20"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.translate(II)V" codesize="34" stacksize="20"></method>
+		<method descriptor="java/lang/System.buildDefaultOutputStream()Ljava/io/OutputStream;" codesize="34" stacksize="16"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.copy([Ljava/lang/Object;)[Ljava/lang/Object;" codesize="35" stacksize="28"></method>
+		<method descriptor="ej/microui/io/CompositeView.basicAddComponentView(Lej/microui/io/ComponentView;)V" codesize="35" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Image$2.run()I" codesize="35" stacksize="36"></method>
+		<method descriptor="ej/mwt/Desktop$PanelsContainer.paintComponentView(Lej/microui/io/GraphicsContext;)V" codesize="35" stacksize="28"></method>
+		<method descriptor="ej/mwt/rendering/Renderer.setParent(Lej/mwt/rendering/Theme;)V" codesize="35" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.isEnabled()Z" codesize="35" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Image$1.run()I" codesize="35" stacksize="36"></method>
+		<method descriptor="ej/microui/io/Display.getAllDisplays()[Lej/microui/io/Display;" codesize="35" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.&amp;lt;init&amp;gt;()V" codesize="35" stacksize="20"></method>
+		<method descriptor="ej/mwt/Panel.isActive()Z" codesize="35" stacksize="16"></method>
+		<method descriptor="ej/microui/io/ComponentView.setViewable(Lej/microui/io/Viewable;)V" codesize="35" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.sleep(J)V" codesize="35" stacksize="32"></method>
+		<method descriptor="ej/microui/MicroUI.start()V" codesize="35" stacksize="24"></method>
+		<method descriptor="ej/mwt/Composite.hasFocus()Z" codesize="36" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Buttons.buildEventData(II)I" codesize="36" stacksize="16"></method>
+		<method descriptor="java/lang/Thread.clinitWrapper(I)V" codesize="36" stacksize="28"></method>
+		<method descriptor="java/lang/Integer.equals(Ljava/lang/Object;)Z" codesize="36" stacksize="20"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakRefPool.addGraphicsContext(Ljava/lang/Object;I)V" codesize="37" stacksize="32"></method>
+		<method descriptor="Widget/PoeleAnimation.&amp;lt;init&amp;gt;(Lej/microui/io/Image;III)V" codesize="37" stacksize="16"></method>
+		<method descriptor="ej/microui/io/CompositeView.&amp;lt;init&amp;gt;(IIII)V" codesize="37" stacksize="36"></method>
+		<method descriptor="ej/microui/io/DisplayFont.getDefaultFont()Lej/microui/io/DisplayFont;" codesize="37" stacksize="20"></method>
+		<method descriptor="ej/microui/Pump.start()V" codesize="37" stacksize="24"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakRefPool.addImage(Ljava/lang/Object;I)V" codesize="37" stacksize="32"></method>
+		<method descriptor="ej/microui/io/Display.&amp;lt;init&amp;gt;()V" codesize="37" stacksize="44"></method>
+		<method descriptor="java/lang/Thread.setPriority(I)V" codesize="37" stacksize="24"></method>
+		<method descriptor="Widget/Picture.fireSelection()V" codesize="37" stacksize="28"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemInputPump.stop()V" codesize="37" stacksize="20"></method>
+		<method descriptor="Utilities/Utilities.getTimer()Lej/bon/Timer;" codesize="37" stacksize="16"></method>
+		<method descriptor="java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;" codesize="37" stacksize="28"></method>
+		<method descriptor="ej/microui/MicroUI.basicStart()V" codesize="37" stacksize="20"></method>
+		<method descriptor="java/lang/System.stackIpsForOutOfMemoryError()[I" codesize="38" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.hasFocus()Z" codesize="38" stacksize="24"></method>
+		<method descriptor="java/io/OutputStream.write([BII)V" codesize="38" stacksize="28"></method>
+		<method descriptor="ej/mwt/Composite.getFocusIndex()I" codesize="38" stacksize="24"></method>
+		<method descriptor="ej/microui/MicroUI.errorLog(Ljava/lang/Throwable;)V" codesize="39" stacksize="24"></method>
+		<method descriptor="com/is2t/tools/GeometryTools.contains(IIIIII)Z" codesize="39" stacksize="12"></method>
+		<method descriptor="ej/microui/io/ComponentView.repaint(IIII)V" codesize="39" stacksize="40"></method>
+		<method descriptor="ej/mwt/Desktop$PanelsContainer.&amp;lt;init&amp;gt;(Lej/mwt/Desktop;IIII)V" codesize="39" stacksize="36"></method>
+		<method descriptor="java/lang/String.toCharArray()[C" codesize="39" stacksize="40"></method>
+		<method descriptor="ej/mwt/Desktop.revalidate()V" codesize="39" stacksize="32"></method>
+		<method descriptor="ej/microui/Event.getGenerator(I)Lej/microui/EventGenerator;" codesize="39" stacksize="20"></method>
+		<method descriptor="ej/microui/io/FlyingImage.setLocation(II)V" codesize="39" stacksize="32"></method>
+		<method descriptor="java/lang/String.&amp;lt;init&amp;gt;(Ljava/lang/StringBuffer;)V" codesize="40" stacksize="28"></method>
+		<method descriptor="java/lang/Class.forName(Ljava/lang/String;)Ljava/lang/Class;" codesize="40" stacksize="20"></method>
+		<method descriptor="ej/microui/io/Font.isIdentifierSupported(I)Z" codesize="40" stacksize="24"></method>
+		<method descriptor="java/lang/Throwable.class$(Ljava/lang/String;)Ljava/lang/Class;" codesize="41" stacksize="20"></method>
+		<method descriptor="ej/microui/BasicWatchdog.start()V" codesize="41" stacksize="28"></method>
+		<method descriptor="ej/mwt/Panel.internPanel(Z)V" codesize="41" stacksize="28"></method>
+		<method descriptor="ej/microui/BasicWatchdog.pause()V" codesize="41" stacksize="28"></method>
+		<method descriptor="Widget/Picture.update()V" codesize="41" stacksize="28"></method>
+		<method descriptor="Utilities/Animation.start()V" codesize="41" stacksize="40"></method>
+		<method descriptor="ej/microui/io/Displayable.repaint()V" codesize="41" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Displayable.show()V" codesize="41" stacksize="28"></method>
+		<method descriptor="ej/mwt/Composite.class$(Ljava/lang/String;)Ljava/lang/Class;" codesize="41" stacksize="20"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.fillCircle(III)V" codesize="41" stacksize="40"></method>
+		<method descriptor="ej/microui/io/CompositeView.add(Lej/microui/io/ComponentView;)V" codesize="41" stacksize="44"></method>
+		<method descriptor="ej/microui/Pump.&amp;lt;init&amp;gt;()V" codesize="41" stacksize="32"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemInputPump.execute(I)V" codesize="41" stacksize="24"></method>
+		<method descriptor="Widget/PoeleAnimation.update()V" codesize="41" stacksize="28"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakRefPool.addImageFromPath(Ljava/lang/Object;ILej/microui/io/Display;Ljava/lang/String;)V" codesize="42" stacksize="40"></method>
+		<method descriptor="ej/microui/MicroUI.errorLog(Ljava/lang/String;)V" codesize="42" stacksize="36"></method>
+		<method descriptor="java/util/Vector.elementAt(I)Ljava/lang/Object;" codesize="42" stacksize="24"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.setFilter(II)V" codesize="43" stacksize="36"></method>
+		<method descriptor="ej/mwt/Desktop.paintFromComponentView(Lej/microui/io/GraphicsContext;Lej/microui/io/ComponentView;IIII)V" codesize="43" stacksize="44"></method>
+		<method descriptor="ej/microui/Immortal.copyPath(Ljava/lang/String;)I" codesize="43" stacksize="32"></method>
+		<method descriptor="ej/microui/io/FlyingImage.setShown(IZ)V" codesize="43" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/ButtonAnimationRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="43" stacksize="20"></method>
+		<method descriptor="ej/microui/io/CompositeView.remove(Lej/microui/io/ComponentView;)V" codesize="43" stacksize="44"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer._getLineCount(Ljava/lang/String;)I" codesize="43" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Pointer.move(II)V" codesize="43" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Buttons.done(II)V" codesize="43" stacksize="32"></method>
+		<method descriptor="Composite/ScreenP.validate(II)V" codesize="43" stacksize="32"></method>
+		<method descriptor="ej/mwt/rendering/Theme.add(Lej/mwt/rendering/Renderer;)V" codesize="43" stacksize="20"></method>
+		<method descriptor="java/io/PrintStream.println(Ljava/lang/String;)V" codesize="43" stacksize="32"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer._getLineCount(Ljava/lang/String;)I" codesize="43" stacksize="28"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer._getLineCount(Ljava/lang/String;)I" codesize="43" stacksize="28"></method>
+		<method descriptor="java/io/PrintStream.println(Ljava/lang/Object;)V" codesize="43" stacksize="24"></method>
+		<method descriptor="ej/microui/io/DisplayPump.getEventData(IZ)Ljava/lang/Object;" codesize="43" stacksize="28"></method>
+		<method descriptor="java/io/PrintStream.print(Ljava/lang/String;)V" codesize="43" stacksize="32"></method>
+		<method descriptor="Widget/Renderer/ButtonAnimationRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="43" stacksize="20"></method>
+		<method descriptor="java/io/PrintStream.print(Ljava/lang/Object;)V" codesize="43" stacksize="20"></method>
+		<method descriptor="ej/microui/io/CompositeView.setViewable(Lej/microui/io/Viewable;)V" codesize="44" stacksize="32"></method>
+		<method descriptor="java/lang/String.charAt(I)C" codesize="44" stacksize="24"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.addToSystemPool()I" codesize="45" stacksize="24"></method>
+		<method descriptor="ej/mwt/Composite.add(Lej/mwt/Widget;)V" codesize="45" stacksize="24"></method>
+		<method descriptor="ej/mwt/Desktop.getActivePanel()Lej/mwt/Panel;" codesize="45" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.setVisible(Z)V" codesize="45" stacksize="28"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.fillRect(IIII)V" codesize="45" stacksize="40"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.drawImage(Lej/microui/io/Image;III)V" codesize="45" stacksize="52"></method>
+		<method descriptor="Composite/Renderer/PlaqueCompositeRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="45" stacksize="20"></method>
+		<method descriptor="Composite/Renderer/PlaqueCompositeRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="45" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.repaintFrom(Lej/microui/io/ComponentView;IIII)V" codesize="45" stacksize="36"></method>
+		<method descriptor="java/lang/StringBuffer.assureNotSharedArray()V" codesize="46" stacksize="36"></method>
+		<method descriptor="java/util/Vector.toString()Ljava/lang/String;" codesize="46" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Image.&amp;lt;init&amp;gt;(Lej/microui/io/Display;IZZLjava/lang/String;)V" codesize="47" stacksize="28"></method>
+		<method descriptor="ej/bon/Timer.&amp;lt;init&amp;gt;(Z)V" codesize="47" stacksize="24"></method>
+		<method descriptor="ej/mwt/Panel.isValidating()Z" codesize="47" stacksize="24"></method>
+		<method descriptor="ej/mwt/Composite.setPanel(Lej/mwt/Panel;)V" codesize="47" stacksize="32"></method>
+		<method descriptor="java/lang/StringBuffer.&amp;lt;init&amp;gt;(Ljava/lang/String;)V" codesize="47" stacksize="40"></method>
+		<method descriptor="ej/microui/io/Viewable.paint(Lej/microui/io/GraphicsContext;)V" codesize="47" stacksize="48"></method>
+		<method descriptor="java/util/Hashtable.toString()Ljava/lang/String;" codesize="48" stacksize="32"></method>
+		<method descriptor="ej/microui/io/GraphicsContextWeakReference.toString()Ljava/lang/String;" codesize="48" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Display.addDisplay(Lej/microui/io/Display;)I" codesize="48" stacksize="20"></method>
+		<method descriptor="ej/mwt/Widget.contains(II)Z" codesize="49" stacksize="40"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="49" stacksize="28"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="49" stacksize="28"></method>
+		<method descriptor="ej/microui/io/ComponentView.beforePaint(Lej/microui/io/GraphicsContext;)V" codesize="49" stacksize="40"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.getPreferredContentWidth(Lej/mwt/Widget;)I" codesize="49" stacksize="28"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.setClipAndUpdateSystemClip(IIII)V" codesize="49" stacksize="48"></method>
+		<method descriptor="ej/mwt/Desktop.sendPointerEvent(Lej/mwt/Renderable;Lej/microui/io/Pointer;II)V" codesize="49" stacksize="36"></method>
+		<method descriptor="ej/microui/io/DisplayFont.&amp;lt;init&amp;gt;(IIIZ)V" codesize="49" stacksize="20"></method>
+		<method descriptor="ej/mwt/Panel.contains(II)Z" codesize="49" stacksize="40"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.setColor(I)V" codesize="49" stacksize="32"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.drawRect(IIII)V" codesize="49" stacksize="40"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.removeInternal(Lej/mwt/Widget;I)V" codesize="49" stacksize="32"></method>
+		<method descriptor="ej/microui/io/Display.sendViewPaintFromMessage(Lej/microui/io/ComponentView;IIII)V" codesize="50" stacksize="40"></method>
+		<method descriptor="ej/microui/io/Viewable.&amp;lt;init&amp;gt;(Lej/microui/io/Display;)V" codesize="51" stacksize="24"></method>
+		<method descriptor="ej/microui/io/Font.stringWidth(Ljava/lang/String;)I" codesize="51" stacksize="32"></method>
+		<method descriptor="ej/microui/Watchdog.getWatchdog(Ljava/lang/Thread;J)Lej/microui/Watchdog;" codesize="51" stacksize="36"></method>
+		<method descriptor="ej/mwt/rendering/RenderingContext.add(Lej/mwt/rendering/Theme;)V" codesize="51" stacksize="24"></method>
+		<method descriptor="ej/microui/FIFOPump.addNewEvent(I)V" codesize="51" stacksize="28"></method>
+		<method descriptor="com/is2t/vm/support/lang/Systools.charValue(I)C" codesize="51" stacksize="20"></method>
+		<method descriptor="ej/microui/io/DisplayPump.execute(I)V" codesize="51" stacksize="24"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.copy([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;" codesize="51" stacksize="32"></method>
+		<method descriptor="ej/microui/Pump.addToSystemPool()V" codesize="52" stacksize="28"></method>
+		<method descriptor="java/lang/String.endsWith(Ljava/lang/String;)Z" codesize="52" stacksize="36"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="53" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="53" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.getPreferredContentHeight(Lej/mwt/Widget;)I" codesize="53" stacksize="24"></method>
+		<method descriptor="ej/mwt/Panel.revalidate()V" codesize="53" stacksize="32"></method>
+		<method descriptor="ej/microui/io/CompositeView.basicRemoveComponentView(Lej/microui/io/ComponentView;)Z" codesize="53" stacksize="28"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer._getMaxWidth(Ljava/lang/String;Lej/microui/io/DisplayFont;)I" codesize="54" stacksize="28"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer._getMaxWidth(Ljava/lang/String;Lej/microui/io/DisplayFont;)I" codesize="54" stacksize="28"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer._getMaxWidth(Ljava/lang/String;Lej/microui/io/DisplayFont;)I" codesize="54" stacksize="28"></method>
+		<method descriptor="ej/microui/io/ComponentView.beforePaint(Lej/microui/io/GraphicsContext;IIII)V" codesize="55" stacksize="32"></method>
+		<method descriptor="ej/microui/io/GraphicsContext$1.action([CIIII)I" codesize="55" stacksize="52"></method>
+		<method descriptor="Widget/Renderer/ButtonAnimationRenderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="55" stacksize="32"></method>
+		<method descriptor="ej/mwt/Widget.&amp;lt;init&amp;gt;()V" codesize="55" stacksize="40"></method>
+		<method descriptor="ej/microui/io/Display.sendViewPaintMessage(Lej/microui/io/ComponentView;ZIIII)V" codesize="55" stacksize="44"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.drawString(Ljava/lang/String;III)V" codesize="55" stacksize="48"></method>
+		<method descriptor="com/is2t/mwt/composites/GridComposite.&amp;lt;init&amp;gt;(II)V" codesize="55" stacksize="20"></method>
+		<method descriptor="Widget/WirelessAnimation.performAction(ILjava/lang/Object;)V" codesize="55" stacksize="20"></method>
+		<method descriptor="ej/mwt/Desktop.panelAt(II)Lej/mwt/Panel;" codesize="55" stacksize="32"></method>
+		<method descriptor="nativeIhm/ScrutationInfos.updateObserver()V" codesize="56" stacksize="28"></method>
+		<method descriptor="com/is2t/mwt/composites/GridComposite.getNext(ZZII)I" codesize="56" stacksize="20"></method>
+		<method descriptor="java/lang/Thread.someName()Ljava/lang/String;" codesize="57" stacksize="28"></method>
+		<method descriptor="ej/mwt/Composite.requestFocusFrom(II)Z" codesize="57" stacksize="32"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.&amp;lt;init&amp;gt;(Lej/microui/io/Display;Lcom/is2t/microbsp/microui/geg/touch/CalibrationSaver;)V" codesize="57" stacksize="32"></method>
+		<method descriptor="ej/microui/io/CompositeView.removeAllViews()V" codesize="57" stacksize="56"></method>
+		<method descriptor="java/lang/System.buildOutputStream()Ljava/io/OutputStream;" codesize="57" stacksize="16"></method>
+		<method descriptor="Theme/Skin.getFont(I)Lej/microui/io/DisplayFont;" codesize="57" stacksize="12"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.remove(Lej/mwt/Widget;)V" codesize="57" stacksize="36"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakRefPool.getOffscreen(Ljava/util/Hashtable;Ljava/lang/String;)Ljava/lang/Object;" codesize="57" stacksize="24"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.&amp;lt;init&amp;gt;(I)V" codesize="57" stacksize="24"></method>
+		<method descriptor="ej/mwt/Desktop.sendEvent(Lej/mwt/Panel;Lej/mwt/Widget;I)Lej/mwt/Renderable;" codesize="58" stacksize="20"></method>
+		<method descriptor="ej/bon/TimerTask.setScheduled(Lej/bon/Timer;JJZ)V" codesize="58" stacksize="24"></method>
+		<method descriptor="ist/support/util/EncUS_ASCII.encode([C[II[BII)I" codesize="58" stacksize="32"></method>
+		<method descriptor="java/util/Vector.increaseCapacity(I)V" codesize="58" stacksize="36"></method>
+		<method descriptor="ej/mwt/Widget.setPanel(Lej/mwt/Panel;)V" codesize="59" stacksize="28"></method>
+		<method descriptor="java/lang/StringBuffer.append(C)Ljava/lang/StringBuffer;" codesize="59" stacksize="28"></method>
+		<method descriptor="ej/microui/io/DisplayFont.getIdentifiers()[I" codesize="59" stacksize="36"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.&amp;lt;init&amp;gt;(Lej/microui/io/Display;IIIZ)V" codesize="59" stacksize="36"></method>
+		<method descriptor="Composite/PlaqueComposite.&amp;lt;init&amp;gt;(Lej/mwt/Widget;Lej/mwt/Widget;Lej/mwt/Widget;Lej/mwt/Widget;Ljava/lang/String;)V" codesize="60" stacksize="20"></method>
+		<method descriptor="ej/bon/Timer.addTaskToScheduledTasks(Lej/bon/TimerTask;J)V" codesize="60" stacksize="32"></method>
+		<method descriptor="ej/microui/io/DisplayPump.&amp;lt;init&amp;gt;(Lej/microui/io/Display;IJZ)V" codesize="61" stacksize="24"></method>
+		<method descriptor="ej/microui/io/ComponentView.update(IIII)V" codesize="61" stacksize="36"></method>
+		<method descriptor="ej/microui/io/Display.flush()V" codesize="61" stacksize="36"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.getManagedType()Ljava/lang/Class;" codesize="63" stacksize="24"></method>
+		<method descriptor="ej/mwt/rendering/RenderingContext.getRenderers()[Lej/mwt/rendering/Renderer;" codesize="63" stacksize="32"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.setUserClipAndTranslate(IIIIII)V" codesize="63" stacksize="36"></method>
+		<method descriptor="ej/mwt/Composite.getWidgets()[Lej/mwt/Widget;" codesize="63" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.getManagedType()Ljava/lang/Class;" codesize="63" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/ButtonAnimationRenderer.getManagedType()Ljava/lang/Class;" codesize="63" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.getManagedType()Ljava/lang/Class;" codesize="63" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/PictureRenderer.getManagedType()Ljava/lang/Class;" codesize="63" stacksize="24"></method>
+		<method descriptor="Composite/Renderer/PlaqueCompositeRenderer.getManagedType()Ljava/lang/Class;" codesize="63" stacksize="24"></method>
+		<method descriptor="Widget/Renderer/PoeleAnimationRenderer.getManagedType()Ljava/lang/Class;" codesize="63" stacksize="24"></method>
+		<method descriptor="ej/microui/io/DisplayPump.addPaintAllFromEvent(Lej/microui/io/ComponentView;IIII)V" codesize="63" stacksize="40"></method>
+		<method descriptor="Widget/Renderer/WirelessAnimationRenderer.getManagedType()Ljava/lang/Class;" codesize="63" stacksize="24"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.reset()V" codesize="63" stacksize="32"></method>
+		<method descriptor="java/lang/String.substring(I)Ljava/lang/String;" codesize="63" stacksize="40"></method>
+		<method descriptor="ej/microui/io/DisplayPump.addViewPaintAllEvent(Lej/microui/io/ComponentView;)V" codesize="64" stacksize="36"></method>
+		<method descriptor="ej/mwt/Widget.setBounds(IIII)V" codesize="65" stacksize="36"></method>
+		<method descriptor="java/lang/Thread.toString()Ljava/lang/String;" codesize="65" stacksize="28"></method>
+		<method descriptor="Widget/ButtonAnimation._click()V" codesize="65" stacksize="24"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.add([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;" codesize="65" stacksize="40"></method>
+		<method descriptor="ej/bon/Timer.reschedule(Lej/bon/TimerTask;J)V" codesize="66" stacksize="48"></method>
+		<method descriptor="java/lang/String.substring(II)Ljava/lang/String;" codesize="67" stacksize="40"></method>
+		<method descriptor="ej/microui/Event.buildEvent(ILej/microui/EventGenerator;I)I" codesize="67" stacksize="28"></method>
+		<method descriptor="ej/microui/FIFOPump.read()I" codesize="67" stacksize="36"></method>
+		<method descriptor="java/lang/Thread.updateThreadCounters()V" codesize="67" stacksize="28"></method>
+		<method descriptor="java/lang/StringBuffer.ensureCapacity(I)V" codesize="68" stacksize="36"></method>
+		<method descriptor="ej/bon/Timer.scheduleAtFixedRate(Lej/bon/TimerTask;JJ)V" codesize="69" stacksize="40"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.addAt(Lej/mwt/Widget;I)V" codesize="69" stacksize="32"></method>
+		<method descriptor="Utilities/Animation.run()V" codesize="69" stacksize="28"></method>
+		<method descriptor="com/is2t/mwt/composites/GridComposite.getPrevious(ZZII)I" codesize="70" stacksize="16"></method>
+		<method descriptor="ej/microui/Immortal.clinit()V" codesize="71" stacksize="24"></method>
+		<method descriptor="java/lang/StringBuffer.preInsertAppend([CIIII)V" codesize="71" stacksize="36"></method>
+		<method descriptor="ej/error/Message.at(Lej/error/ErrorMessages;I)Ljava/lang/String;" codesize="71" stacksize="28"></method>
+		<method descriptor="ej/mwt/Composite.remove(Lej/mwt/Widget;)V" codesize="71" stacksize="28"></method>
+		<method descriptor="ej/microui/io/DisplayPump.addDisplayableEvent(Lej/microui/io/Displayable;II)V" codesize="72" stacksize="40"></method>
+		<method descriptor="ej/microui/io/ImageWeakReference.toString()Ljava/lang/String;" codesize="72" stacksize="28"></method>
+		<method descriptor="ej/mwt/Widget.setParent(Lej/mwt/Composite;)V" codesize="72" stacksize="28"></method>
+		<method descriptor="ej/mwt/Panel.setWidget(Lej/mwt/Widget;)V" codesize="73" stacksize="32"></method>
+		<method descriptor="ej/mwt/Panel.getWidgetAt(II)Lej/mwt/Widget;" codesize="74" stacksize="36"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.calibrate()Z" codesize="74" stacksize="24"></method>
+		<method descriptor="ej/bon/Timer.schedule(Lej/bon/TimerTask;JJZ)V" codesize="74" stacksize="48"></method>
+		<method descriptor="Composite/PlaqueComposite.performAction(ILjava/lang/Object;)V" codesize="75" stacksize="24"></method>
+		<method descriptor="ej/microui/BasicWatchdog.&amp;lt;init&amp;gt;(Ljava/lang/Thread;J)V" codesize="75" stacksize="24"></method>
+		<method descriptor="ej/mwt/Desktop.validate()V" codesize="75" stacksize="32"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.add([Ljava/lang/Object;Ljava/lang/Object;I)[Ljava/lang/Object;" codesize="75" stacksize="40"></method>
+		<method descriptor="ej/microui/io/ImageWeakReference.sizeToString(Ljava/lang/StringBuffer;)Z" codesize="75" stacksize="28"></method>
+		<method descriptor="com/is2t/mwt/RenderableHelper.paintRenderable(Lej/microui/io/GraphicsContext;Lej/mwt/Desktop;)V" codesize="75" stacksize="28"></method>
+		<method descriptor="com/is2t/microbsp/microui/io/SystemInputPump.&amp;lt;init&amp;gt;()V" codesize="77" stacksize="32"></method>
+		<method descriptor="ej/microui/io/VisitorComputeXY.generate(Lej/microui/io/ComponentView;Lej/microui/Rectangle;)Lej/microui/Rectangle;" codesize="77" stacksize="40"></method>
+		<method descriptor="ej/error/Message.at(Lej/error/ErrorMessages;ILjava/lang/Object;)Ljava/lang/String;" codesize="77" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Pointer.send(II)V" codesize="77" stacksize="32"></method>
+		<method descriptor="Page/GestionPage.SetStateOfPage(II)V" codesize="77" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Viewable.paintComponentView(Lej/microui/io/GraphicsContext;Lej/microui/io/ComponentView;ZIIII)V" codesize="78" stacksize="44"></method>
+		<method descriptor="ej/mwt/Desktop$ExtendedPointer.getXPointer(Lej/microui/io/Pointer;)Lej/mwt/Desktop$ExtendedPointer;" codesize="79" stacksize="32"></method>
+		<method descriptor="ej/mwt/Composite.getNext(II)I" codesize="79" stacksize="24"></method>
+		<method descriptor="ej/mwt/Composite.getWidgetAt(II)Lej/mwt/Widget;" codesize="79" stacksize="32"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.add([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;" codesize="79" stacksize="44"></method>
+		<method descriptor="ej/bon/Timer.removeReferenceTo(Lej/bon/TimerTask;)V" codesize="81" stacksize="32"></method>
+		<method descriptor="ej/microui/io/DisplayFont.intializeAllFonts()[Lej/microui/io/DisplayFont;" codesize="81" stacksize="24"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.getInternalFromPosition(I)I" codesize="81" stacksize="24"></method>
+		<method descriptor="Composite/Renderer/PlaqueCompositeRenderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="83" stacksize="36"></method>
+		<method descriptor="ej/mwt/Panel.repaint(IIII)V" codesize="83" stacksize="32"></method>
+		<method descriptor="java/lang/String.&amp;lt;init&amp;gt;([CIIZ)V" codesize="83" stacksize="36"></method>
+		<method descriptor="ej/mwt/Widget.repaint(IIII)V" codesize="83" stacksize="32"></method>
+		<method descriptor="com/is2t/vm/support/lang/SupportNumber.toUnsignedString(II)Ljava/lang/String;" codesize="83" stacksize="44"></method>
+		<method descriptor="ej/microui/io/Buttons.&amp;lt;init&amp;gt;(I)V" codesize="84" stacksize="24"></method>
+		<method descriptor="java/lang/Object.toString()Ljava/lang/String;" codesize="84" stacksize="28"></method>
+		<method descriptor="com/is2t/microbsp/microui/SystemMicroUI.errorLog([BII)V" codesize="85" stacksize="28"></method>
+		<method descriptor="ej/microui/io/DisplayFont.getFonts()[Lej/microui/io/DisplayFont;" codesize="85" stacksize="20"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.computeXTopLeftCorner(III)I" codesize="86" stacksize="28"></method>
+		<method descriptor="ej/microui/io/Viewable.computeAbsoluteXY()V" codesize="86" stacksize="64"></method>
+		<method descriptor="java/lang/System.getProperty(Ljava/lang/String;)Ljava/lang/String;" codesize="88" stacksize="36"></method>
+		<method descriptor="java/lang/Throwable.toString()Ljava/lang/String;" codesize="89" stacksize="28"></method>
+		<method descriptor="ej/microui/Immortal.useArray([CIIILej/microui/ImmortalArrayAction;)I" codesize="90" stacksize="48"></method>
+		<method descriptor="ej/mwt/Desktop.pointerMoveEvent(I)V" codesize="91" stacksize="36"></method>
+		<method descriptor="ej/mwt/Desktop.sendEvent(Lej/mwt/Renderable;I)Lej/mwt/Renderable;" codesize="91" stacksize="32"></method>
+		<method descriptor="java/lang/System.&amp;lt;clinit&amp;gt;()V" codesize="91" stacksize="32"></method>
+		<method descriptor="ej/mwt/Panel.setFocus(Lej/mwt/Widget;)V" codesize="91" stacksize="28"></method>
+		<method descriptor="ej/mwt/Composite.removeAllWidgets()V" codesize="92" stacksize="40"></method>
+		<method descriptor="ej/microui/io/Viewable.paintComponentViewNonRec(Lej/microui/io/GraphicsContext;Lej/microui/io/ComponentView;ZIIII)V" codesize="92" stacksize="52"></method>
+		<method descriptor="ej/microui/io/Viewable.performAction(I)V" codesize="93" stacksize="32"></method>
+		<method descriptor="ej/mwt/Composite.handleEvent(I)Z" codesize="93" stacksize="24"></method>
+		<method descriptor="ej/microui/io/DisplayPump.addViewPaintPartEvent(Lej/microui/io/ComponentView;IIII)V" codesize="94" stacksize="48"></method>
+		<method descriptor="ej/bon/TimerTask.cancel()Z" codesize="95" stacksize="44"></method>
+		<method descriptor="ej/microui/io/ImageFromPathWeakReference.toString()Ljava/lang/String;" codesize="96" stacksize="28"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.transition(Lej/microui/io/ExplicitFlush;IIIIII)V" codesize="97" stacksize="48"></method>
+		<method descriptor="ej/mwt/Panel.handleEvent(I)Z" codesize="97" stacksize="24"></method>
+		<method descriptor="ej/mwt/Panel.repaintInternal(IIII)V" codesize="97" stacksize="44"></method>
+		<method descriptor="com/is2t/mwt/RenderableHelper.getRenderer()Lej/mwt/rendering/Renderer;" codesize="97" stacksize="52"></method>
+		<method descriptor="ej/mwt/Dialog.show(Lej/mwt/Desktop;)V" codesize="99" stacksize="32"></method>
+		<method descriptor="com/is2t/mwt/composites/GridComposite.requestFocus(I)Z" codesize="99" stacksize="36"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.remove([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;" codesize="100" stacksize="44"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakRefPool.addOffscreen(Lej/microui/io/OffscreenWeakReference;)V" codesize="100" stacksize="32"></method>
+		<method descriptor="ej/mwt/Desktop.setActivePanel(Lej/mwt/Panel;)V" codesize="100" stacksize="36"></method>
+		<method descriptor="ej/microui/io/Font.charsWidth([CII)I" codesize="100" stacksize="36"></method>
+		<method descriptor="ej/mwt/Composite.requestFocus(I)Z" codesize="100" stacksize="32"></method>
+		<method descriptor="ej/microui/FIFOPump.&amp;lt;init&amp;gt;(I)V" codesize="101" stacksize="32"></method>
+		<method descriptor="ej/microui/io/DisplayPump.read()I" codesize="101" stacksize="40"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer._getLines(Ljava/lang/String;)[Ljava/lang/String;" codesize="101" stacksize="44"></method>
+		<method descriptor="Widget/Picture.&amp;lt;init&amp;gt;(Lej/microui/io/Image;III)V" codesize="101" stacksize="32"></method>
+		<method descriptor="Theme/Skin.&amp;lt;clinit&amp;gt;()V" codesize="101" stacksize="28"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer._getLines(Ljava/lang/String;)[Ljava/lang/String;" codesize="101" stacksize="44"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer._getLines(Ljava/lang/String;)[Ljava/lang/String;" codesize="101" stacksize="44"></method>
+		<method descriptor="ej/microui/BasicWatchdog.run()V" codesize="102" stacksize="52"></method>
+		<method descriptor="java/lang/StringBuffer.append(I)Ljava/lang/StringBuffer;" codesize="103" stacksize="36"></method>
+		<method descriptor="com/is2t/mwt/composites/GridComposite.getNext(II)I" codesize="107" stacksize="40"></method>
+		<method descriptor="ej/microui/io/DisplayPump.storeEventData(Ljava/lang/Object;)I" codesize="107" stacksize="48"></method>
+		<method descriptor="java/lang/Class.toString()Ljava/lang/String;" codesize="107" stacksize="28"></method>
+		<method descriptor="ej/mwt/Desktop.&amp;lt;init&amp;gt;(Lej/microui/io/Display;)V" codesize="107" stacksize="44"></method>
+		<method descriptor="Widget/ButtonAnimation.performAction(ILjava/lang/Object;)V" codesize="109" stacksize="24"></method>
+		<method descriptor="java/lang/ExceptionInInitializerError.&amp;lt;init&amp;gt;(Ljava/lang/Throwable;)V" codesize="109" stacksize="28"></method>
+		<method descriptor="ej/mwt/Desktop.performAction(I)V" codesize="109" stacksize="32"></method>
+		<method descriptor="java/lang/String.getBytes(Lcom/is2t/vm/support/util/EncodingConversion;)[B" codesize="110" stacksize="60"></method>
+		<method descriptor="ej/microui/io/Displayable.paintDisplayable(Lej/microui/io/GraphicsContext;)V" codesize="114" stacksize="56"></method>
+		<method descriptor="ej/microui/io/DisplayPump.needToAddNewEvent(Lej/microui/io/Displayable;II)Z" codesize="115" stacksize="36"></method>
+		<method descriptor="Widget/Renderer/WirelessAnimationRenderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="116" stacksize="52"></method>
+		<method descriptor="ej/mwt/Widget.validate(II)V" codesize="116" stacksize="44"></method>
+		<method descriptor="ej/microui/io/CompositeView.fillBackground(Lej/microui/io/GraphicsContext;)V" codesize="116" stacksize="56"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.computeYTopLeftCorner(III)I" codesize="118" stacksize="28"></method>
+		<method descriptor="java/lang/String.trim()Ljava/lang/String;" codesize="118" stacksize="48"></method>
+		<method descriptor="Composite/ScreenP.handleEvent(I)Z" codesize="119" stacksize="28"></method>
+		<method descriptor="Page/Welcome.&amp;lt;init&amp;gt;()V" codesize="119" stacksize="44"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.getNext(II)I" codesize="121" stacksize="32"></method>
+		<method descriptor="java/util/Hashtable.&amp;lt;init&amp;gt;(I)V" codesize="123" stacksize="32"></method>
+		<method descriptor="ej/mwt/rendering/RenderingContext.getRenderer(Lej/mwt/Renderable;)Lej/mwt/rendering/Renderer;" codesize="123" stacksize="60"></method>
+		<method descriptor="java/util/Hashtable.get(Ljava/lang/Object;)Ljava/lang/Object;" codesize="123" stacksize="44"></method>
+		<method descriptor="Widget/TemperatureLabel.performAction(ILjava/lang/Object;)V" codesize="123" stacksize="28"></method>
+		<method descriptor="ej/mwt/Desktop.removePanel(Lej/mwt/Panel;)V" codesize="124" stacksize="40"></method>
+		<method descriptor="ej/microui/io/Buttons.send(II)V" codesize="127" stacksize="56"></method>
+		<method descriptor="ej/microui/io/Pointer.update(II)V" codesize="127" stacksize="28"></method>
+		<method descriptor="ej/mwt/Panel.show(Lej/mwt/Desktop;Z)V" codesize="127" stacksize="44"></method>
+		<method descriptor="ej/microui/io/ImageOutOfMemoryVisitor.callRun(I)I" codesize="127" stacksize="32"></method>
+		<method descriptor="ej/microui/Rectangle.toString()Ljava/lang/String;" codesize="127" stacksize="24"></method>
+		<method descriptor="java/util/Vector.insertElementAt(Ljava/lang/Object;I)V" codesize="127" stacksize="40"></method>
+		<method descriptor="ej/microui/FIFOPump.performAction(I)V" codesize="127" stacksize="36"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.getNext(ZZI)I" codesize="129" stacksize="24"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.getPrevious(ZZI)I" codesize="129" stacksize="24"></method>
+		<method descriptor="Widget/PuissancePlaqueLabel.performAction(ILjava/lang/Object;)V" codesize="129" stacksize="36"></method>
+		<method descriptor="ej/mwt/Desktop.addPanel(Lej/mwt/Panel;)V" codesize="130" stacksize="44"></method>
+		<method descriptor="java/util/Hashtable.remove(Ljava/lang/Object;)Ljava/lang/Object;" codesize="132" stacksize="44"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.drawCursor(Lej/microui/io/ExplicitFlush;IIII)V" codesize="133" stacksize="36"></method>
+		<method descriptor="ej/microui/FIFOPump.increaseEventsQueueSize()V" codesize="133" stacksize="56"></method>
+		<method descriptor="java/util/Hashtable.toString(Ljava/lang/StringBuffer;)V" codesize="134" stacksize="56"></method>
+		<method descriptor="ej/mwt/Widget.repaintInternal(IIII)V" codesize="135" stacksize="48"></method>
+		<method descriptor="ej/microui/io/VisitorPaint.generate(Lej/microui/io/ComponentView;Lej/microui/Rectangle;)Lej/microui/Rectangle;" codesize="136" stacksize="60"></method>
+		<method descriptor="ej/microui/io/DisplayFont.addMicroUIFonts(Ljava/lang/String;[Lej/microui/io/DisplayFont;)[Lej/microui/io/DisplayFont;" codesize="139" stacksize="40"></method>
+		<method descriptor="java/io/OutputStreamWriter.write([CII)V" codesize="140" stacksize="60"></method>
+		<method descriptor="Widget/PoeleAnimation.performAction(ILjava/lang/Object;)V" codesize="141" stacksize="32"></method>
+		<method descriptor="java/util/Vector.toString(Ljava/lang/StringBuffer;)V" codesize="146" stacksize="44"></method>
+		<method descriptor="ej/microui/MicroUI.getMicroUIImpl()Lej/microui/MicroUI;" codesize="147" stacksize="32"></method>
+		<method descriptor="Widget/Picture.handleEvent(I)Z" codesize="149" stacksize="32"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.setClip(IIIIIIII)V" codesize="149" stacksize="36"></method>
+		<method descriptor="Main.class$()V" codesize="149" stacksize="12"></method>
+		<method descriptor="ej/microui/io/Image.checkError(I)I" codesize="151" stacksize="36"></method>
+		<method descriptor="com/is2t/microej/microui/SystemMicroUIImpl.init()V" codesize="151" stacksize="44"></method>
+		<method descriptor="java/io/OutputStreamWriter.writeln([CII)V" codesize="152" stacksize="60"></method>
+		<method descriptor="java/lang/StringBuffer.delete(II)Ljava/lang/StringBuffer;" codesize="153" stacksize="52"></method>
+		<method descriptor="ej/microui/io/DisplayableVisitor.generate(Lej/microui/io/ComponentView;Lej/microui/Rectangle;I)I" codesize="155" stacksize="44"></method>
+		<method descriptor="ej/mwt/Desktop.updatePointer(Lej/mwt/Desktop$ExtendedPointer;Lej/microui/io/Pointer;)V" codesize="156" stacksize="52"></method>
+		<method descriptor="ej/mwt/Panel.validate(II)V" codesize="157" stacksize="52"></method>
+		<method descriptor="ej/mwt/Panel.validate()V" codesize="157" stacksize="36"></method>
+		<method descriptor="Main.main([Ljava/lang/String;)V" codesize="159" stacksize="40"></method>
+		<method descriptor="ej/microui/EventGenerator.addToSystemPool()I" codesize="159" stacksize="48"></method>
+		<method descriptor="Widget/ButtonAnimation.handleEvent(I)Z" codesize="160" stacksize="32"></method>
+		<method descriptor="ej/microui/io/ComponentView.computeAbsoluteXY(IIIIII)V" codesize="161" stacksize="36"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.requestFocus(I)Z" codesize="165" stacksize="48"></method>
+		<method descriptor="Page/MainMenu$1.update(LnativeIhm/NativeData;)V" codesize="167" stacksize="24"></method>
+		<method descriptor="nativeIhm/ScrutationInfos.run()V" codesize="168" stacksize="56"></method>
+		<method descriptor="Theme/ClassicTheme.populate()V" codesize="171" stacksize="24"></method>
+		<method descriptor="com/is2t/tools/ArrayTools.checkBounds(IIII)V" codesize="171" stacksize="36"></method>
+		<method descriptor="ej/microui/io/Display.&amp;lt;init&amp;gt;(IIJZ)V" codesize="179" stacksize="44"></method>
+		<method descriptor="Composite/PlaqueComposite.validate(II)V" codesize="179" stacksize="36"></method>
+		<method descriptor="ej/microui/io/Display.getNewGraphicsContext(Z)Lej/microui/io/GraphicsContext;" codesize="179" stacksize="44"></method>
+		<method descriptor="java/lang/Thread.start()V" codesize="179" stacksize="40"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.place(Lej/mwt/Widget;Lcom/is2t/mwt/composites/BorderComposite$WidgetInfos;Lcom/is2t/mwt/composites/BorderComposite$Rectangle;ZZZ)V" codesize="184" stacksize="52"></method>
+		<method descriptor="nativeIhm/ScrutationInfos.&amp;lt;init&amp;gt;()V" codesize="185" stacksize="24"></method>
+		<method descriptor="com/is2t/vm/support/lang/SupportNumber.toStringInteger(II)Ljava/lang/String;" codesize="187" stacksize="36"></method>
+		<method descriptor="ej/microui/io/DisplayPump.performAction(I)V" codesize="189" stacksize="48"></method>
+		<method descriptor="ej/microui/MicroUI.clinit()V" codesize="193" stacksize="32"></method>
+		<method descriptor="ej/microui/io/OffscreenWeakRefPool.removeOffscreens()V" codesize="198" stacksize="36"></method>
+		<method descriptor="ej/microui/io/CompositeView.basicArrangeComponentView(Lej/microui/io/ComponentView;I)V" codesize="206" stacksize="48"></method>
+		<method descriptor="ej/microui/io/DisplayPump.needToAddPaintAllEvent(Lej/microui/io/ComponentView;)Z" codesize="207" stacksize="44"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/SystemPointer.convert(Lej/microui/Pump;I)V" codesize="214" stacksize="40"></method>
+		<method descriptor="ej/mwt/Desktop.pointerButtonEvent(I)V" codesize="214" stacksize="44"></method>
+		<method descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="218" stacksize="68"></method>
+		<method descriptor="Widget/Renderer/TemperatureLabelRenderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="218" stacksize="68"></method>
+		<method descriptor="Widget/Renderer/LabelRenderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="218" stacksize="68"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.drawChars([CIIIII)V" codesize="224" stacksize="84"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.validate(Lej/mwt/Widget;Lcom/is2t/mwt/composites/BorderComposite$Sizes;ZZZZ)Lcom/is2t/mwt/composites/BorderComposite$WidgetInfos;" codesize="239" stacksize="52"></method>
+		<method descriptor="java/lang/Throwable.printStackTrace()V" codesize="242" stacksize="40"></method>
+		<method descriptor="ej/bon/Timer.run()V" codesize="266" stacksize="60"></method>
+		<method descriptor="ej/microui/io/DisplayPump.needToAddViewPaintPartEvent(Lej/microui/io/ComponentView;IIII)Z" codesize="273" stacksize="48"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.drawDeformedImage(Lej/microui/io/Image;II[II)V" codesize="280" stacksize="64"></method>
+		<method descriptor="java/lang/System.printStackTrace(Ljava/io/PrintStream;[I)V" codesize="296" stacksize="56"></method>
+		<method descriptor="java/util/Hashtable.rehash()V" codesize="306" stacksize="120"></method>
+		<method descriptor="ej/microui/io/GraphicsContext.drawRegion(Lej/microui/io/Image;IIIIIII)V" codesize="306" stacksize="92"></method>
+		<method descriptor="java/util/Hashtable.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" codesize="310" stacksize="64"></method>
+		<method descriptor="ej/microui/io/Image.createImage(Lej/microui/io/Display;Ljava/lang/String;I)Lej/microui/io/Image;" codesize="340" stacksize="60"></method>
+		<method descriptor="Widget/Renderer/PoeleAnimationRenderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="344" stacksize="60"></method>
+		<method descriptor="com/is2t/mwt/composites/GridComposite.validate(II)V" codesize="412" stacksize="120"></method>
+		<method descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer.forceCalibration()Z" codesize="423" stacksize="96"></method>
+		<method descriptor="Page/MainMenu.&amp;lt;init&amp;gt;()V" codesize="490" stacksize="64"></method>
+		<method descriptor="ej/microui/io/DisplayFont.getFont(III)Lej/microui/io/DisplayFont;" codesize="508" stacksize="76"></method>
+		<method descriptor="ej/microui/io/Display.execute(I)V" codesize="513" stacksize="68"></method>
+		<method descriptor="Theme/Skin.getColor(I)I" codesize="552" stacksize="20"></method>
+		<method descriptor="Widget/Renderer/PictureRenderer.render(Lej/microui/io/GraphicsContext;Lej/mwt/Renderable;)V" codesize="640" stacksize="72"></method>
+		<method descriptor="com/is2t/mwt/composites/BorderComposite.validate(II)V" codesize="680" stacksize="128"></method>
+		<method descriptor="ej/microui/io/DisplayFont.addMicroUIFonts([Lej/microui/io/DisplayFont;Ljava/lang/String;)[Lej/microui/io/DisplayFont;" codesize="788" stacksize="92"></method>
+	</selected_methods>
+	<!--selected resources-->
+	<selected_resources>
+		<resource name="Image.poele.png" size="39277"></resource>
+		<resource name="resources.fonts.microej_system_font.ejf_raw" size="3557"></resource>
+		<resource name="Font.Font28.ejf_raw" size="10868"></resource>
+		<resource name="Font.Font10.ejf_raw" size="5140"></resource>
+		<resource name="Font.Font12.ejf_raw" size="5748"></resource>
+		<resource name="Font.CookStepFont15.ejf_raw" size="3251"></resource>
+		<resource name="Font.CountDownFont40.ejf_raw" size="1374"></resource>
+		<resource name="Image.StopButton.png_raw" size="7072"></resource>
+		<resource name="Image.StartGriseButton.png_raw" size="2000"></resource>
+		<resource name="Image.StartButton.png_raw" size="7032"></resource>
+		<resource name="Image.Wireless_on.jpeg_raw" size="1416"></resource>
+		<resource name="Image.Plaque_Induction.jpeg_raw" size="21008"></resource>
+		<resource name="Image.Poele.png_raw" size="127520"></resource>
+		<resource name="Image.TouchAndCook.png_raw" size="24700"></resource>
+	</selected_resources>
+	<!--added properties-->
+	<java_properties>
+		<property name="java.vendor" value="IS2T"></property>
+		<property name="java.vendor.url" value="www.is2t.com"></property>
+		<property name="ej.microui.vendor.url" value="www.is2t.com"></property>
+		<property name="ej.bon.version" value="true"></property>
+		<property name="ej.microui.user.fonts" value="/Font/Font28.ejf_raw:/Font/Font10.ejf_raw:/Font/Font12.ejf_raw:/Font/CookStepFont15.ejf_raw:/Font/CountDownFont40.ejf_raw:"></property>
+		<property name="ej.microui.autostart" value="true"></property>
+		<property name="ej.bon.vendor.url" value="true"></property>
+		<property name="com.is2t.system.out.class" value=""></property>
+		<property name="microedition.platform" value="STM32F429-HMI-CM4_ARMCC"></property>
+		<property name="ej.microui.version.value" value="1.4.1"></property>
+		<property name="ej.bon.vendor" value="true"></property>
+		<property name="ej.bon.immortalAfterInit" value="false"></property>
+		<property name="ej.microui.vendor" value="IS2T"></property>
+		<property name="ej.microui.system.fonts" value="/resources/fonts/microej_system_font.ejf_raw:"></property>
+		<property name="com.is2t.microui.SystemMicroUI" value="com.is2t.microej.microui.SystemMicroUIImpl"></property>
+		<property name="file.separator" value=""></property>
+		<property name="com.ist.cldc.timezone" value="GMT"></property>
+		<property name="line.separator" value="&#xa;"></property>
+		<property name="path.separator" value=""></property>
+		<property name="microedition.configuration" value="CLDC-1.1"></property>
+		<property name="microedition.encoding" value="ISO-8859-1"></property>
+	</java_properties>
+	<!--selected internString-->
+	<selected_internString>
+		main
+		microedition.encoding
+		microedition.configuration
+		path.separator
+		line.separator
+		com.ist.cldc.timezone
+		file.separator
+		com.is2t.microej.microui.SystemMicroUIImpl
+		com.is2t.microui.SystemMicroUI
+		/resources/fonts/microej_system_font.ejf_raw:
+		ej.microui.vendor
+		ej.bon.immortalAfterInit
+		ej.bon.vendor
+		1.4.1
+		ej.microui.version.value
+		STM32F429-HMI-CM4_ARMCC
+		microedition.platform
+		ej.bon.vendor.url
+		ej.microui.autostart
+		/Font/Font28.ejf_raw:/Font/Font10.ejf_raw:/Font/Font12.ejf_raw:/Font/CookStepFont15.ejf_raw:/Font/CountDownFont40.ejf_raw:
+		ej.bon.version
+		ej.microui.vendor.url
+		www.is2t.com
+		java.vendor.url
+		IS2T
+		java.vendor
+		/Image/Plaque_Induction_Chauffe.jpeg
+		not implemented
+		Position corrupted
+		Screen handel event
+		&#xb0;C
+		T&#xb0;Poele: 
+		%
+		Puissance: 
+		marche pas
+		/Image/Wireless_on.jpeg
+		/Image/Poele.png
+		/Image/Plaque_Induction.jpeg
+		try to grow _jvm_sharedMemory_size
+		class 
+		interface 
+		&#xa;
+		MWT-1.0
+		not implemented1
+		/Image/StartGriseButton.png
+		/Image/StopButton.png
+		[Lej.mwt.Widget;
+		autostart
+		log
+		com.is2t.microui.
+		ej.microui.
+		SystemMicroUI
+		ej.microui.io.ReflectionANDisplay
+		BEEP
+		false
+		true
+		null
+		getNewGraphicsContext 
+		Widget.PuissancePlaqueLabel
+		@M:0x
+		thread
+		: 
+		/Image/StartButton.png
+		Pump
+		java.lang.Throwable
+		 remaining frame(s).&#xa;
+		ej.microui.system.fonts
+		FIFOpmp
+		_raw
+		Widget.WirelessAnimation
+		[MicroUI LOG: add native object]&#x9;
+		@&#xa;
+		Too many alive java threads (
+		&#xa;Caused by: 
+		checkError 
+		Image:&#x9;
+		Stacks space
+		Widget.ButtonAnimation
+		
+		/Image/TouchAndCook.png
+		Click on screen to start the calibration...
+		Invalid calibration. Click to start a new calibration...
+		Widget.PoeleAnimation
+		Widget.Label
+		[MicroUI LOG: delete native object]&#x9;
+		MicroUI-1.4
+		Exception in thread "
+		Widget.TemperatureLabel
+		Widget.Picture
+		GraphicsContext:&#x9;
+		     at 
+		...&#xa;
+		DISPLpmp
+		*
+		nativeID = 
+		CLDC-1.1
+		Image from path:&#x9;
+		java.lang.OutOfMemoryError
+		Unknown color index
+		Thread[
+		Calibrating, touch marked picture...
+		SYSINpmp
+		ISO-8859-1
+		&#x9;
+		" 
+		GMT
+		[MicroUI LOG: available native object]
+		:0x
+		ej.microui.user.fonts
+		)
+		com.is2t.system.out.class
+		Composite.PlaqueComposite
+		Picture
+		Generic
+		 (
+		RecipeParameterWidget.performAction(int) --&gt; NOT IMPLEMENTED
+	</selected_internString>
+	<!--selected types-->
+	<selected_type nb="219">
+		<type descriptor="java/lang/Object" instancesize="4" depth="1"></type>
+		<type descriptor="Main" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/Image" instancesize="16" depth="2"></type>
+		<type descriptor="[Lej/microui/io/Image;" depth="2"></type>
+		<type descriptor="ej/microui/MicroUI" instancesize="8" depth="2"></type>
+		<type descriptor="ej/microui/Immortal" instancesize="4" depth="2"></type>
+		<type descriptor="[B" depth="2"></type>
+		<type descriptor="ej/bon/Immortals" instancesize="4" depth="2"></type>
+		<type descriptor="[C" depth="2"></type>
+		<type descriptor="[I" depth="2"></type>
+		<type descriptor="ej/microui/io/OffscreenWeakRefPool" instancesize="4" depth="2"></type>
+		<type descriptor="ej/bon/ReferenceQueue" instancesize="16" depth="2"></type>
+		<type descriptor="java/lang/ref/Reference" instancesize="8" depth="2"></type>
+		<type descriptor="java/lang/ref/WeakReference" instancesize="12" depth="3"></type>
+		<type descriptor="ej/bon/EnqueuedWeakReference" instancesize="16" depth="4"></type>
+		<type descriptor="ej/microui/io/OffscreenWeakReference" instancesize="28" depth="5"></type>
+		<type descriptor="ej/microui/io/ImageWeakReference" instancesize="28" depth="6"></type>
+		<type descriptor="java/lang/System" instancesize="4" depth="2"></type>
+		<type descriptor="java/lang/String" instancesize="20" depth="2"></type>
+		<type descriptor="[Ljava/lang/String;" depth="2"></type>
+		<type descriptor="[[Ljava/lang/String;" depth="2"></type>
+		<type descriptor="java/lang/Throwable" instancesize="12" depth="2"></type>
+		<type descriptor="java/lang/Thread" instancesize="20" depth="2"></type>
+		<type descriptor="java/lang/StringBuffer" instancesize="16" depth="2"></type>
+		<type descriptor="java/lang/Math" instancesize="4" depth="2"></type>
+		<type descriptor="java/lang/Exception" instancesize="12" depth="3"></type>
+		<type descriptor="java/lang/RuntimeException" instancesize="12" depth="4"></type>
+		<type descriptor="java/lang/IndexOutOfBoundsException" instancesize="12" depth="5"></type>
+		<type descriptor="java/lang/NullPointerException" instancesize="12" depth="5"></type>
+		<type descriptor="com/is2t/vm/support/lang/Systools" instancesize="4" depth="2"></type>
+		<type descriptor="java/lang/IllegalArgumentException" instancesize="12" depth="5"></type>
+		<type descriptor="java/lang/Class" instancesize="4" depth="2"></type>
+		<type descriptor="java/lang/Error" instancesize="12" depth="3"></type>
+		<type descriptor="java/lang/VirtualMachineError" instancesize="12" depth="4"></type>
+		<type descriptor="com/is2t/vm/support/InternalLimitsError" instancesize="12" depth="5"></type>
+		<type descriptor="java/io/OutputStream" instancesize="4" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/io/NullOutputStream" instancesize="4" depth="3"></type>
+		<type descriptor="java/io/PrintStream" instancesize="12" depth="3"></type>
+		<type descriptor="java/io/Writer" instancesize="8" depth="2"></type>
+		<type descriptor="java/io/OutputStreamWriter" instancesize="16" depth="3"></type>
+		<type descriptor="com/is2t/vm/support/util/EncodingConversion" instancesize="4" depth="2"></type>
+		<type descriptor="ist/support/util/EncUS_ASCII" instancesize="4" depth="3"></type>
+		<type descriptor="com/is2t/tools/ArrayTools" instancesize="4" depth="2"></type>
+		<type descriptor="java/lang/Integer" instancesize="8" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/lang/SupportNumber" instancesize="4" depth="2"></type>
+		<type descriptor="com/is2t/tools/ToolsErrorMessage" instancesize="4" depth="2"></type>
+		<type descriptor="ej/error/Message" instancesize="4" depth="2"></type>
+		<type descriptor="com/is2t/microbsp/microui/natives/NSystemDisplay" instancesize="4" depth="2"></type>
+		<type descriptor="java/lang/ArrayIndexOutOfBoundsException" instancesize="12" depth="6"></type>
+		<type descriptor="java/lang/StringIndexOutOfBoundsException" instancesize="12" depth="6"></type>
+		<type descriptor="java/io/IOException" instancesize="12" depth="4"></type>
+		<type descriptor="com/is2t/vm/support/err/CLDCErrorMessages" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/ImageFromPathWeakReference" instancesize="36" depth="7"></type>
+		<type descriptor="ej/microui/io/Screen" instancesize="8" depth="2"></type>
+		<type descriptor="ej/microui/io/Display" instancesize="52" depth="3"></type>
+		<type descriptor="[Lej/microui/io/Display;" depth="2"></type>
+		<type descriptor="java/util/Hashtable" instancesize="28" depth="2"></type>
+		<type descriptor="[Ljava/lang/Object;" depth="2"></type>
+		<type descriptor="[[I" depth="2"></type>
+		<type descriptor="ej/microui/io/GraphicsContext" instancesize="68" depth="2"></type>
+		<type descriptor="ej/microui/io/Font" instancesize="8" depth="2"></type>
+		<type descriptor="ej/microui/io/DisplayFont" instancesize="16" depth="3"></type>
+		<type descriptor="[Lej/microui/io/DisplayFont;" depth="2"></type>
+		<type descriptor="ej/microui/MicroUIProperties" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/err/MicroUIErrorMessages" instancesize="4" depth="2"></type>
+		<type descriptor="java/lang/NoClassDefFoundError" instancesize="12" depth="4"></type>
+		<type descriptor="java/lang/ClassNotFoundException" instancesize="12" depth="4"></type>
+		<type descriptor="java/lang/OutOfMemoryError" instancesize="12" depth="5"></type>
+		<type descriptor="ej/microui/MicroUIException" instancesize="12" depth="5"></type>
+		<type descriptor="ej/microui/Pump" instancesize="12" depth="2"></type>
+		<type descriptor="[Lej/microui/Pump;" depth="2"></type>
+		<type descriptor="ej/microui/FIFOPump" instancesize="36" depth="3"></type>
+		<type descriptor="ej/microui/io/DisplayPump" instancesize="60" depth="4"></type>
+		<type descriptor="ej/microui/Watchdog" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/NoWatchdog" instancesize="4" depth="3"></type>
+		<type descriptor="ej/microui/BasicWatchdog" instancesize="28" depth="3"></type>
+		<type descriptor="java/lang/IllegalThreadStateException" instancesize="12" depth="6"></type>
+		<type descriptor="java/lang/ClassCastException" instancesize="12" depth="5"></type>
+		<type descriptor="ej/mwt/MWT" instancesize="4" depth="2"></type>
+		<type descriptor="ej/mwt/rendering/RenderingContext" instancesize="12" depth="2"></type>
+		<type descriptor="ej/mwt/rendering/Theme" instancesize="12" depth="2"></type>
+		<type descriptor="ej/mwt/rendering/Renderer" instancesize="8" depth="2"></type>
+		<type descriptor="[Lej/mwt/rendering/Renderer;" depth="2"></type>
+		<type descriptor="[Lej/mwt/rendering/Theme;" depth="2"></type>
+		<type descriptor="Theme/ClassicTheme" instancesize="12" depth="3"></type>
+		<type descriptor="ej/mwt/rendering/WidgetRenderer" instancesize="8" depth="3"></type>
+		<type descriptor="Widget/Renderer/LabelRenderer" instancesize="8" depth="4"></type>
+		<type descriptor="Widget/Renderer/PictureRenderer" instancesize="8" depth="4"></type>
+		<type descriptor="Composite/Renderer/PlaqueCompositeRenderer" instancesize="12" depth="4"></type>
+		<type descriptor="Widget/Renderer/PoeleAnimationRenderer" instancesize="8" depth="4"></type>
+		<type descriptor="Widget/Renderer/WirelessAnimationRenderer" instancesize="8" depth="4"></type>
+		<type descriptor="Widget/Renderer/TemperatureLabelRenderer" instancesize="8" depth="4"></type>
+		<type descriptor="Widget/Renderer/PuissancePlaqueLabelRenderer" instancesize="8" depth="4"></type>
+		<type descriptor="Widget/Renderer/ButtonAnimationRenderer" instancesize="8" depth="4"></type>
+		<type descriptor="ej/microui/io/Displayable" instancesize="12" depth="2"></type>
+		<type descriptor="ej/microui/io/Viewable" instancesize="28" depth="3"></type>
+		<type descriptor="ej/mwt/Desktop" instancesize="40" depth="4"></type>
+		<type descriptor="ej/microui/io/DisplayableVisitor" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/VisitorComputeXY" instancesize="4" depth="3"></type>
+		<type descriptor="ej/microui/io/VisitorPaint" instancesize="8" depth="3"></type>
+		<type descriptor="com/is2t/mwt/RenderableHelper" instancesize="16" depth="2"></type>
+		<type descriptor="com/is2t/tools/BitFieldHelper" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/ComponentView" instancesize="28" depth="2"></type>
+		<type descriptor="ej/microui/io/CompositeView" instancesize="36" depth="3"></type>
+		<type descriptor="ej/mwt/Desktop$PanelsContainer" instancesize="36" depth="4"></type>
+		<type descriptor="ej/microui/Rectangle" instancesize="28" depth="2"></type>
+		<type descriptor="[Lej/microui/io/ComponentView;" depth="2"></type>
+		<type descriptor="[Lej/microui/Rectangle;" depth="2"></type>
+		<type descriptor="ej/mwt/Widget" instancesize="52" depth="4"></type>
+		<type descriptor="ej/mwt/Panel" instancesize="48" depth="4"></type>
+		<type descriptor="ej/mwt/Panel$1" instancesize="8" depth="2"></type>
+		<type descriptor="ej/microui/io/OutOfEventsException" instancesize="12" depth="5"></type>
+		<type descriptor="java/lang/InterruptedException" instancesize="12" depth="4"></type>
+		<type descriptor="Widget/InductionModel" instancesize="60" depth="5"></type>
+		<type descriptor="Widget/Label" instancesize="68" depth="6"></type>
+		<type descriptor="Widget/Picture" instancesize="80" depth="5"></type>
+		<type descriptor="ej/mwt/Composite" instancesize="52" depth="5"></type>
+		<type descriptor="Composite/PlaqueComposite" instancesize="72" depth="6"></type>
+		<type descriptor="Widget/PoeleAnimation" instancesize="96" depth="6"></type>
+		<type descriptor="Widget/WirelessAnimation" instancesize="76" depth="6"></type>
+		<type descriptor="Widget/TemperatureLabel" instancesize="80" depth="7"></type>
+		<type descriptor="Widget/PuissancePlaqueLabel" instancesize="84" depth="7"></type>
+		<type descriptor="Widget/ButtonAnimation" instancesize="68" depth="6"></type>
+		<type descriptor="Theme/Skin" instancesize="4" depth="2"></type>
+		<type descriptor="[Z" depth="2"></type>
+		<type descriptor="ej/microui/ImmortalArrayAction" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/Font$1" instancesize="8" depth="3"></type>
+		<type descriptor="ej/microui/io/GraphicsContext$1" instancesize="28" depth="3"></type>
+		<type descriptor="ej/bon/TimerTask" instancesize="32" depth="2"></type>
+		<type descriptor="Utilities/Animation" instancesize="52" depth="3"></type>
+		<type descriptor="ej/microui/io/ImageOutOfMemoryVisitor" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/Image$1" instancesize="16" depth="3"></type>
+		<type descriptor="java/lang/Runtime" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/Image$2" instancesize="20" depth="3"></type>
+		<type descriptor="ej/mwt/Dialog" instancesize="48" depth="5"></type>
+		<type descriptor="[Lej/mwt/Dialog;" depth="2"></type>
+		<type descriptor="Page/GestionPage" instancesize="20" depth="2"></type>
+		<type descriptor="Composite/ScreenP" instancesize="56" depth="6"></type>
+		<type descriptor="com/is2t/mwt/composites/BorderComposite" instancesize="56" depth="6"></type>
+		<type descriptor="Page/Welcome" instancesize="56" depth="7"></type>
+		<type descriptor="Utilities/Utilities" instancesize="4" depth="2"></type>
+		<type descriptor="ej/bon/Timer" instancesize="16" depth="2"></type>
+		<type descriptor="ej/bon/CurrentTime" instancesize="4" depth="2"></type>
+		<type descriptor="ej/bon/IllegalStateException" instancesize="12" depth="5"></type>
+		<type descriptor="[Lej/mwt/Widget;" depth="2"></type>
+		<type descriptor="ej/microui/Event" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/RepaintView" instancesize="24" depth="2"></type>
+		<type descriptor="com/is2t/mwt/err/MWTErrorMessages" instancesize="4" depth="2"></type>
+		<type descriptor="Page/Welcome$1" instancesize="8" depth="2"></type>
+		<type descriptor="Page/MainMenu" instancesize="84" depth="7"></type>
+		<type descriptor="com/is2t/mwt/composites/GridComposite" instancesize="60" depth="6"></type>
+		<type descriptor="nativeIhm/ScrutationInfos" instancesize="44" depth="2"></type>
+		<type descriptor="java/util/Vector" instancesize="16" depth="2"></type>
+		<type descriptor="nativeIhm/NativeData" instancesize="28" depth="2"></type>
+		<type descriptor="nativeIhm/PcomNative" instancesize="4" depth="2"></type>
+		<type descriptor="Page/MainMenu$1" instancesize="8" depth="2"></type>
+		<type descriptor="ej/bon/Util" instancesize="4" depth="2"></type>
+		<type descriptor="ej/mwt/Desktop$1" instancesize="8" depth="2"></type>
+		<type descriptor="ej/microui/io/FlyingImage" instancesize="24" depth="2"></type>
+		<type descriptor="ej/microui/WatchdogException" instancesize="12" depth="5"></type>
+		<type descriptor="Widget/PoeleAnimation$1" instancesize="8" depth="2"></type>
+		<type descriptor="Widget/Picture$1" instancesize="8" depth="2"></type>
+		<type descriptor="com/is2t/mwt/composites/BorderComposite$Sizes" instancesize="32" depth="2"></type>
+		<type descriptor="com/is2t/mwt/composites/BorderComposite$WidgetInfos" instancesize="20" depth="2"></type>
+		<type descriptor="com/is2t/mwt/composites/BorderComposite$Rectangle" instancesize="24" depth="2"></type>
+		<type descriptor="ej/microui/EventGenerator" instancesize="16" depth="2"></type>
+		<type descriptor="ej/microui/io/Buttons" instancesize="32" depth="3"></type>
+		<type descriptor="[J" depth="2"></type>
+		<type descriptor="ej/microui/io/Pointer" instancesize="96" depth="4"></type>
+		<type descriptor="ej/mwt/Desktop$ExtendedPointer" instancesize="16" depth="2"></type>
+		<type descriptor="[Lej/mwt/Desktop$ExtendedPointer;" depth="2"></type>
+		<type descriptor="com/is2t/tools/GeometryTools" instancesize="4" depth="2"></type>
+		<type descriptor="[[C" depth="2"></type>
+		<type descriptor="[Ljava/lang/Thread;" depth="2"></type>
+		<type descriptor="java/lang/NegativeArraySizeException" instancesize="12" depth="5"></type>
+		<type descriptor="java/lang/ArrayStoreException" instancesize="12" depth="5"></type>
+		<type descriptor="java/lang/IllegalAccessException" instancesize="12" depth="4"></type>
+		<type descriptor="java/lang/LinkageError" instancesize="12" depth="4"></type>
+		<type descriptor="java/lang/IllegalAccessError" instancesize="12" depth="5"></type>
+		<type descriptor="java/lang/InstantiationException" instancesize="12" depth="4"></type>
+		<type descriptor="java/lang/IllegalMonitorStateException" instancesize="12" depth="5"></type>
+		<type descriptor="java/lang/ArithmeticException" instancesize="12" depth="5"></type>
+		<type descriptor="java/lang/NumberFormatException" instancesize="12" depth="6"></type>
+		<type descriptor="java/lang/UnsatisfiedLinkError" instancesize="12" depth="4"></type>
+		<type descriptor="java/lang/StackOverflowError" instancesize="12" depth="5"></type>
+		<type descriptor="com/is2t/vm/support/io/DebugOutputStream" instancesize="4" depth="3"></type>
+		<type descriptor="java/io/InputStream" instancesize="4" depth="2"></type>
+		<type descriptor="com/is2t/vm/support/io/MemoryInputStream" instancesize="20" depth="3"></type>
+		<type descriptor="java/lang/MainThread" instancesize="20" depth="3"></type>
+		<type descriptor="java/lang/ExceptionInInitializerError" instancesize="16" depth="5"></type>
+		<type descriptor="java/lang/AbstractMethodError" instancesize="12" depth="4"></type>
+		<type descriptor="[D" depth="2"></type>
+		<type descriptor="[F" depth="2"></type>
+		<type descriptor="[S" depth="2"></type>
+		<type descriptor="com/is2t/microbsp/microui/SystemMicroUI" instancesize="8" depth="3"></type>
+		<type descriptor="com/is2t/microej/microui/SystemMicroUIImpl" instancesize="24" depth="4"></type>
+		<type descriptor="com/is2t/microbsp/microui/io/SystemDisplay" instancesize="52" depth="4"></type>
+		<type descriptor="com/is2t/microbsp/microui/io/SystemInputPump" instancesize="12" depth="3"></type>
+		<type descriptor="com/is2t/microbsp/microui/natives/NSystemInputPump" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/Command" instancesize="16" depth="3"></type>
+		<type descriptor="com/is2t/microbsp/microui/geg/SystemCommand" instancesize="16" depth="4"></type>
+		<type descriptor="[Lej/microui/EventGenerator;" depth="2"></type>
+		<type descriptor="com/is2t/microbsp/microui/geg/SystemPointer" instancesize="96" depth="5"></type>
+		<type descriptor="com/is2t/microbsp/microui/geg/TouchScreenPointer" instancesize="108" depth="6"></type>
+		<type descriptor="com/is2t/microbsp/microui/natives/NTouchScreenPointer" instancesize="4" depth="2"></type>
+		<type descriptor="ej/microui/io/Display$1" instancesize="12" depth="3"></type>
+		<type descriptor="ej/microui/io/ExplicitFlush" instancesize="68" depth="3"></type>
+		<type descriptor="ej/microui/io/GraphicsContextWeakReference" instancesize="28" depth="6"></type>
+		<type descriptor="com/is2t/microbsp/microui/geg/touch/NativeCalibrationSaver" instancesize="4" depth="2"></type>
+		<type descriptor="java/lang/Runnable" depth="1"></type>
+		<type descriptor="ej/error/ErrorMessages" depth="1"></type>
+		<type descriptor="ej/microui/err/ErrorMessagesNames" depth="1"></type>
+		<type descriptor="ej/microui/Listener" depth="1"></type>
+		<type descriptor="ej/mwt/Renderable" depth="1"></type>
+		<type descriptor="Utilities/Animator" depth="1"></type>
+		<type descriptor="Widget/NavigationElement" depth="1"></type>
+		<type descriptor="com/jfa/observer/Observable" depth="1"></type>
+		<type descriptor="com/jfa/observer/Observer" depth="1"></type>
+		<type descriptor="com/is2t/microbsp/microui/geg/touch/CalibrationSaver" depth="1"></type>
+	</selected_type>
+	<!--selected immutables-->
+	<selected_immutables></selected_immutables>
+</soar_information>

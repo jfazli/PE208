@@ -1,0 +1,13 @@
+.\stm32f429\buttons_listener.o: ..\src\buttons_listener.c
+.\stm32f429\buttons_listener.o: ..\includeAPIs\LLINPUT_LISTENER_BUTTONS_impl.h
+.\stm32f429\buttons_listener.o: ..\includeAPIs\LLINPUT_LISTENER_BUTTONS.h
+.\stm32f429\buttons_listener.o: ..\includeAPIs\intern/LLINPUT_LISTENER_BUTTONS.h
+.\stm32f429\buttons_listener.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\stm32f429\buttons_listener.o: ..\includeAPIs\LLINPUT_DEVICE.h
+.\stm32f429\buttons_listener.o: ..\includeAPIs\intern/LLINPUT_DEVICE.h
+.\stm32f429\buttons_listener.o: ..\includeAPIs\intern/LLINPUT_LISTENER_BUTTONS_impl.h
+.\stm32f429\buttons_listener.o: ..\includeAPIs\LLINPUT.h
+.\stm32f429\buttons_listener.o: ..\includeAPIs\intern/LLINPUT.h
+.\stm32f429\buttons_listener.o: ..\inc\microej.h
+.\stm32f429\buttons_listener.o: ..\inc\microui_constants.h
+.\stm32f429\buttons_listener.o: ..\inc\bsp_customization.h

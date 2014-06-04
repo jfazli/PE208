@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Copyright 2012-2013 IS2T. All rights reserved.	
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<project name="deployInSpecificDir" default="deploy/copy">
+	
+	<!--
+		Input properties : 
+			- deploy.binary.file: binary file to copy
+			- deploy.copy.filename: destination file
+			- deploy.copy.backend.script.enable
+		Optional input properties:
+			- deploy.copy.backend.script.file
+	-->
+	
+	<target name="init" depends="checkProperties">
+		
+		<!-- forces an OS path-->
+		<getProperty property="deploy.copy.file0" default="${deploy.copy.filename}"/>
+		<property name="deploy.copy.file" location="${deploy.copy.file0}"/>
+		
+		<condition property="backendScript.enable" value="SET">
+			<equals arg1="${deploy.copy.backend.script.enable}" arg2="true"/>
+		</condition>
+	</target>
+	
+	<target name="copyApplication" depends="init">
+		<copy tofile="${deploy.copy.file}" file="${deploy.binary.file}"/>
+	</target>
+	
+	<target name="backendScript" depends="init" if="backendScript.enable">
+		<ant antfile="${deploy.copy.backend.script.file}"/>
+	</target>
+	
+	<target name="deploy/copy" depends="copyApplication, backendScript">
+		<echo message="The Java application output file has been copied here: '${deploy.copy.file}'"/>
+	</target>
+	
+	<target name="checkProperties">
+		<fail unless="deploy.copy.filename"/>
+		<fail unless="deploy.binary.file"/>
+	</target>
+	
+</project>

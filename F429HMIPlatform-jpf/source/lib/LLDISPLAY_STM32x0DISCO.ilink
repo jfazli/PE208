@@ -1,0 +1,3 @@
+<ilink>
+	<nativeImplementation name="LLDISPLAY_STM32x0DISCO" nativeName="LLDISPLAY_SWITCH"/>
+</ilink>

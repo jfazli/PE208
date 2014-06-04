@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2012-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="spCompilerInit">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/commonSPCompiler.xml" />
+	<import file="${scripts.dir}/commonSP.xml" />
+	
+	<target name="init/spCompiler" extensionOf="init/execution" if="onBoard">
+		
+		<!-- temporary directory for shieldedplug -->
+		<microejtempfile deleteonexit="true" prefix="compSP" property="sp.output.dir"/>
+		<mkdir dir="${sp.output.dir}"/>
+		
+		<antcall target="spCompiler/do"/>	
+		
+		<augment id="partialLink.objects.files">
+			<fileset dir="${sp.output.dir}" includes="*.o"/>
+		</augment>	
+	</target>
+
+	
+	<target name="init/spLink" extensionOf="init/execution" depends="sp/database" if="onBoard">
+		<!-- sp/database must have set sp.database.xml property -->
+		<fail unless="sp.database.xml"/>
+		
+		<!-- temporary link files -->
+		<local name="link.files.dir"/>
+		<microejtempfile deleteonexit="true" prefix="linkSP" property="link.files.dir"/>
+		<mkdir dir="${link.files.dir}"/>
+		
+		<!-- Generate the link file for the linker -->
+		<xslt style="${platform.dir}/tools/generateSPLscFile.xsl" in="${sp.database.xml}" out="${link.files.dir}/userSP.lscf" force="true"/>
+		
+		<augment id="partialLink.lscf.path">
+			<path location="${link.files.dir}"/>
+		</augment>
+		
+	</target>
+
+</project>

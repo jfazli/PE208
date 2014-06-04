@@ -1,0 +1,3 @@
+<ilink>
+	<nativeImplementation name="JOYSTICK" nativeName="LLINPUT_DEVICE"/>
+</ilink>

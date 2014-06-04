@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2012-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="application">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/microejAntlib.xml" />
+
+	<target name="init/application" extensionOf="init/execution" depends="resources, immutables, requires">
+		<echo message="Application init" level="verbose"/>
+		<!-- 
+			Default properties if the MemPage isn't provided by the Workbench Extension (pure simJPF)
+		-->
+		<property name="${jpf.property.header}core.memory.javaheapsum.size" value="0"/>
+			
+		<nestedProperty output="jpf.core.memory.javaheapsum.size" input="${jpf.property.header}core.memory.javaheapsum.size" />
+
+		<!-- add application classpath to global one -->
+		<augment id="init.application.classpath">
+			<path path="${application.classpath}"/>
+		</augment>
+	</target>
+
+	<target name="requires" if="application.require">
+		<!-- add application requires to global ones -->
+		<augment id="init.requires">
+			<string value="${application.require}"/>
+		</augment>
+	</target>
+
+	<target name="resources" if="application.resources">
+		<!-- add application resources to global ones -->
+		<augment id="init.resources">
+			<string value="${application.resources}"/>
+		</augment>
+	</target>
+		
+	<target name="immutables" if="application.immutables">
+		<!-- add application immutables to global ones -->
+		<augment id="init.immutables">
+			<string value="${application.immutables}"/>
+		</augment>
+	</target>
+
+</project>

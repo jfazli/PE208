@@ -1,0 +1,21 @@
+<!--
+	LSC
+	
+	Copyright 2011-2013 IS2T. All rights reserved.
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+
+	<defSymbol name="microui.image.size" value="108"/>
+	<defSymbol name="microui.fimage.size" value="40"/>
+	<defSymbol name="microui.font.size" value="4"/>
+	<defSymbol name="microui.display.internal.size" value="300"/>
+	<defSymbol name="microui.display.nativeheap" value="microui.display.internal.size+microui.image.size*MAX_NB_SCREEN_DESCRIPTORS+microui.fimage.size*MAX_NB_FLYING_IMAGES+microui.font.size*MAX_NB_FONTS"/>
+	
+	<!--
+		Define HEAP extension for MicroUI
+	-->
+	<defSection name="HEAP_DISPLAY_STACK" size="microui.display.nativeheap" rootSection="true"/>
+	
+</lscFragment>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2011-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="imageGeneratorInit">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/init-microui/microuiinit.xml" />
+
+	<target name="init/imageGen/check" extensionOf="init/context" depends="init/microui/check">
+		<condition property="image.generator.gen.needed" value="true">
+			<and>
+				<istrue value="${usesMICROUI}"/>
+				<istrue value="${ej.microui.imageConverter.useIt}"/>
+			</and>
+		</condition>
+	</target>
+	
+	<target name="definitions/imageGen" if="image.generator.gen.needed">
+		<loadproperties srcfile="init-microui-imagen/imagegen.properties" prefix="image.gen."/>
+	</target>
+		
+	<target name="activity/imageGen" depends="definitions/imageGen" if="image.generator.gen.needed">
+		<start.subactivity
+			activity.id="${image.gen.activity.id}"
+			message="${image.gen.activity.msg}"
+			parent.activity.id="${activity.root.id}"
+		/>
+	</target>
+	
+	<target name="init/imageGen" extensionOf="init/execution" depends="activity/imageGen, definitions/imageGen" if="image.generator.gen.needed">
+		
+		<!-- verbose -->
+		<echo message="MicroUI ImageGen init" level="verbose" />
+
+		<!-- Define ImageGenerator task -->
+		<path id="imageGenerator.classpath.ref">
+			<fileset dir="${jpf.dir}/tools" includes="IMAGE-GENERATOR*.jar" />
+		</path>
+		<taskdef name="ImageGenerator" classname="${image.gen.classname}" classpathref="imageGenerator.classpath.ref"/>
+		
+		<!-- define verbose -->
+		<condition property="imagen.verbose" value="1" else="0">
+			<isset property="execution.verbose"/>
+		</condition>
+
+		<!-- create a temp file -->
+		<property name="images.file" value="${microej.io.tmpdir}/imagegen.prop"/>
+		<delete file="${images.file}" failonerror="false" verbose="no"/>
+
+		<!-- generate -->
+		<ImageGenerator
+			list="${ej.microui.imageConverter.file}" 
+			classpath="${application.classpath}" 
+			outputFile="${images.file}" 
+			pathSeparator="${path.separator}"
+			verboseLevel="${imagen.verbose}"
+			endianness="${arch.endianness}"
+		/>
+
+		<!-- load a property from a file, nothing is loaded if the file does not exists -->
+		<property file="${images.file}"/>
+		
+		<!-- set an empty value in case of no image has been generated -->
+		<property name="images.resources" value=""/>
+		
+		<!-- append the ant property to the global list -->
+		<augment id="init.resources">
+			<string value="${images.resources}"/>
+		</augment>
+			
+		<!-- delete temp files if exist -->
+		<delete file="${images.file}" failonerror="false" verbose="no"/>
+		
+	</target>
+	
+</project>

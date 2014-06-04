@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Ant
+	
+	Copyright 2012-2013 IS2T. All rights reserved.	
+	Modification and distribution is permitted under certain conditions.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<!--
+	This script is intended to be run by internal Eclipse ANT runner in order to access
+	- JDT compiler task
+	- MicroEJ Workbench tasks
+	- Platform tasks
+	- Front Panel designer tasks
+
+	Input properties:
+	- workspace: 	workspace absolute location
+	- repository:	MicroEJ repository absolute location
+	
+	These properties are set in the ANT launch. 
+	(See Run > External Tools > External Tools Configuration > Ant Build > Properties tab).
+-->
+<project name="HMI" default="all">
+
+	<!-- 
+		Projects names definition 
+	-->
+	<dirname file="${ant.file.HMI}" property="project.dir"/>
+	<basename file="${project.dir}" suffix="-intern" property="project.prefix"/>
+	<property name="bsp.project.name" value="${project.prefix}-bsp"/>
+	<property name="frontPanel.project.name" value="${project.prefix}-fp"/>
+	<property name="intern.project.name" value="${project.prefix}-intern"/>
+	<property name="java.project.name" value="${project.prefix}"/>
+	<property name="microuiImageGeneratorExtension.project.name" value="${project.prefix}-microuiGeneratorExtension"/>
+	<property name="wipJPF.project.name" value="${project.prefix}-jpf"/>
+	
+	<!-- 
+		Platform paths definition 
+	-->
+	<property name="bsp.dir" location="${workspace}/${bsp.project.name}"/>
+	<property name="bsp.include.dir" location="${bsp.dir}/Project/MicroEJ/inc"/>
+	<property name="bsp.includeAPIs.dir" location="${bsp.dir}/Project/MicroEJ/includeAPIs"/>
+	<property name="bsp.libs.dir" location="${bsp.dir}/Project/MicroEJ/lib"/>
+	<property name="frontPanel.dir" location="${workspace}/${frontPanel.project.name}"/>
+	<property name="jpf.include.relativedir" value="source/include"/>
+	<property name="jpf.jvm.include.relativedir" value="source/MICROJVM/include"/>
+	<property name="jpf.jvm.lib.relativedir" value="source/MICROJVM/lib"/>
+	<property name="jpf.lib.relativedir" value="source/lib"/>
+	<property name="jpf.mocks.relativedir" value="source/S3/mockModules"/>
+	<property name="jpf.tools.relativedir" value="source/tools"/>
+	<property name="jpf.dir" location="${workspace}/${wipJPF.project.name}"/>
+	<property name="jpf.lib.dir" location="${jpf.dir}/${jpf.lib.relativedir}"/>
+	<property name="jpf.jvm.lib.dir" location="${jpf.dir}/${jpf.jvm.lib.relativedir}"/>
+	<property name="jpf.include.dir" location="${jpf.dir}/${jpf.include.relativedir}"/>
+	<property name="jpf.jvm.include.dir" location="${jpf.dir}/${jpf.jvm.include.relativedir}"/>
+	<property name="jpf.mocks.dir" location="${jpf.dir}/${jpf.mocks.relativedir}"/>
+	<property name="jpf.tmp.dir" location="${jpf.dir}/build/tmp"/>
+	<property name="jpf.scripts.dir" location="${jpf.dir}/build/scripts"/>
+	
+	<!-- 
+		User specific properties 
+	-->
+	<!-- Compute a unique platform name (allow to instanciate the same example multiple times without conflicts) -->
+	<property name="user.wipJPF.name" value="HMI"/>
+	<property name="user.wipJPF.provider" value="IS2T"/>
+	<property name="user.wipJPF.version" value="2.0"/>
+	<property name="user.microui.definition.file" location="${project.dir}/build/microui/stm32x0geval.microui"/>
+	<property name="user.link.options.file" location="${project.dir}/resources/link.properties"/>
+	<property name="user.java.application.lib" value="javaapp.o"/>
+	<property name="user.force.clean.projects" value="false"/>
+	<!-- 
+		System properties 
+	-->
+	<!-- Connect ANT task javac to JDT compiler --> 
+	<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+	
+	<!-- 
+		Import tasks 
+	-->	
+	<import file="${project.dir}/build/scripts/augmentCProject.microejTask"/>
+	<import file="${project.dir}/build/scripts/promptExecuteTarget.microejTask"/>
+	<import file="${project.dir}/build/scripts/removeFragment.microejTask"/>
+	
+	<!-- 
+		Main targets
+	-->
+	<target name="all" depends="simJPF, embJPF" description="all"/>
+	<target name="simJPF" depends="mock/build, frontPanelMock, additionalFragments, microuiImageGeneratorExtension, javaLibsFragments" description="simJPF"/>
+	<target name="embJPF" depends="bspFragments, additionalFragments, microuiImageGeneratorExtension, javaLibsFragments, copyILink, copyIncludes, cProject" description="embJPF"/>
+	
+	<target name="all/clean" depends="frontPanelProject/clean, wipJPF/clean" description="all/clean"/>
+		
+	<target name="wipJPF/clean/check">
+		<condition property="wipJPF/clean.notRequired" value="">
+			<not>
+				<available file="${workspace}/${wipJPF.project.name}"/>
+			</not>
+		</condition>
+	</target>	
+	
+	<target name="wipJPF/clean/prompt" depends="wipJPF/clean/check" unless="wipJPF/clean.notRequired">
+		<microej.promptExecuteTarget
+			promptExecuteTarget.message="Are you sure you want to remove project '${wipJPF.project.name}' from the workspace ?${line.separator}This cannot be undone."
+			promptExecuteTarget.target.name="wipJPF/clean"
+			promptExecuteTarget.force="${user.force.clean.projects}"
+		/>
+	</target>
+	
+	<target name="wipJPF/clean" depends="wipJPF/clean/prompt" unless="wipJPF/clean.notRequired" description="wipJPF/clean">
+		<microej.deleteResource resource="${wipJPF.project.name}" failonerror="true"/>
+	</target>
+
+	<target name="rawWipJPF/check">
+		<condition property="rawWipJPF.notRequired" value="SET">
+			<available file="${jpf.dir}"/>
+		</condition>
+	</target>
+	
+	<target name="mock/check">
+		<condition property="mock" value="${workspace}/${project.prefix}-mock">
+			<available type="dir" file="${workspace}/${project.prefix}-mock"/>
+		</condition>
+	</target>
+	
+	<target name="mock/build" depends="mock/check, rawWipJPF, javaLibsFragments" if="mock">
+		<microej.buildMock
+			buildMock.name="mock_${project.prefix}"
+			buildMock.working.jpf.dir="${jpf.dir}/source"
+			buildMock.output.dir="${jpf.dir}/source/mocks/dropins"
+		>
+			<buildMock.elem.srcpaths>
+				<path location="${mock}/src"/>
+			</buildMock.elem.srcpaths>
+			<buildMock.elem.binpaths>
+				<path location="${jpf.dir}/source/javaAPIs/sp-1.0-api.jar"/>
+			</buildMock.elem.binpaths>
+		</microej.buildMock>
+	</target>
+	
+	<target name="mock/clean" depends="mock/check" if="mock">
+		<delete file="${jpf.dir}/source/mocks/dropins/mock_${project.prefix}"/>
+	</target>
+	
+	<target name="rawWipJPF" depends="rawWipJPF/check" unless="rawWipJPF.notRequired" description="rawWipJPF">
+		<!-- 
+			Create a new work-in-progress JPF (wipJPF) from the XPF
+		-->
+		<microej.newJavaPlatform
+			repository="${repository}"
+			workspace="${workspace}"
+			hardwarepartnumber="STM32F429"
+			name="${user.wipJPF.name}"
+			provider="${user.wipJPF.provider}"
+			version="${user.wipJPF.version}"
+			projectname="${wipJPF.project.name}"
+			overwrite="true"
+		>
+			<xpf
+				architecture="CM4"
+				hardwarePartNumber="CM4"
+				name="flopi4"
+				provider="IS2T"
+				version="2.0.3"
+				techVersion="1.6"
+				baseline="14"
+				licenseTag="IS2T_J8F5C"
+				level="dev"
+				toolchain="CM4_ARMCC"
+			/>
+		</microej.newJavaPlatform>
+	</target>
+	
+	<target name="nlsFragment" depends="rawWipJPF" description="nlsFragment">
+		<ant antfile="${jpf.dir}/build/fragments/nls/default/copy.xml" inheritall="false"/>		
+	</target>
+
+	<target name="spFragment" depends="rawWipJPF" description="spFragment">
+		<ant antfile="${jpf.dir}/build/fragments/sp/default/copy.xml" inheritall="false"/>		
+		<!--ant antfile="${jpf.dir}/build/fragments/sp-server/default/copy.xml" inheritall="false"/-->
+	</target>
+
+	<target name="javaLibsFragments" depends="microuiFragment, nlsFragment, systemMicroUI, spFragment" description="javaLibsFragments"/>
+	
+	<target name="bspFragments" depends="rawWipJPF" description="bspFragments">
+		<!-- Copy STM3240GEVAL board specific fragments -->
+		<ant antfile="${jpf.dir}/build/fragments/alpha_numeric_display/stub/copy.xml" inheritall="false"/>
+		<ant antfile="${jpf.dir}/build/fragments/audio/stub/copy.xml" inheritall="false"/>
+		<ant antfile="${jpf.dir}/build/fragments/display/16_xy_switch/copy.xml" inheritall="false"/>
+		<ant antfile="${jpf.dir}/build/fragments/input/advanced/copy.xml" inheritall="false"/>
+		<ant antfile="${jpf.dir}/build/fragments/leds/default/copy.xml" inheritall="false"/>
+		<ant antfile="${jpf.dir}/build/fragments/display_decoder_bmpm/default/copy.xml" inheritall="false"/>
+		<ant antfile="${jpf.dir}/build/fragments/display_decoder_png/default/copy.xml" inheritall="false"/>
+		<ant antfile="${jpf.dir}/build/fragments/mwt/default/copy.xml" inheritall="false"/>
+		<ant antfile="${jpf.dir}/build/fragments/widgets/default/copy.xml" inheritall="false"/>
+	</target>
+	
+	<target name="additionalFragments" depends="rawWipJPF" description="optional fragments available in current project">
+		<condition property="specific.fragments.dir" value="${workspace}/${intern.project.name}/build/fragments">
+			<available type="dir" file="${workspace}/${intern.project.name}/build/fragments"/>
+		</condition>
+		<antcall target="additionalFragments0"/>
+	</target>
+	
+	<target name="additionalFragments0" if="specific.fragments.dir">
+		<subant genericantfile="${ant.file.HMI}" target="additionalFragments1" inheritall="true" >
+			<dirset dir="${specific.fragments.dir}" includes="*"/>
+		</subant>
+	</target>
+	
+	<target name="additionalFragments1">
+		<basename property="additionalFragments1.fragment.name" file="${basedir}"/>
+		<echo level="info" message="Fragment [${additionalFragments1.fragment.name}]"/>
+		<copy todir="${jpf.dir}/source">
+			<fileset dir="${basedir}" includes="**"/>
+		</copy>
+	</target>
+	
+	<!-- copy bsp ilink files in jpf if any (every ilink files are stored in the same folder) -->
+	<target name="copyILink" description="copyILink">
+		<!-- Copy BSP defined ilink files (implementation definition) to JPF lib --> 
+		<copy todir="${jpf.lib.dir}">
+			<fileset dir="${bsp.libs.dir}" includes="*.ilink" erroronmissingdir="false"/>
+		</copy>
+	</target>
+	
+	<target name="copyIncludes" depends="rawWipJPF, systemMicroUI" description="copyIncludes">
+		<!-- 
+			Copy platform generated include files in BSP project
+		-->
+		<copy todir="${bsp.include.dir}" failonerror="false">
+			<fileset dir="${jpf.tmp.dir}/bsp/include" includes="*.h"/>
+		</copy>
+		<!-- 
+			Copy platform include API files in BSP project
+		-->
+		<copy todir="${bsp.includeAPIs.dir}" failonerror="false">
+			<fileset dir="${jpf.include.dir}" includes="**/*.h"/>
+			<fileset dir="${jpf.jvm.include.dir}" includes="**/*.h"/>
+		</copy>
+	</target>
+	
+	<target name="cProject" description="cProject">
+		<!-- Augment Default C project with platform libraries -->
+		<touch file="${jpf.lib.dir}/${user.java.application.lib}" description="create a fake javaapp.o in order to update C project with future java application lib"/>
+		
+		<fileset id="archives.id" dir="${jpf.dir}">
+			<include name="${jpf.lib.relativedir}/*.lib"/>
+			<include name="${jpf.lib.relativedir}/*.a"/>
+			<include name="${jpf.lib.relativedir}/*.o"/>
+			<include name="${jpf.jvm.lib.relativedir}/*.lib"/>
+			<include name="${jpf.jvm.lib.relativedir}/*.a"/>
+			<include name="${jpf.jvm.lib.relativedir}/*.o"/>
+		</fileset>
+
+		<property name="user.bsp.project.file" location="${bsp.dir}/Project/MicroEJ/MDK-ARM/Project.uvproj"/>
+		<microej.augmentCProject
+			augmentCProject.project.file="${user.bsp.project.file}"
+			augmentCProject.group.name="libs"
+			augmentCProject.files.id="archives.id"
+		/>
+		
+		<!-- Delete the temporary fake javaapp.o -->
+		<delete file="${jpf.lib.dir}/${user.java.application.lib}"/>
+	</target>
+	
+	<target name="importJavaExamples/check">
+		<condition property="importJavaExamples.required" value="SET">
+			<and>
+				<available type="dir" file="${workspace}/${intern.project.name}/build/examples" description="examples zips are optional"/>
+				<not><available type="dir" file="${jpf.dir}/source/examples" description="no need to reinstall examples twice"/></not>
+			</and>
+		</condition>
+	</target>
+			
+	<target name="importJavaExamples" depends="rawWipJPF,importJavaExamples/check" description="importJavaExamples" if="importJavaExamples.required">
+		<sleep seconds="10"/> <!-- temporary patch, microej.newPlatform must block until the architecture is fully loaded -->
+		<!-- Import the default set of java samples, that can be run on this rightly created platform -->
+		<fileset id="importJavaExamples.allExamples.id" dir="${workspace}/${intern.project.name}/build/examples" includes="*.zip"/>
+		<pathconvert property="importJavaExamples.allExamples.path" refid="importJavaExamples.allExamples.id"/>
+		<microej.importExamples 
+			repository="${repository}"
+		>
+			<path>
+				<pathElement path="${importJavaExamples.allExamples.path}"/>
+			</path>
+		</microej.importExamples>
+		<eclipse.refreshLocal resource="${wipJPF.project.name}"/>
+	</target>
+	
+	<target name="frontPanelProject/check">
+		<condition property="frontPanelProject.notRequired" value="SET">
+			<available file="${frontPanel.dir}"/>
+		</condition>
+	</target>
+		
+	<target name="frontPanelProject/clean/check">
+		<condition property="frontPanelProject/clean.notRequired" value="">
+			<not>
+				<available file="${workspace}/${frontPanel.project.name}"/>
+			</not>
+		</condition>
+	</target>	
+	
+	<target name="frontPanelProject/clean/prompt" depends="frontPanelProject/clean/check" unless="frontPanelProject/clean.notRequired">
+		<microej.promptExecuteTarget
+			promptExecuteTarget.message="Are you sure you want to remove project '${frontPanel.project.name}' from the workspace  ?${line.separator}This cannot be undone."
+			promptExecuteTarget.target.name="frontPanelProject/clean"
+			promptExecuteTarget.force="${user.force.clean.projects}"
+		/>
+	</target>
+		
+	<target name="frontPanelProject/clean" depends="frontPanelMock/clean, frontPanelFragment/clean, frontPanelProject/clean/prompt" unless="frontPanelProject/clean.notRequired" description="frontPanelProject/clean">
+		<microej.deleteResource resource="${frontPanel.project.name}" failonerror="true"/>
+	</target>
+		
+	<target name="frontPanelProject" depends="frontPanelFragment,systemMicroUI,frontPanelProject/check" unless="frontPanelProject.notRequired" description="frontPanelProject">
+		<!-- Create Front Panel project and populate it -->
+		<eclipse.refreshLocal resource="${wipJPF.project.name}"/>
+		<frontpaneldesigner.createNewProject
+			associatedjpfproject="${wipJPF.project.name}"
+			frontpanelproject="${frontPanel.project.name}"
+		/>
+		<unzip src="${workspace}/${intern.project.name}/build/fp.zip" dest="${workspace}/${frontPanel.project.name}"></unzip>
+	</target>
+	
+	<target name="systemMicroUI" depends="microuiFragment" description="systemMicroUI">
+		<!-- 
+			Build System MicroUI
+			Run in a new ANT context in order to include tasks supplied by the rightly created wipJPF.
+			Moreover, this script does not make links to platform JAR files defining ANT tasks, allowing to delete the platform project. 			
+		-->
+		<ant antfile="${project.dir}/build/scripts/callTargetWithImport.xml">
+			<property name="callTargetWithImport.import.file" value="${jpf.scripts.dir}/buildSystemMicroUI.microejTask"/>
+			<property name="callTargetWithImport.ant.file" value="${ant.file.HMI}"/>
+			<property name="callTargetWithImport.ant.target" value="systemMicroUI0"/>			
+		</ant>
+	</target>
+			
+	<target name="systemMicroUI0">
+		<microej.buildSystemMicroUI
+			buildSystemMicroUI.definition.file="${user.microui.definition.file}"
+			buildSystemMicroUI.wipJPF.dir="${jpf.dir}" 
+		/>		
+	</target>
+	
+	<target name="frontPanelMock/clean" description="frontPanelMock/clean">
+		<delete dir="${jpf.mocks.dir}" includes="mockFPWidgetsExtension.jar"/>
+	</target>
+	
+	<target name="frontPanelMock" depends="frontPanelProject" description="frontPanelMock">
+		<!-- Export Front Panel project into wipJPF mock -->
+		<eclipse.refreshLocal resource="${frontPanel.project.name}"/>
+		<frontpaneldesigner.exportProject
+			frontpanelproject="${frontPanel.project.name}"
+		/>
+	</target>
+	
+	<target name="microuiFragment" depends="rawWipJPF" description="microuiFragment">
+		<ant antfile="${jpf.dir}/build/fragments/microui/default/copy.xml" inheritall="false"/>		
+	</target>
+	
+	<target name="frontPanelFragment/clean" depends="frontPanelMock/clean" description="frontPanelFragment/clean">
+		<microej.removeFragment removeFragment.fragment.dir="${jpf.dir}/build/fragments/frontpanel/default"/>
+	</target>
+		
+	<target name="frontPanelFragment" depends="microuiFragment" description="frontPanelFragment">
+		<ant antfile="${jpf.dir}/build/fragments/frontpanel/default/copy.xml" inheritall="false"/>
+	</target>
+	
+	
+	<target name="microuiImageGeneratorExtension/clean" description="microuiImageGeneratorExtension/clean">
+		<delete dir="${jpf.dir}" includes="${jpf.tools.relativedir}/IMAGE-GENERATOR-EXTENSION*"/>
+	</target>
+	
+	<target name="microuiImageGeneratorExtension" depends="microuiFragment" description="microuiImageGeneratorExtension">
+		<!-- 
+			Build MicroUI Image Generator Extension 
+			Run in a new ANT context in order to include tasks supplied by the rightly created wipJPF.
+			Moreover, this script does not make links to platform JAR files defining ANT tasks, allowing to delete the platform project.
+		-->
+		<ant antfile="${project.dir}/build/scripts/callTargetWithImport.xml">
+			<property name="callTargetWithImport.import.file" value="${jpf.scripts.dir}/buildImageGeneratorExtension.microejTask"/>
+			<property name="callTargetWithImport.ant.file" value="${ant.file.HMI}"/>
+			<property name="callTargetWithImport.ant.target" value="microuiImageGeneratorExtension0"/>			
+		</ant>
+	</target>
+	
+	<target name="microuiImageGeneratorExtension0">
+		<path id="microuiGeneratorExtention.sourcepath" location="${workspace}/${microuiImageGeneratorExtension.project.name}/src"/>
+		<microej.buildImageGeneratorExtension
+			buildImageGeneratorExtension.sourcepathref="microuiGeneratorExtention.sourcepath"
+			buildImageGeneratorExtension.wipJPF.dir="${jpf.dir}"
+			buildImageGeneratorExtension.suffix="ForGEVAL"
+		/>
+	</target>
+</project>

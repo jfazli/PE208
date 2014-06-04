@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2011-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="microuInit">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	
+	<extension-point name="init/microui/context/hook" description="Hook to force to use MicroUI (see MWT)" />
+	
+	<target name="init/microui/check" extensionOf="init/context" depends="init/microui/context/hook">
+		<!-- check if application targets MicroUI -->
+		<available classpath="${application.classpath}" classname="ej.microui.MicroUI" property="usesMICROUI"/>
+	</target>
+	
+	<target name="init/microui" extensionOf="init/execution" if="usesMICROUI">
+		
+		<echo message="MicroUI init" level="verbose" />
+		
+		<!-- CLASSPATH -->
+		<augment id="init.application.classpath">
+			<fileset dir="${jpf.dir}/javaLibs" includes="microui-*.jar" />
+			<fileset dir="${jpf.dir}/javaLibs" includes="systemmicroui-*.jar" />
+		</augment>
+		
+		<!-- REQUIRES XXX optional ? -->
+		<property file="${jpf.dir}/javaLibs/systemmicroui.properties"/>
+		<fail unless="microui.require" description="platform specific, must be set in systemmicroui.properties"/>
+		<augment id="init.requires">
+			<string value="${microui.require}"/>
+		</augment>
+		
+		<!-- RESOURCES -->
+		<property name="microui.resources" value="" description="default value: no specific resource"/>	
+		<augment id="init.resources">
+			<string value="${microui.resources}"/>
+		</augment>
+		
+		<!-- PROPERTIES -->
+		<property name="microej.application.ej.microui.vendor.url" value="${ej.microui.vendor.url.value}"/>
+		<property name="microej.application.ej.microui.vendor" value="${ej.microui.vendor.value}"/>
+		<property name="microej.application.ej.microui.version.value" value="${ej.microui.version.value}"/>
+		<augment id="init.properties">
+			<propertyref name="ej.microui.autostart"/>
+			<propertyref name="microej.application.ej.microui.vendor.url"/>
+			<propertyref name="microej.application.ej.microui.vendor"/>
+			<propertyref name="microej.application.ej.microui.version.value"/>
+		</augment>
+		
+	</target>
+	
+</project>

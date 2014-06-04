@@ -1,0 +1,14 @@
+<!--
+  IS2T linker file
+ 
+  Copyright 2012-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+	
+	<!--
+		On Green thread MicroJvm, need at most 1 wrapper max at a time.
+	-->
+	<defSymbol name="_java_vmthread_nb_wrappers" value="1" rootSymbol="true"/>
+
+</lscFragment>

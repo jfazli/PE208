@@ -1,0 +1,6 @@
+<ecom>
+	<comms>
+		<comm port="5" nickname="BLE"/>
+	</comms>
+</ecom>
+	

@@ -1,0 +1,13 @@
+.\stm32f429\microui_bsp.o: ../src/microui_bsp.c
+.\stm32f429\microui_bsp.o: ..\inc\LLDISPLAY_STM32x0DISCO.h
+.\stm32f429\microui_bsp.o: ..\includeAPIs\LLDISPLAY_SWITCH.h
+.\stm32f429\microui_bsp.o: ..\includeAPIs\intern/LLDISPLAY_SWITCH.h
+.\stm32f429\microui_bsp.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\stm32f429\microui_bsp.o: ..\includeAPIs\LLDISPLAY_DECODER_PNG.h
+.\stm32f429\microui_bsp.o: ..\includeAPIs\intern/LLDISPLAY_DECODER_PNG.h
+.\stm32f429\microui_bsp.o: ..\includeAPIs\LLDISPLAY_DECODER.h
+.\stm32f429\microui_bsp.o: ..\includeAPIs\intern/LLDISPLAY_DECODER.h
+.\stm32f429\microui_bsp.o: ..\includeAPIs\LLDISPLAY_DECODER_BMPM.h
+.\stm32f429\microui_bsp.o: ..\includeAPIs\intern/LLDISPLAY_DECODER_BMPM.h
+.\stm32f429\microui_bsp.o: ..\inc\bsp_customization.h
+.\stm32f429\microui_bsp.o: ..\inc\microej.h

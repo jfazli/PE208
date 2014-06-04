@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2011-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+    
+  Input properties:
+  	- jpf.name
+  	- core.outputstream.disable.uart
+  	- cldc.encoding.utf8.included (from workbench extension)
+  	
+-->
+<project name="cldcInit">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+		
+	<target name="init/cldc" extensionOf="init/execution">
+		<echo message="CLDC init" level="verbose"/>
+		<!-- CLASSPATH -->
+		<augment id="init.application.classpath">
+			<fileset dir="${vm.dir}/javaLibs" includes="cldc-*.jar" />
+		</augment>
+	
+		<!-- add or not the CLDC encoding UTF8 -->
+		<condition property="embed.utf8" value="ist.support.util.EncUTF_8" else="">
+			<and>
+				<istrue value="${cldc.encoding.utf8.included}"/>
+			</and>
+		</condition>
+
+		<!-- add or not a specific System.out class -->
+		<condition property="specific.system.out" value="${core.outputstream.class}" else="">
+			<and>
+				<istrue value="${core.outputstream.disable.uart}"/>
+				<isset property="core.outputstream.class"/>
+			</and>
+		</condition>
+		
+		<augment id="init.requires">
+			<string value="${embed.utf8}"/>
+			<string value="${specific.system.out}"/>
+		</augment>
+	
+		<property name="microedition.platform" value="${platform.name}"/>
+	
+		<!-- disable uart -->
+		<condition property="com.is2t.system.out.class" value="${core.outputstream.class}" else="">
+			<and>
+				<istrue value="${core.outputstream.disable.uart}"/>
+				<isset property="core.outputstream.class"/>
+			</and>
+		</condition>
+		
+		<augment id="init.properties">
+			<propertyref name="com.is2t.system.out.class"/>
+			<propertyref name="microedition.platform"/>
+		</augment>
+	</target>
+	
+</project>

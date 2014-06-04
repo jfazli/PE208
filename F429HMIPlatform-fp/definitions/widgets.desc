@@ -1,0 +1,171 @@
+<frontpanel>
+	<!-- Generated file - DO NOT EDIT -->
+	<alias name="accelerometerXYZ" value="com.is2t.duik.widgets.AccelerometerXYZ">
+		<attribute name="id"/>
+		<attribute name="xID"/>
+		<attribute name="yID"/>
+		<attribute name="zID"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="skin"/>
+		<attribute name="minValueX"/>
+		<attribute name="maxValueX"/>
+		<attribute name="minValueY"/>
+		<attribute name="maxValueY"/>
+		<attribute name="minValueZ"/>
+		<attribute name="maxValueZ"/>
+		<attribute name="backColor" optional="true"/>
+		<attribute name="gaugeWidth" optional="true"/>
+	</alias>
+	<alias name="alphaNumericDisplay2colors" value="com.is2t.duik.widgets.AlphaNumericDisplay2Colors">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="width"/>
+		<attribute name="height"/>
+		<attribute name="nbLines"/>
+		<attribute name="nbCols"/>
+		<attribute name="charBackColor"/>
+		<attribute name="charFrontColor"/>
+		<attribute name="hSpace"/>
+		<attribute name="vSpace"/>
+		<attribute name="charWidth"/>
+		<attribute name="charHeight"/>
+		<attribute name="backlightColor" optional="true"/>
+	</alias>
+	<alias name="joystick" value="com.is2t.duik.widgets.Joystick">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="skin"/>
+		<attribute name="mask" optional="true"/>
+		<attribute name="upSkin"/>
+		<attribute name="downSkin"/>
+		<attribute name="leftSkin"/>
+		<attribute name="rightSkin"/>
+		<attribute name="enterSkin" optional="true"/>
+		<attribute name="disableEnter" optional="true"/>
+		<attribute name="repeatPeriod" optional="true"/>
+		<attribute name="hotkeys" optional="true"/>
+		<attribute name="listenerClass" optional="true"/>
+	</alias>
+	<alias name="key" value="com.is2t.duik.widgets.Key">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="skin"/>
+		<attribute name="pushedSkin"/>
+		<attribute name="hotkey" optional="true"/>
+		<attribute name="filter" optional="true"/>
+	</alias>
+	<alias name="keypad" value="com.is2t.duik.widgets.Keypad">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="width"/>
+		<attribute name="height"/>
+		<attribute name="skin" optional="true"/>
+	</alias>
+	<alias name="led2states" value="com.is2t.duik.widgets.Led2States">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="ledOff"/>
+		<attribute name="ledOn"/>
+		<attribute name="overlay" optional="true"/>
+	</alias>
+	<alias name="longPush" value="com.is2t.duik.widgets.LongButton">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="skin"/>
+		<attribute name="pushedSkin"/>
+		<attribute name="longPeriod" optional="true"/>
+		<attribute name="hotkey" optional="true"/>
+		<attribute name="filter" optional="true"/>
+		<attribute name="listenerClass" optional="true"/>
+	</alias>
+	<alias name="motor" value="com.is2t.duik.widgets.Motor">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="steps"/>
+	</alias>
+	<alias name="pixelatedDisplay" value="com.is2t.duik.widgets.Display">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="width"/>
+		<attribute name="height"/>
+		<attribute name="realWidth" optional="true"/>
+		<attribute name="realHeight" optional="true"/>
+		<attribute name="initialColor" optional="true"/>
+		<attribute name="residualFactor" optional="true"/>
+		<attribute name="transparencyLevel" optional="true"/>
+		<attribute name="extensionClass" optional="true"/>
+	</alias>
+	<alias name="pointer" value="com.is2t.duik.widgets.Pointer">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="width"/>
+		<attribute name="height"/>
+		<attribute name="touch" optional="true"/>
+		<attribute name="listenerClass" optional="true"/>
+	</alias>
+	<alias name="potentiometer" value="com.is2t.duik.widgets.Potentiometer">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="maxAngle"/>
+		<attribute name="minValue"/>
+		<attribute name="maxValue"/>
+		<attribute name="steps"/>
+		<attribute name="filter" optional="true"/>
+		<attribute name="hotkeys" optional="true"/>
+	</alias>
+	<alias name="push" value="com.is2t.duik.widgets.PushButton">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="skin"/>
+		<attribute name="pushedSkin"/>
+		<attribute name="hotkey" optional="true"/>
+		<attribute name="filter" optional="true"/>
+		<attribute name="listenerClass" optional="true"/>
+	</alias>
+	<alias name="repeatPush" value="com.is2t.duik.widgets.RepeatButton">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="skin"/>
+		<attribute name="pushedSkin"/>
+		<attribute name="repeatPeriod" optional="true"/>
+		<attribute name="sendPressRelease" optional="true"/>
+		<attribute name="hotkey" optional="true"/>
+		<attribute name="filter" optional="true"/>
+		<attribute name="listenerClass" optional="true"/>
+	</alias>
+	<alias name="sensor" value="com.is2t.duik.widgets.DefaultSensor">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="skin"/>
+		<attribute name="minValue"/>
+		<attribute name="maxValue"/>
+		<attribute name="backColor" optional="true"/>
+		<attribute name="gaugeColor" optional="true"/>
+		<attribute name="borderColor" optional="true"/>
+		<attribute name="horizontal" optional="true"/>
+		<attribute name="inverted" optional="true"/>
+		<attribute name="hotkeys" optional="true"/>
+	</alias>
+	<alias name="wheel" value="com.is2t.duik.widgets.Wheel">
+		<attribute name="id"/>
+		<attribute name="x"/>
+		<attribute name="y"/>
+		<attribute name="maxAngle"/>
+		<attribute name="steps"/>
+		<attribute name="filter" optional="true"/>
+	</alias>
+</frontpanel>

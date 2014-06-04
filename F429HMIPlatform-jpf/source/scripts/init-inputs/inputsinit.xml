@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Copyright 2012-2013 IS2T. All rights reserved.
+-->
+<project default="inputsInit"> 
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/init-microui/microuiinit.xml" />
+	<import file="${scripts.dir}/microejAntlib.xml" />
+	
+	<target name="init/inputs" extensionOf="init/execution" if="onBoard">
+		
+		<!-- create tmp dir -->
+		<local name="link.files.dir"/>
+		<microejtempfile deleteonexit="true" prefix="linkInputs" property="link.files.dir"/>
+		<mkdir dir="${link.files.dir}"/>
+			
+		<!-- get tmp link file name -->
+		<local name="link.sizes"/>
+		<property name="link.sizes" value="${link.files.dir}/sizes.lscf" />
+		
+		<!-- set default properties values (in case of we are not using MicroUI) -->
+		<property name="${jpf.property.header}.mui.inputs.buffer.size" value="0"/>
+		
+		<!-- get properties values from MicroEJ launcher -->
+		<getProperty prefix="${jpf.property.header}" property="mui.inputs.buffer.size"/>
+		
+		<!-- create the size file -->
+		<echoxml file="${link.sizes}" append="false">
+			<lscFragment>
+				<defSymbol name="${arch.symbol.prefix}EVENTS_BUFFER_SIZE" value="${mui.inputs.buffer.size}"/>
+			</lscFragment>
+		</echoxml>
+		
+		<!-- add link file in linker's link files path -->
+		<augment id="partialLink.lscf.path">
+			<path location="${link.files.dir}"/>
+			<path location="${jpf.dir}/link"/>
+		</augment>
+		
+	</target>
+</project>

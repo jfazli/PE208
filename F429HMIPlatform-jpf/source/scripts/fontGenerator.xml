@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+	
+	Copyright 2013 IS2T. All rights reserved.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<project name="FontGenerator" default="fontGenerator.convert"> 
+	
+	<target name="fontGenerator.convert/check">
+		<fail unless="fontGenerator.classpath" message="Please set 'fontGenerator.classpath' property. This is the classpath of the font generator."/>
+		<fail unless="application.classpath" message="Please set 'application.classpath' property. This is the classpath where the fonts to convert are."/>
+		<fail unless="list.file" message="Please set 'list.file' property. This is the full path of fonts list file."/>
+		<fail unless="platform.endianness" message="Please set 'platform.endianness' property. This is the endianness of the platform."/>
+	</target>
+	
+	<target name="fontGenerator.convert" depends="fontGenerator.convert/check">
+		
+		<!-- default options -->
+		<property name="output.format" value="3" description="Last available font format"/>
+		<property name="output.file" value="" description="Full path of file which will contains the converted fonts paths"/>
+		<property name="verbose" value="0" description="0 to 9"/>
+
+		<!-- font generator tool definition -->
+		<taskdef name="FontGenerator" classname="com.is2t.generator.font.FontGeneratorTask" classpath="${fontGenerator.classpath}"/>
+		
+		<!-- convert -->
+		<FontGenerator
+			classpath="${application.classpath}" 
+			list="${list.file}" 
+			pathSeparator="${path.separator}" 
+			verboseLevel="${verbose}"
+			format="${output.format}"
+			endianness="${platform.endianness}"
+			outputFile="${output.file}" 
+		/>
+		
+	</target>
+	
+</project>

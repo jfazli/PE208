@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2011-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="fontGeneratorInit">
+	
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/init-microui/microuiinit.xml" />
+
+	<target name="init/fontGen/check" extensionOf="init/context" depends="init/microui/check">
+		<condition property="font.generator.gen.needed" value="true">
+			<and>
+				<istrue value="${usesMICROUI}"/>
+				<istrue value="${ej.microui.fontConverter.useIt}"/>
+			</and>
+		</condition>
+	</target>
+	
+	<target name="definitions/fontGen" if="font.generator.gen.needed">
+		<loadproperties srcfile="init-microui-fontgen/fontgen.properties" prefix="font.gen."/>
+	</target>
+	
+	<target name="activity/fontGen" depends="definitions/fontGen" if="font.generator.gen.needed">
+		<start.subactivity
+			activity.id="${font.gen.activity.id}"
+			message="${font.gen.activity.msg}"
+			parent.activity.id="${activity.root.id}"
+		/>
+	</target>
+	
+	<target name="init/fontGen" extensionOf="init/execution" depends="activity/fontGen, definitions/fontGen" if="font.generator.gen.needed">
+
+		<!-- verbose -->
+		<echo message="MicroUI FontGen init" level="verbose" />
+
+		<!-- define FontGenerator task -->
+		<path id="fontGenerator.classpath.ref">
+			<fileset dir="${jpf.dir}/tools" includes="FONT-GENERATOR.jar" />
+		</path>
+		<taskdef name="FontGenerator" classname="${font.gen.classname}" classpathref="fontGenerator.classpath.ref"/>
+		
+		<!-- define verbose -->
+		<condition property="fontgen.verbose" value="1" else="0">
+			<isset property="execution.verbose"/>
+		</condition>
+	
+		<!-- create a temp file -->
+		<property name="fonts.file" value="${microej.io.tmpdir}/fontgen.prop"/>
+		<delete file="${fonts.file}" failonerror="false" verbose="no"/>
+		
+		<!-- generate -->
+		<FontGenerator
+			list="${ej.microui.fontConverter.file}" 
+			classpath="${application.classpath}" 
+			outputFile="${fonts.file}" 
+			pathSeparator="${path.separator}"
+			endianness="${arch.endianness}"
+			verboseLevel="${fontgen.verbose}"
+		/>
+		
+		<!-- load a property from a file, nothing is loaded if the file does not exists -->
+		<property file="${fonts.file}"/>
+		
+		<!-- set empty values in case of no font has been generated -->
+		<property name="fonts.resources" value=""/>
+		<property name="ej.microui.user.fonts" value=""/>
+
+		<!-- append the ant property to the global list -->
+		<augment id="init.resources">
+			<string value="${fonts.resources}"/>
+		</augment>
+		
+		<!-- append the java property to the global list -->
+		<augment id="init.properties">
+			<propertyref name="ej.microui.user.fonts"/>
+		</augment>
+		
+		<!-- delete temp files if exist -->
+		<delete file="${fonts.file}" failonerror="false" verbose="no"/>
+		
+	</target>
+	
+</project>

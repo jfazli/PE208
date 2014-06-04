@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2012-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="extension.init">
+
+	<!-- Libraries initialization extension point -->
+	<extension-point name="init/context" description="Initializes some context such as Class availability etc." />
+	<extension-point name="init/execution" depends="init/context, activity/init/jpf" description="Initializes launch according to context and application."/>
+	<extension-point name="init/finalization" description="Computes final values of the 'overall.*' properties given to tools (S3, SOAR, etc.)"/>
+	
+	<!-- Creates output directories -->
+	<extension-point name="launch/mkdirs" depends="mkdirs/application"/> <!-- application directory is the base for all others -->
+	
+	<!-- JPF Initialization Activity Definition -->
+	<target name="activity/init/jpf">
+		<start.subactivity
+			activity.id="${activity.jpf.init.id}"
+			message="JPF Initialization"
+			parent.activity.id="${activity.root.id}"
+		/>
+	</target>
+	
+	<target name="mkdirs/application">
+		<fail unless="output.dir" message="Please define the 'output.dir' property"/>
+		<property name="application.output.dir" location="${output.dir}/${application.main.class}"/>
+		<delete dir="${application.output.dir}" includes="**/*"/>
+		<mkdir dir="${application.output.dir}"/>
+	</target>
+		
+</project>

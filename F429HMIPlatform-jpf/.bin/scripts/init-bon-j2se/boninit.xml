@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+
+-->
+<project name="bonInitJ2SE">
+
+	<import file="${scripts.dir}/extension-init.xml" />
+	<import file="${scripts.dir}/antToolsDefinition.xml" />
+	
+	<extension-point name="init/bon/context/hook" description="Hook to force to use BON" />
+	
+	<target name="checkJ2SE">
+		<condition property="onJ2SE" value="SET">
+			<or>
+				<isset property="onApplet" />
+				<isset property="onStandalone" />
+			</or>
+		</condition>
+	</target>
+	
+	<!-- Add the immutables property -->
+	<target name="init/bon/j2se" depends="checkJ2SE, init/bon/context/hook" extensionOf="init/execution" if="onJ2SE">
+	
+		<tempfile property="j2se.immutables.dir" prefix="j2seimmutables" deleteonexit="true" />
+		<mkdir dir="${j2se.immutables.dir}" />
+		
+		<!-- add header in the immutables -->
+		<path id="application.classpath.id">
+			<path path="${application.classpath}" />
+			<path refid="init.application.classpath" />
+		</path>
+		<pathExpander inputPathId="application.classpath.id" outputPathId="application.classpath.expanded.id" />
+		<copy todir="${j2se.immutables.dir}">
+			<restrict>
+				<path refid="application.classpath.expanded.id" />
+				<selection list="${application.immutables}${path.separator}${toString:init.immutables}" />
+			</restrict>
+		</copy>
+		<fileset id="com.is2t.bon.immutables.resources.set" dir="${j2se.immutables.dir}"/>
+		<replace>
+			<fileset refid="com.is2t.bon.immutables.resources.set" />
+			<replacefilter>
+				<replacetoken>&lt;immutables</replacetoken> 
+				<replacevalue>&lt;immutables xmlns="http://is2t.com/immutables/xml"</replacevalue>
+			</replacefilter>
+		</replace>
+		<pathconvert property="com.is2t.bon.immutables.resources" refid="com.is2t.bon.immutables.resources.set">
+			<map from="${j2se.immutables.dir}/" to=""/>
+		</pathconvert>
+		
+		<!-- property -->
+		<augment id="init.properties">
+			<propertyref name="com.is2t.bon.immutables.resources"/>
+		</augment>
+		
+		<!-- classpath -->
+		<augment id="init.application.classpath">
+			<path location="${j2se.immutables.dir}" />
+			<fileset dir="${vm.dir}/javaLibs">
+				<include name="codemodel.jar" />
+				<include name="ImmutablesModel.jar" />
+				<include name="jaxb2-basics-ant.jar" />
+				<include name="jaxb-api.jar" />
+				<include name="jaxb-impl.jar" />
+				<include name="JaxbPlugins.jar" />
+			</fileset>
+		</augment>
+	</target>
+	
+</project>

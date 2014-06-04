@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT
+	
+	Copyright 2013 IS2T. All rights reserved.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<project name="ImageGenerator" default="imageGenerator.convert"> 
+	
+	<target name="imageGenerator.convert/check">
+		<fail unless="imageGenerator.classpath" message="Please set 'imageGenerator.classpath' property. This is the classpath of the image generator."/>
+		<fail unless="application.classpath" message="Please set 'application.classpath' property. This is the classpath where the images to convert are."/>
+		<fail unless="list.file" message="Please set 'list.file' property. This is the full path of images list file."/>
+		<fail unless="platform.endianness" message="Please set 'platform.endianness' property. This is the endianness of the platform."/>
+	</target>
+	
+	<target name="imageGenerator.convert" depends="imageGenerator.convert/check">
+		
+		<!-- default options -->
+		<property name="output.file" value="" description="Full path of file which will contains the converted images paths"/>
+		<property name="verbose" value="0" description="0 to 9"/>
+
+		<!-- image generator tool definition -->
+		<taskdef name="ImageGenerator" classname="com.is2t.generator.image.ImageGeneratorTask" classpath="${imageGenerator.classpath}"/>
+		
+		<!-- convert -->
+		<ImageGenerator
+			classpath="${application.classpath}" 
+			list="${list.file}" 
+			pathSeparator="${path.separator}" 
+			verboseLevel="${verbose}"
+			endianness="${platform.endianness}"
+			outputFile="${output.file}" 
+		/>
+		
+	</target>
+	
+</project>

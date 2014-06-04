@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.is2t.com" xmlns="http://www.is2t.com"
+	elementFormDefault="qualified">
+
+	<!-- Generated file - DO NOT EDIT -->
+	<xs:element name="frontpanel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description">
+					<xs:complexType>
+						<xs:attribute name="file" type="xs:string" fixed="widgets.desc" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="device">
+					<xs:complexType>
+						<xs:sequence>
+								<xs:element name="body">
+									<xs:complexType>
+										<xs:choice minOccurs="0" maxOccurs="unbounded">
+											<xs:element name="init">
+												<xs:complexType>
+													<xs:attribute name="class" type="xs:string" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="accelerometerXYZ">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="xID" type="xs:string" use="required"/>
+													<xs:attribute name="yID" type="xs:string" use="required"/>
+													<xs:attribute name="zID" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="skin" type="xs:string" use="required"/>
+													<xs:attribute name="minValueX" type="xs:string" use="required"/>
+													<xs:attribute name="maxValueX" type="xs:string" use="required"/>
+													<xs:attribute name="minValueY" type="xs:string" use="required"/>
+													<xs:attribute name="maxValueY" type="xs:string" use="required"/>
+													<xs:attribute name="minValueZ" type="xs:string" use="required"/>
+													<xs:attribute name="maxValueZ" type="xs:string" use="required"/>
+													<xs:attribute name="backColor" type="xs:string" use="optional"/>
+													<xs:attribute name="gaugeWidth" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="alphaNumericDisplay2colors">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="width" type="xs:string" use="required"/>
+													<xs:attribute name="height" type="xs:string" use="required"/>
+													<xs:attribute name="nbLines" type="xs:string" use="required"/>
+													<xs:attribute name="nbCols" type="xs:string" use="required"/>
+													<xs:attribute name="charBackColor" type="xs:string" use="required"/>
+													<xs:attribute name="charFrontColor" type="xs:string" use="required"/>
+													<xs:attribute name="hSpace" type="xs:string" use="required"/>
+													<xs:attribute name="vSpace" type="xs:string" use="required"/>
+													<xs:attribute name="charWidth" type="xs:string" use="required"/>
+													<xs:attribute name="charHeight" type="xs:string" use="required"/>
+													<xs:attribute name="backlightColor" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="joystick">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="skin" type="xs:string" use="required"/>
+													<xs:attribute name="mask" type="xs:string" use="optional"/>
+													<xs:attribute name="upSkin" type="xs:string" use="required"/>
+													<xs:attribute name="downSkin" type="xs:string" use="required"/>
+													<xs:attribute name="leftSkin" type="xs:string" use="required"/>
+													<xs:attribute name="rightSkin" type="xs:string" use="required"/>
+													<xs:attribute name="enterSkin" type="xs:string" use="optional"/>
+													<xs:attribute name="disableEnter" type="xs:string" use="optional"/>
+													<xs:attribute name="repeatPeriod" type="xs:string" use="optional"/>
+													<xs:attribute name="hotkeys" type="xs:string" use="optional"/>
+													<xs:attribute name="listenerClass" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="keypad">
+												<xs:complexType>
+													<xs:choice minOccurs="0" maxOccurs="unbounded">
+														<xs:element name="key">
+															<xs:complexType>
+																<xs:attribute name="id" type="xs:string" use="required"/>
+																<xs:attribute name="x" type="xs:string" use="required"/>
+																<xs:attribute name="y" type="xs:string" use="required"/>
+																<xs:attribute name="skin" type="xs:string" use="required"/>
+																<xs:attribute name="pushedSkin" type="xs:string" use="required"/>
+																<xs:attribute name="hotkey" type="xs:string" use="optional"/>
+																<xs:attribute name="filter" type="xs:string" use="optional"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:choice>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="width" type="xs:string" use="required"/>
+													<xs:attribute name="height" type="xs:string" use="required"/>
+													<xs:attribute name="skin" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="led2states">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="ledOff" type="xs:string" use="required"/>
+													<xs:attribute name="ledOn" type="xs:string" use="required"/>
+													<xs:attribute name="overlay" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="longPush">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="skin" type="xs:string" use="required"/>
+													<xs:attribute name="pushedSkin" type="xs:string" use="required"/>
+													<xs:attribute name="longPeriod" type="xs:string" use="optional"/>
+													<xs:attribute name="hotkey" type="xs:string" use="optional"/>
+													<xs:attribute name="filter" type="xs:string" use="optional"/>
+													<xs:attribute name="listenerClass" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="motor">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="steps" type="xs:string" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="pixelatedDisplay">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="width" type="xs:string" use="required"/>
+													<xs:attribute name="height" type="xs:string" use="required"/>
+													<xs:attribute name="realWidth" type="xs:string" use="optional"/>
+													<xs:attribute name="realHeight" type="xs:string" use="optional"/>
+													<xs:attribute name="initialColor" type="xs:string" use="optional"/>
+													<xs:attribute name="residualFactor" type="xs:string" use="optional"/>
+													<xs:attribute name="transparencyLevel" type="xs:string" use="optional"/>
+													<xs:attribute name="extensionClass" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="pointer">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="width" type="xs:string" use="required"/>
+													<xs:attribute name="height" type="xs:string" use="required"/>
+													<xs:attribute name="touch" type="xs:string" use="optional"/>
+													<xs:attribute name="listenerClass" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="potentiometer">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="maxAngle" type="xs:string" use="required"/>
+													<xs:attribute name="minValue" type="xs:string" use="required"/>
+													<xs:attribute name="maxValue" type="xs:string" use="required"/>
+													<xs:attribute name="steps" type="xs:string" use="required"/>
+													<xs:attribute name="filter" type="xs:string" use="optional"/>
+													<xs:attribute name="hotkeys" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="push">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="skin" type="xs:string" use="required"/>
+													<xs:attribute name="pushedSkin" type="xs:string" use="required"/>
+													<xs:attribute name="hotkey" type="xs:string" use="optional"/>
+													<xs:attribute name="filter" type="xs:string" use="optional"/>
+													<xs:attribute name="listenerClass" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="repeatPush">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="skin" type="xs:string" use="required"/>
+													<xs:attribute name="pushedSkin" type="xs:string" use="required"/>
+													<xs:attribute name="repeatPeriod" type="xs:string" use="optional"/>
+													<xs:attribute name="sendPressRelease" type="xs:string" use="optional"/>
+													<xs:attribute name="hotkey" type="xs:string" use="optional"/>
+													<xs:attribute name="filter" type="xs:string" use="optional"/>
+													<xs:attribute name="listenerClass" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="sensor">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="skin" type="xs:string" use="required"/>
+													<xs:attribute name="minValue" type="xs:string" use="required"/>
+													<xs:attribute name="maxValue" type="xs:string" use="required"/>
+													<xs:attribute name="backColor" type="xs:string" use="optional"/>
+													<xs:attribute name="gaugeColor" type="xs:string" use="optional"/>
+													<xs:attribute name="borderColor" type="xs:string" use="optional"/>
+													<xs:attribute name="horizontal" type="xs:string" use="optional"/>
+													<xs:attribute name="inverted" type="xs:string" use="optional"/>
+													<xs:attribute name="hotkeys" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="wheel">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required"/>
+													<xs:attribute name="x" type="xs:string" use="required"/>
+													<xs:attribute name="y" type="xs:string" use="required"/>
+													<xs:attribute name="maxAngle" type="xs:string" use="required"/>
+													<xs:attribute name="steps" type="xs:string" use="required"/>
+													<xs:attribute name="filter" type="xs:string" use="optional"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						<xs:attribute name="name" type="xs:string" use="required"/>
+						<xs:attribute name="skin" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

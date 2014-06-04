@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ANT file
+	Copyright 2011-2013 IS2T. All rights reserved.
+	IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<!--
+	Input properties
+	cc.dir:							*.cc sources directory
+	cc.includes:					Code coverage includes classes, separated with <code>:</code>
+	cc.excludes:					Report code coverage excludes classes, separated with <code>:</code>	
+-->
+<project name="Code coverage report" default="s3">
+	
+	<description>Generate code coverage HTML report.</description>
+
+	<import file="codeCoverageAnalyzer.xml"/>
+	
+	<target name="s3" depends="cc.analyser">
+		<!-- Generate .postactions file => open report -->
+		<echo file="${microej.io.tmpdir}/.postactions">OPEN:${cc.html.dir}/index.html</echo>
+	</target>
+	
+</project>

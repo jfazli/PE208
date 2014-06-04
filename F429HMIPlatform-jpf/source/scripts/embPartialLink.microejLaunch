@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ANT Buildfile
+ 
+  Copyright 2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<project name="emb.default" default="board">
+
+	<import file="init.xml"/>
+	<import file="partialLink.xml"/> 
+	<import file="deploy.xml"/> 
+	
+	<!-- Entry point. Mandatory name as defined by workbench. -->
+	<target name="board" depends="init, partialLink, deploy"/>
+
+	<target name="deploy">
+		<deploy binary.file="${partialLink.output.file}"/>
+	</target>
+
+
+</project>

@@ -1,0 +1,12 @@
+<!--
+  IS2T linker file
+ 
+  Copyright 2011-2013 IS2T. All rights reserved.
+  IS2T PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+<lscFragment>
+
+	<defSymbol name="_timeStamp_high" value="TSTAMPH()"/>
+	<defSymbol name="_timeStamp_low" value="TSTAMPL()"/>
+	
+</lscFragment>
