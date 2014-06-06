@@ -24,7 +24,9 @@
 //===== DEFINEs  ================================================================
 #define DEBUG_PID
 #define SIZE_PARAM	int16_t
-#define COEFF_MULT	100
+#define COEFF_MULT_1	4096
+#define COEFF_MULT_2	131072
+
 #define BASE_TEMPS_SEC_INTERRUPTION	(uint32_t)  (TIME_1S) //Interruption du timer toutes les 10µS
 //===== TYPEDEFs ================================================================
 //===== VARIABLEs ===============================================================
@@ -38,22 +40,23 @@ struct PID_Saturateur
 
 struct PID_coefficient
 {
-	uint8_t Kp;
-	uint8_t Ki;
-	uint8_t Kd;
+	int32_t a1;
+	int32_t a2;
+	int32_t b1;
+	int32_t b2;
+	int32_t c1;
+	int32_t c2;
 };
 
-struct PID_error
+struct PID_Last
 {
-	int16_t LastError;
-	int16_t ErrorSum;
+	int32_t LastError;
+	int32_t x1n_1 ;
+	int32_t x2n_1;
 };
 
 struct PID_Result
 {
-	int32_t proportionnel;
-	int32_t integrateur;
-	int32_t derivateur;
 	int32_t output; 
 	int32_t error;	
 };
@@ -63,7 +66,7 @@ struct PID_Parameter
 	struct PCTIME_Tempo time;
 	struct PID_Saturateur saturateur;
 	struct PID_coefficient coefficient;
-	struct PID_error error;
+	struct PID_Last last;
 #ifdef DEBUG_PID
 	struct PID_Result debug;
 #endif
@@ -79,7 +82,7 @@ struct PID_Parameter
 								
  * @return      None
  ***************************************************************************************************/
-extern void PID_initialisation(struct PID_Parameter *pPIDstruct,SIZE_TYPE sampleTime,SIZE_PARAM Kp,SIZE_PARAM Ki,SIZE_PARAM Kd,SIZE_PARAM Min, SIZE_PARAM Max );
+extern void PID_initialisation(struct PID_Parameter *pPIDstruct,SIZE_TYPE sampleTime,SIZE_PARAM Min, SIZE_PARAM Max );
 /*!*************************************************************************************************
  * @brief       Choisis le taux d'échantillonnage. Le timing est gérer par la librairie "PCOM_Time"
  *							Il faut donc que la fonction "PCTIME_Interrupt" soit placer dans une interruption.
@@ -112,4 +115,6 @@ extern void PID_Saturateur(struct PID_Parameter *pPIDstruct,SIZE_PARAM Min, SIZE
  ********************************************************************************/
 extern void PID_Loop(struct PID_Parameter*  pPIDstruct,SIZE_PARAM input, SIZE_PARAM *pOutput, SIZE_PARAM consigne);
 extern void PID_initialisationRegistre(void);
+extern void PID_Debug(int32_t input, int32_t output,int32_t consigne);
+
 #endif

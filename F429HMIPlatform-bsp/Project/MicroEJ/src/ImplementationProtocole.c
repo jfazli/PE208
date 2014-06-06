@@ -134,6 +134,8 @@ void IP_ReceptionTrame(void)
 			FrameTabletteRecu.CoeffKp= dataReceive[5];
 			FrameTabletteRecu.CoeffKi= dataReceive[6];
 			
+			FrameTabletteEnvoie.TempsEnCours = ((FrameTabletteRecu.TempEtape)*30);
+			
 		}
 		else if(sourceEqp == ID_EQP_SL_1)
 		{
@@ -158,8 +160,8 @@ void IP_EmissionTrameFoyer(void)
 void IP_EmissionTrameTablette(void)
 {
 	uint8_t bufferData[SizeOfFrameTablette];
+	
 	FrameTabletteEnvoie.recette.Bit.NumeroEtape = FrameTabletteRecu.NumeroEtape;
-
 	bufferData[0] = FrameTabletteEnvoie.PuissanceTable;
 	bufferData[1] = FrameTabletteEnvoie.recette.data;
 	bufferData[2] = FrameTabletteEnvoie.TempsEnCours>>8;//MSB

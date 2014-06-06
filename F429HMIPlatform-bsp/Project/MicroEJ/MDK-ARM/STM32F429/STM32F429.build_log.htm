@@ -8,46 +8,38 @@ Project File Date:  06/04/2014
 
 <h2>Output:</h2>
 Build target 'STM32F429'
-compiling APPLI_InteractiveCookware.c...
+compiling ImplementationProtocole.c...
+..\inc\PCOM_Uart.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
 ..\inc\APPLI_InteractiveCookware.h(44): warning:  #1-D: last line of file ends without a newline
   #endif
-..\inc\PID.h(115): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\APPLI_InteractiveCookware.c(81): warning:  #177-D: variable "t_regulation" was declared but never referenced
-        static struct PCTIME_Tempo t_regulation;
-..\src\APPLI_InteractiveCookware.c(103): warning:  #174-D: expression has no effect
-                startRecette==0;
-..\src\APPLI_InteractiveCookware.c(94): warning:  #177-D: variable "countTemps" was declared but never referenced
-        static uint8_t countTemps=0;
-..\src\APPLI_InteractiveCookware.c(96): warning:  #177-D: variable "consigneTable" was declared but never referenced
-        uint16_t consigneTable;
-..\src\APPLI_InteractiveCookware.c(186): warning:  #186-D: pointless comparison of unsigned integer with zero
-                        if(ReceptionTrameUart>=0 && stateAppli ==STATE_APPLI_START)
-..\src\APPLI_InteractiveCookware.c(319): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\APPLI_InteractiveCookware.c: 8 warnings, 0 errors
-linking...
-.\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436460 RO-data=7336 RW-data=596 ZI-data=108916  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 9 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
-</pre>
-</body>
-</html>
-=436476 RO-data=7336 RW-data=596 ZI-data=108916  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 12 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
-7): warning:  #188-D: enumerated type mixed with another type
+..\src\ImplementationProtocole.c(55): warning:  #550-D: variable "bEnd" was set but never used
+        jchar bEnd=0;
+..\src\ImplementationProtocole.c(106): warning:  #177-D: variable "OnseshotStartDelay" was declared but never referenced
+        static uint8_t OnseshotStartDelay=0;
+..\src\ImplementationProtocole.c(111): warning:  #177-D: variable "increment" was declared but never referenced
+        uint8_t increment=0;
+..\src\ImplementationProtocole.c: 5 warnings, 0 errors
+compiling MICRO_Serial.c...
+..\src\MICRO_Serial.c(34): warning:  #188-D: enumerated type mixed with another type
+        RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART4, ENABLE);
+..\src\MICRO_Serial.c(35): warning:  #188-D: enumerated type mixed with another type
+        RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+..\src\MICRO_Serial.c(70): warning:  #188-D: enumerated type mixed with another type
+        NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;          // the UART4 interrupts are globally enabled
+..\src\MICRO_Serial.c(73): warning:  #188-D: enumerated type mixed with another type
+        USART_ITConfig(UART4,USART_IT_RXNE,ENABLE);
+..\src\MICRO_Serial.c(75): warning:  #188-D: enumerated type mixed with another type
+        USART_Cmd(UART4, ENABLE);
+..\src\MICRO_Serial.c(84): warning:  #223-D: function "PCUART_Interrupt" declared implicitly
+                PCUART_Interrupt();
+..\src\MICRO_Serial.c: 6 warnings, 0 errors
+compiling MICRO_Spi.c...
+..\src\MICRO_Spi.c(45): warning:  #188-D: enumerated type mixed with another type
+        RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI3, ENABLE);
+..\src\MICRO_Spi.c(47): warning:  #188-D: enumerated type mixed with another type
+        RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+..\src\MICRO_Spi.c(127): warning:  #188-D: enumerated type mixed with another type
         SPI_Cmd(SPI3, ENABLE);
 ..\src\MICRO_Spi.c(42): warning:  #177-D: variable "NVIC_InitStructure" was declared but never referenced
         NVIC_InitTypeDef NVIC_InitStructure; // this is used to configure the NVIC
@@ -100,128 +92,33 @@ compiling PCOM_Spi.c...
 compiling PCOM_Time.c...
 compiling PCOM_Uart.c...
 compiling PID.c...
-..\inc\PID.h(115): warning:  #1-D: last line of file ends without a newline
+..\inc\PID.h(120): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\PID.c(47): warning:  #177-D: variable "value" was declared but never referenced
+..\src\PID.c(46): warning:  #177-D: variable "value" was declared but never referenced
         double value;
-..\src\PID.c(60): warning:  #177-D: function "PID_LimitOverflow" was declared but never referenced
+..\src\PID.c(56): warning:  #177-D: function "PID_LimitOverflow" was declared but never referenced
   static void PID_LimitOverflow(SIZE_PARAM *pInput,SIZE_PARAM Min, SIZE_PARAM Max)
 ..\src\PID.c: 3 warnings, 0 errors
 compiling APPLI_InteractiveCookware.c...
 ..\inc\APPLI_InteractiveCookware.h(44): warning:  #1-D: last line of file ends without a newline
   #endif
-..\inc\PID.h(115): warning:  #1-D: last line of file ends without a newline
+..\inc\PID.h(120): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\APPLI_InteractiveCookware.c(81): warning:  #177-D: variable "t_regulation" was declared but never referenced
+..\src\APPLI_InteractiveCookware.c(89): warning:  #177-D: variable "t_regulation" was declared but never referenced
         static struct PCTIME_Tempo t_regulation;
-..\src\APPLI_InteractiveCookware.c(94): warning:  #177-D: variable "countTemps" was declared but never referenced
+..\src\APPLI_InteractiveCookware.c(102): warning:  #177-D: variable "countTemps" was declared but never referenced
         static uint8_t countTemps=0;
-..\src\APPLI_InteractiveCookware.c(96): warning:  #177-D: variable "consigneTable" was declared but never referenced
+..\src\APPLI_InteractiveCookware.c(104): warning:  #177-D: variable "consigneTable" was declared but never referenced
         uint16_t consigneTable;
-..\src\APPLI_InteractiveCookware.c(177): warning:  #186-D: pointless comparison of unsigned integer with zero
-                        if(ReceptionTrameUart>=0 && stateAppli ==STATE_APPLI_START)
-..\src\APPLI_InteractiveCookware.c(307): warning:  #1-D: last line of file ends without a newline
+..\src\APPLI_InteractiveCookware.c(352): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\APPLI_InteractiveCookware.c: 7 warnings, 0 errors
+..\src\APPLI_InteractiveCookware.c: 6 warnings, 0 errors
 linking...
 .\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436380 RO-data=7336 RW-data=596 ZI-data=108916  
+Program Size: Code=436484 RO-data=7348 RW-data=596 ZI-data=108932  
 Finished: 0 information, 1 warning and 0 error messages.
 FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 45 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
-ixed with another type
-        TIM_ITConfig(TIM5, TIM_IT_Update, ENABLE);
-..\src\MICRO_Timer.c(80): warning:  #188-D: enumerated type mixed with another type
-        TIM_Cmd(TIM5, ENABLE);
-..\src\MICRO_Timer.c(41): warning:  #177-D: variable "PrescalerValue" was declared but never referenced
-        uint16_t PrescalerValue;
-..\src\MICRO_Timer.c(86): warning:  #177-D: variable "toggle" was declared but never referenced
-        static uint8_t toggle;
-..\src\MICRO_Timer.c: 6 warnings, 0 errors
-compiling PCOM_Communication.c...
-..\inc\PCOM_Uart.h(23): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\PCOM_Communication.c(144): warning:  #223-D: function "memcpy" declared implicitly
-          memcpy(dl_FrameInfoEm.data,pData,sizeOfData);
-..\src\PCOM_Communication.c(145): warning:  #167-D: argument of type "volatile struct DL_FrameInfo *" is incompatible with parameter of type "struct DL_FrameInfo *"
-          dl_FrameInfoEm.crc=PCDL_CalculateCRC_EM(&dl_FrameInfoEm);
-..\src\PCOM_Communication.c(227): warning:  #167-D: argument of type "volatile struct DL_FrameInfoRcv *" is incompatible with parameter of type "struct DL_FrameInfoRcv *"
-              dl_FrameInfoRecv[i].StoreCrc=PCDL_CalculateCRC_REC(&dl_FrameInfoRecv[i]);
-..\src\PCOM_Communication.c(282): warning:  #223-D: function "memcpy" declared implicitly
-              memcpy(pframe,dl_FrameInfoRecv[NumBerOfEqpDL].data,dl_FrameInfoRecv[NumBerOfEqpDL].sizeOfData);
-..\src\PCOM_Communication.c(218): warning:  #550-D: variable "GatewayFrame" was set but never used
-      uint8_t GatewayFrame=0;
-..\src\PCOM_Communication.c(322): warning:  #186-D: pointless comparison of unsigned integer with zero
-                  if(CountSendedFrame<NUMB_SEND_SAME_FRAME)
-..\src\PCOM_Communication.c(327): warning:  #223-D: function "memcpy" declared implicitly
-                      memcpy(&dl_FrameInfoEm,&dl_FrameInfoRep,sizeof(dl_FrameInfoRep));
-..\src\PCOM_Communication.c(328): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-                      PCCOM_SendFrame(dl_FrameInfoEm.NbOfEqp,dl_FrameInfoEm.data,dl_FrameInfoEm.sizeOfData);
-..\src\PCOM_Communication.c: 9 warnings, 0 errors
-compiling PCOM_DataLink.c...
-..\inc\PCOM_Uart.h(23): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\PCOM_DataLink.c(109): warning:  #550-D: variable "bDLEsending" was set but never used
-      static uint8_t bDLEsending=0;
-..\src\PCOM_DataLink.c: 2 warnings, 0 errors
-compiling PCOM_Gpio.c...
-..\src\PCOM_Gpio.c(22): warning:  #188-D: enumerated type mixed with another type
-        GPIO_WriteBit(PortIo, PinIO,state);
-..\src\PCOM_Gpio.c: 1 warning, 0 errors
-compiling PCOM_Spi.c...
-compiling PCOM_Time.c...
-compiling PCOM_Uart.c...
-compiling sensors.c...
-compiling sram_driver.c...
-..\src\sram_driver.c(61): warning:  #223-D: function "printf" declared implicitly
-                printf("ERROR %d, @0x%x read 0x%x, expected 0x%x\n", cpt, addr, (*(uint32_t*)addr), value);
-..\src\sram_driver.c(80): warning:  #174-D: expression has no effect
-                        for(i=3;--i;i>=0)
-..\src\sram_driver.c(73): warning:  #177-D: variable "j" was declared but never referenced
-        int i,inc,cpt,j;
-..\src\sram_driver.c(139): warning:  #223-D: function "SRAM_Init" declared implicitly
-   SRAM_Init();
-..\src\sram_driver.c: 4 warnings, 0 errors
-compiling system_stm32f4xx.c...
-compiling PID.c...
-..\inc\PID.h(115): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\PID.c(47): warning:  #177-D: variable "value" was declared but never referenced
-        double value;
-..\src\PID.c(60): warning:  #177-D: function "PID_LimitOverflow" was declared but never referenced
-  static void PID_LimitOverflow(SIZE_PARAM *pInput,SIZE_PARAM Min, SIZE_PARAM Max)
-..\src\PID.c: 3 warnings, 0 errors
-compiling APPLI_InteractiveCookware.c...
-..\inc\APPLI_InteractiveCookware.h(44): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\inc\PID.h(115): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\APPLI_InteractiveCookware.c(81): warning:  #177-D: variable "t_regulation" was declared but never referenced
-        static struct PCTIME_Tempo t_regulation;
-..\src\APPLI_InteractiveCookware.c(94): warning:  #177-D: variable "countTemps" was declared but never referenced
-        static uint8_t countTemps=0;
-..\src\APPLI_InteractiveCookware.c(96): warning:  #177-D: variable "consigneTable" was declared but never referenced
-        uint16_t consigneTable;
-..\src\APPLI_InteractiveCookware.c(177): warning:  #186-D: pointless comparison of unsigned integer with zero
-                        if(ReceptionTrameUart>=0 && stateAppli ==STATE_APPLI_START)
-..\src\APPLI_InteractiveCookware.c(307): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\APPLI_InteractiveCookware.c: 7 warnings, 0 errors
-compiling SNI_nativeInterfaceJVM.c...
-..\inc\APPLI_InteractiveCookware.h(44): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\inc\SNI_nativeInterfaceJVM.h(53): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\SNI_nativeInterfaceJVM.c(60): warning:  #1-D: last line of file ends without a newline
-  }
-..\src\SNI_nativeInterfaceJVM.c: 3 warnings, 0 errors
-linking...
-.\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436380 RO-data=7336 RW-data=596 ZI-data=108916  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 71 Warning(s).
+".\STM32F429\STM32F429.axf" - 0 Error(s), 43 Warning(s).
+</pre>
+</body>
+</html>
