@@ -38,20 +38,22 @@ struct PID_Saturateur
 
 struct PID_coefficient
 {
-	uint32_t a0;
-	uint32_t a1;
+	uint8_t Kp;
+	uint8_t Ki;
+	uint8_t Kd;
 };
 
-struct PID_Buff
+struct PID_error
 {
-	int32_t LastError;
-	int32_t LastConsigne;
+	int16_t LastError;
+	int16_t ErrorSum;
 };
 
 struct PID_Result
 {
 	int32_t proportionnel;
 	int32_t integrateur;
+	int32_t derivateur;
 	int32_t output; 
 	int32_t error;	
 };
@@ -61,7 +63,10 @@ struct PID_Parameter
 	struct PCTIME_Tempo time;
 	struct PID_Saturateur saturateur;
 	struct PID_coefficient coefficient;
-	struct PID_Buff recovery;
+	struct PID_error error;
+#ifdef DEBUG_PID
+	struct PID_Result debug;
+#endif
 };
 
 //===== PROTOTYPEs ==============================================================
@@ -74,7 +79,7 @@ struct PID_Parameter
 								
  * @return      None
  ***************************************************************************************************/
-extern void PID_initialisation(struct PID_Parameter *pPIDstruct,SIZE_TYPE sampleTime,int32_t a0,int32_t a1,SIZE_PARAM Min, SIZE_PARAM Max);
+extern void PID_initialisation(struct PID_Parameter *pPIDstruct,SIZE_TYPE sampleTime,SIZE_PARAM Kp,SIZE_PARAM Ki,SIZE_PARAM Kd,SIZE_PARAM Min, SIZE_PARAM Max );
 /*!*************************************************************************************************
  * @brief       Choisis le taux d'échantillonnage. Le timing est gérer par la librairie "PCOM_Time"
  *							Il faut donc que la fonction "PCTIME_Interrupt" soit placer dans une interruption.
@@ -92,7 +97,7 @@ extern void PID_sampleTime(struct PID_Parameter *pPIDstruct,SIZE_TYPE sampleTime
  * @param[in]   None
  * @return      None
  ********************************************************************************/
-extern void PID_Parameter(struct PID_Parameter *pPIDstruct,int32_t a0,int32_t a1);
+extern void PID_Parameter(struct PID_Parameter *pPIDstruct, SIZE_PARAM Kp,SIZE_PARAM Ki,SIZE_PARAM Kd);
 /*!******************************************************************************
  * @brief       Mise en place de valeur de seuils à ne pas dépasser
  * @param[in]   None

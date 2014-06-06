@@ -36,10 +36,10 @@ typedef uint8_t BOOLEAN;
 #define DEBIT_BLE_9600
 #ifndef TOUCH_COOK
 /* Simulation d'une recette implémenter à l'init de l'appli*/
-#define SIMULATION_TABLETTE
+//#define SIMULATION_TABLETTE
 #endif
 
-#define DEBUG
+//#define DEBUG
 //#define DEBUG_OUT //test avec une pin
 //#define DEBUG_PRINTF //utilisé pour ecrire sur l'uart
 //-------------------------------------------------------------------------------

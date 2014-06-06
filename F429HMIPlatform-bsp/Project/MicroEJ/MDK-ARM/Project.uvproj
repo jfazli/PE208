@@ -1311,8 +1311,8 @@
             </File>
             <File>
               <FileName>javaapp.o</FileName>
-              <FileType>4</FileType>
-              <FilePath>C:\Users\jfazli\Documents\Projet\_SOFTWARE\PE208\Microej 2.0\EnCours\F429HMIPlatform-jpf\source\lib\javaapp.o</FilePath>
+              <FileType>3</FileType>
+              <FilePath>..\..\..\..\F429HMIPlatform-jpf\source\lib\javaapp.o</FilePath>
             </File>
           </Files>
         </Group>
