@@ -112,6 +112,7 @@ void APPLI_DeroulementRecette(void)
 		FrameTabletteEnvoie.TempsEnCours=0;
 		old_Etape =0;
 		PCTIME_InitialiseTempoStart( &t_deroulementRecette);
+		
 	}
 	else if(FrameTabletteRecu.NumeroEtape != old_Etape)
 	{
@@ -142,12 +143,14 @@ void APPLI_DeroulementRecette(void)
 	else
 	{
 		startRecette=0;
-		PCTIME_TempoStart(&t_deroulementRecette,TIME_1S);
+		PCTIME_TempoStart(&t_deroulementRecette,TIME_2S);
 		if(PCTIME_TempoIsElapsed(&t_deroulementRecette))
 		{
 			SelectMode =MODE_INIT;
 			old_Etape=0;
 			FrameTabletteRecu.NumeroEtape=0;
+			
+
 		}
 	}
 	

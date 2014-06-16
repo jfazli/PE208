@@ -10,6 +10,7 @@
 
 //===== INCLUDEs ================================================================
 #include "ImplementationProtocole.h"
+#include "PCOM_Time.h"
 #include "APPLI_InteractiveCookware.h"
 #include "SNI_nativeInterfaceJVM.h"
 //===== DEFINEs  ================================================================
@@ -47,6 +48,8 @@ void Java_nativeIhm_PcomNative_stateButton(jint state)
  ******************************************************************************/
 void Java_nativeIhm_PcomNative_DataReaded(jint *pTemperature,jchar *pReceptionTrameUart, jchar *pMemorisationPuissance,jchar *pSelectMode,jchar *pChoixFoyer,jchar *pStartAppli)
 {
+	static struct PCTIME_Tempo tempoStartAppli;
+	
 	*pTemperature = FramePoeleRecu.TemperatureMesure;
 	*pReceptionTrameUart= ReceptionTrameUart;
 	*pMemorisationPuissance= MemorisationPuissance;
@@ -54,7 +57,16 @@ void Java_nativeIhm_PcomNative_DataReaded(jint *pTemperature,jchar *pReceptionTr
 	*pChoixFoyer = ChoixFoyer;
 	
 	if((ReceptionTrameUart >=1) && (FrameTabletteRecu.NumeroEtape > 0))
+	{
 		*pStartAppli = 1;
+		PCTIME_InitialiseTempoStart(&tempoStartAppli);
+	}
 	else 
-		*pStartAppli = 0;
+	{
+		PCTIME_TempoStart(&tempoStartAppli,TIME_1S);
+		if(PCTIME_TempoIsElapsed(&tempoStartAppli))
+		{
+			*pStartAppli = 0;
+		}
+	}
 }

@@ -27,6 +27,9 @@
 #define TIME_100MS (100*MS)
 
 #define TIME_1S (1000*MS)
+#define TIME_2S (TIME_1S*2)
+#define TIME_3S (TIME_1S*3)
+
 #define TIME_6S (6000*MS)
 #define TIME_30S (30000*MS)
 
