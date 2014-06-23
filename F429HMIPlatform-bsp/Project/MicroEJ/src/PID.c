@@ -27,7 +27,7 @@ void PID_Parameter(struct PID_Parameter *pPIDstruct, SIZE_PARAM Kp,SIZE_PARAM Ki
 void PID_Init_Saturateur(struct PID_Parameter *pPIDstruct,SIZE_PARAM Min, SIZE_PARAM Max);
 void PID_Loop(struct PID_Parameter*  pPIDstruct,SIZE_PARAM input, SIZE_PARAM *pOutput, SIZE_PARAM consigne);
 void PID_Init_LimitOverflow(SIZE_PARAM Min, SIZE_PARAM Max);
-void PID_Debug(int32_t input, int32_t output,int32_t consigne);
+static void PID_Debug(struct PID_Parameter*  pPIDstruct,int32_t error, int32_t proportionnel, int32_t integrateur, int32_t derivateur, int16_t output);
 
 //===== CODE ====================================================================
 void PID_initialisation(struct PID_Parameter *pPIDstruct,SIZE_TYPE sampleTime,SIZE_PARAM Min, SIZE_PARAM Max )
@@ -44,6 +44,9 @@ void PID_sampleTime(struct PID_Parameter *pPIDstruct,SIZE_TYPE sampleTime)
 void PID_Parameter(struct PID_Parameter *pPIDstruct, SIZE_PARAM Kp,SIZE_PARAM Ki,SIZE_PARAM Kd)
 {
 	double value;
+	pPIDstruct->coefficient.Kp = Kp;
+	pPIDstruct->coefficient.Ki = Ki*pPIDstruct->time.delay/BASE_TEMPS_SEC_INTERRUPTION;
+	pPIDstruct->coefficient.Kd = Kd /(pPIDstruct->time.delay/BASE_TEMPS_SEC_INTERRUPTION);
 }
 
 void PID_Init_Saturateur(struct PID_Parameter *pPIDstruct,SIZE_PARAM Min, SIZE_PARAM Max)
@@ -63,7 +66,9 @@ static void PID_LimitOverflow(SIZE_PARAM *pInput,SIZE_PARAM Min, SIZE_PARAM Max)
 void PID_Loop(struct PID_Parameter*  pPIDstruct,SIZE_PARAM input, SIZE_PARAM *pOutput, SIZE_PARAM consigne)
 {
 	int32_t error=0;	
-	int32_t x1n,x2n;
+	int32_t proportionnel=0;
+	int32_t integrateur=0;
+	int32_t derivateur=0;
 	int32_t output = *pOutput;
 	
 	PCTIME_TempoStart(&(pPIDstruct->time),(pPIDstruct->time.delay));
@@ -71,21 +76,36 @@ void PID_Loop(struct PID_Parameter*  pPIDstruct,SIZE_PARAM input, SIZE_PARAM *pO
 	{
 		/*calcul de l'erreur à l'instant t*/
 		error = consigne -  input;	
-		
-		// récurrence
-		x1n = (pPIDstruct->coefficient.a1*pPIDstruct->last.x1n_1 + pPIDstruct->coefficient.b1*error)/COEFF_MULT_1;
-		x2n = (pPIDstruct->coefficient.a2*pPIDstruct->last.x2n_1 + pPIDstruct->coefficient.b2*error)/COEFF_MULT_1;
+/************************************************************************************/												
+		/* Calcul integrateur*/				
+		(pPIDstruct->error.ErrorSum) += error;
+		if((pPIDstruct->error.ErrorSum) > ErrorSumMax)(pPIDstruct->error.ErrorSum) = ErrorSumMax;
+		else if((pPIDstruct->error.ErrorSum) < ErrorSumMin) (pPIDstruct->error.ErrorSum) =ErrorSumMin;
 
-		//calcul de la sortie
-		output = (pPIDstruct->coefficient.c1*x1n + pPIDstruct->coefficient.c2*x2n)/ COEFF_MULT_2;
-
-
-		// sauvegarde des états avec condition de saturation
-		if(output <= 100 && output >= 0)
+		integrateur	= (pPIDstruct->coefficient.Ki)* (pPIDstruct->error.ErrorSum);
+		/*ajout base de temps=> il est possible pour économiser 2 operations de l'integrer directement dans les coefficients*/
+//		integrateur *= pPIDstruct->time.delay;
+//		integrateur /=BASE_TEMPS_SEC_INTERRUPTION;		
+/************************************************************************************/			
+		/*	Calcul du dérivateur	= (erreur - lastError) * kD*/ 	
+		if((pPIDstruct->coefficient.Kd)!= 0)
 		{
-			 pPIDstruct->last.x1n_1 = x1n;
-			 pPIDstruct->last.x2n_1 = x2n;
+			derivateur = (error - (pPIDstruct->error.LastError))*(pPIDstruct->coefficient.Kd);	//solution 1
+			(pPIDstruct->error.LastError)= error;	//recupération de l'erreur
 		}
+		else
+			derivateur=0;
+/*************************************************************************************/		
+		/*	Calcul du proportionnel*/
+		proportionnel= (pPIDstruct->coefficient.Kp) * error;
+
+/************************************************************************************/
+
+		/*Calcul de la sortie avec PID*/
+		output= proportionnel +  integrateur - derivateur;
+		output /=10; // les coefficients sont à 1/10emes
+
+
 
 		/*On s'assure que la sortie ne dépasse pas le saturateur*/
 		if(output > (pPIDstruct->saturateur.MAX))
@@ -95,15 +115,23 @@ void PID_Loop(struct PID_Parameter*  pPIDstruct,SIZE_PARAM input, SIZE_PARAM *pO
 		
 		*pOutput=output ;
 #ifdef DEBUG_PID
-		PID_Debug(input,output,consigne);
+		PID_Debug(pPIDstruct,error,proportionnel,integrateur,derivateur,output);
 #endif
 	}
 }
 
 #ifdef DEBUG_PID
-void PID_Debug(int32_t input, int32_t output,int32_t consigne)
+static void PID_Debug(struct PID_Parameter*  pPIDstruct,int32_t error, int32_t proportionnel, int32_t integrateur, int32_t derivateur, int16_t output)
 {
-	printf("\n\r%d,%d,%d",input,output,consigne);	
+
+	pPIDstruct->debug.proportionnel=proportionnel;
+	pPIDstruct->debug.integrateur=integrateur;
+	pPIDstruct->debug.derivateur=derivateur;
+	pPIDstruct->debug.error=error;
+	pPIDstruct->debug.output=output;
+	
+	printf("\n\r int:%d;error:%d;output:%d",integrateur,error,output);
+	
 }
 #endif
 	

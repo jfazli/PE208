@@ -8,105 +8,32 @@ Project File Date:  06/04/2014
 
 <h2>Output:</h2>
 Build target 'STM32F429'
-linking...
-.\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436516 RO-data=7348 RW-data=596 ZI-data=108948  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
-</pre>
-</body>
-</html>
-6 ZI-data=108948  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
- warning:  #1-D: last line of file ends without a newline
-  #endif
-..\inc\SNI_nativeInterfaceJVM.h(53): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\SNI_nativeInterfaceJVM.c(65): warning:  #1-D: last line of file ends without a newline
-  }
-..\src\SNI_nativeInterfaceJVM.c: 3 warnings, 0 errors
-linking...
-.\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436484 RO-data=7348 RW-data=596 ZI-data=108932  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 10 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
-   memcpy(dl_FrameInfoEm.data,pData,sizeOfData);
-..\src\PCOM_Communication.c(145): warning:  #167-D: argument of type "volatile struct DL_FrameInfo *" is incompatible with parameter of type "struct DL_FrameInfo *"
-          dl_FrameInfoEm.crc=PCDL_CalculateCRC_EM(&dl_FrameInfoEm);
-..\src\PCOM_Communication.c(227): warning:  #167-D: argument of type "volatile struct DL_FrameInfoRcv *" is incompatible with parameter of type "struct DL_FrameInfoRcv *"
-              dl_FrameInfoRecv[i].StoreCrc=PCDL_CalculateCRC_REC(&dl_FrameInfoRecv[i]);
-..\src\PCOM_Communication.c(282): warning:  #223-D: function "memcpy" declared implicitly
-              memcpy(pframe,dl_FrameInfoRecv[NumBerOfEqpDL].data,dl_FrameInfoRecv[NumBerOfEqpDL].sizeOfData);
-..\src\PCOM_Communication.c(218): warning:  #550-D: variable "GatewayFrame" was set but never used
-      uint8_t GatewayFrame=0;
-..\src\PCOM_Communication.c(322): warning:  #186-D: pointless comparison of unsigned integer with zero
-                  if(CountSendedFrame<NUMB_SEND_SAME_FRAME)
-..\src\PCOM_Communication.c(327): warning:  #223-D: function "memcpy" declared implicitly
-                      memcpy(&dl_FrameInfoEm,&dl_FrameInfoRep,sizeof(dl_FrameInfoRep));
-..\src\PCOM_Communication.c(328): warning:  #167-D: argument of type "volatile uint8_t *" is incompatible with parameter of type "uint8_t *"
-                      PCCOM_SendFrame(dl_FrameInfoEm.NbOfEqp,dl_FrameInfoEm.data,dl_FrameInfoEm.sizeOfData);
-..\src\PCOM_Communication.c: 9 warnings, 0 errors
-compiling PCOM_DataLink.c...
-..\inc\PCOM_Uart.h(23): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\PCOM_DataLink.c(109): warning:  #550-D: variable "bDLEsending" was set but never used
-      static uint8_t bDLEsending=0;
-..\src\PCOM_DataLink.c: 2 warnings, 0 errors
-compiling PCOM_Spi.c...
-compiling PCOM_Time.c...
-compiling PID.c...
-..\inc\PID.h(120): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\PID.c(46): warning:  #177-D: variable "value" was declared but never referenced
-        double value;
-..\src\PID.c(56): warning:  #177-D: function "PID_LimitOverflow" was declared but never referenced
-  static void PID_LimitOverflow(SIZE_PARAM *pInput,SIZE_PARAM Min, SIZE_PARAM Max)
-..\src\PID.c: 3 warnings, 0 errors
 compiling APPLI_InteractiveCookware.c...
 ..\inc\APPLI_InteractiveCookware.h(44): warning:  #1-D: last line of file ends without a newline
   #endif
-..\inc\PID.h(120): warning:  #1-D: last line of file ends without a newline
+..\inc\PID.h(115): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\APPLI_InteractiveCookware.c(89): warning:  #177-D: variable "t_regulation" was declared but never referenced
+..\src\APPLI_InteractiveCookware.c(92): warning:  #177-D: variable "t_regulation" was declared but never referenced
         static struct PCTIME_Tempo t_regulation;
-..\src\APPLI_InteractiveCookware.c(102): warning:  #177-D: variable "countTemps" was declared but never referenced
+..\src\APPLI_InteractiveCookware.c(105): warning:  #177-D: variable "countTemps" was declared but never referenced
         static uint8_t countTemps=0;
-..\src\APPLI_InteractiveCookware.c(104): warning:  #177-D: variable "consigneTable" was declared but never referenced
+..\src\APPLI_InteractiveCookware.c(107): warning:  #177-D: variable "consigneTable" was declared but never referenced
         uint16_t consigneTable;
-..\src\APPLI_InteractiveCookware.c(357): warning:  #1-D: last line of file ends without a newline
+..\src\APPLI_InteractiveCookware.c(362): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\APPLI_InteractiveCookware.c: 6 warnings, 0 errors
-compiling SNI_nativeInterfaceJVM.c...
-..\inc\APPLI_InteractiveCookware.h(44): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\inc\SNI_nativeInterfaceJVM.h(53): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\SNI_nativeInterfaceJVM.c(72): warning:  #1-D: last line of file ends without a newline
-  }
-..\src\SNI_nativeInterfaceJVM.c: 3 warnings, 0 errors
 linking...
 .\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436508 RO-data=7348 RW-data=596 ZI-data=108932  
+Program Size: Code=436164 RO-data=7336 RW-data=596 ZI-data=108916  
 Finished: 0 information, 1 warning and 0 error messages.
 FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 35 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
+".\STM32F429\STM32F429.axf" - 0 Error(s), 7 Warning(s).
+line of file ends without a newline
+  #endif
+..\src\APPLI_InteractiveCookware.c: 6 warnings, 0 errors
+linking...
+.\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
+Program Size: Code=436156 RO-data=7336 RW-data=596 ZI-data=108916  
+Finished: 0 information, 1 warning and 0 error messages.
+FromELF: creating hex file...
+".\STM32F429\STM32F429.axf" - 0 Error(s), 10 Warning(s).
