@@ -175,15 +175,13 @@ void APPLI_ToggleSelectFoyer(void)
 void APPLI_AppliLogiciel(void)
 {
 	/* gestion bouton appuie sur stop ou grisé*/
-	#ifndef TOUCH_COOK
-
+#ifndef TOUCH_COOK
 	if(stateAppli != STATE_APPLI_START)
 	{
 		SelectMode=MODE_INIT;
 		FrameTabletteEnvoie.recette.Bit.MarcheAret=0;
-		
 	}
-	#endif
+#endif
 	switch(SelectMode)
 	{
 		case MODE_INIT :	
@@ -265,16 +263,16 @@ void APPLI_AppliLogiciel(void)
 					IP_setDataSpiToSending(FOYER_FOYER1,0,10);
 				}
 				/*au bout de xs on repart en init*/
-				PCTIME_TempoStart(&t_tempScrutation,TIME_2MIN );
-				if(PCTIME_TempoIsElapsed(&t_tempScrutation))
-				{
-					if(MemorisationPuissance == 0) //si la consigne de puissance vaut 0
-					{
-						MemorisationPuissance=1;		//alors gardé une consigne à 1
-					}
-					SelectMode= MODE_INIT;				//revenir au mode init
-					PCTIME_InitialiseTempoStart(&t_tempScrutation);
-				}
+//				PCTIME_TempoStart(&t_tempScrutation,TIME_2MIN );
+//				if(PCTIME_TempoIsElapsed(&t_tempScrutation))
+//				{
+//					if(MemorisationPuissance == 0) //si la consigne de puissance vaut 0
+//					{
+//						MemorisationPuissance=1;		//alors gardé une consigne à 1
+//					}
+//					SelectMode= MODE_INIT;				//revenir au mode init
+//					PCTIME_InitialiseTempoStart(&t_tempScrutation);
+//				}
 			}
 			break;
 		case MODE_FONCTIONNEMENT:
@@ -302,12 +300,14 @@ void APPLI_AppliLogiciel(void)
 				}
 				FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton1= 0;//réinit les appuie boutons	
 				FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton2= 0;//réinit les appuie boutons
-				
+
 				IP_setDataSpiToSending(ChoixFoyer,1,MemorisationPuissance);
+	
 			}
 /*****************************************************************************************************/
 /****************Fonctionnement sans la tablette avec la tablette****************************/
 #else
+	#ifndef DEBUG_OUT 
 			if(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.ChampMagnetique == 0)		//Si il y'a perte du champ magnetique
 			{
 				FrameTabletteEnvoie.recette.Bit.PresencePoele=0;
@@ -315,10 +315,14 @@ void APPLI_AppliLogiciel(void)
 			}
 			else
 			{
+	#endif
 				FrameTabletteEnvoie.recette.Bit.PresencePoele=(ChoixFoyer+1);
 				APPLI_DeroulementRecette();
-				IP_setDataSpiToSending(ChoixFoyer,1,MemorisationPuissance);			
+				IP_setDataSpiToSending(ChoixFoyer,1,MemorisationPuissance);		
+#ifndef DEBUG_OUT				
 			}
+#endif
+
 #endif
 			break;
 	}

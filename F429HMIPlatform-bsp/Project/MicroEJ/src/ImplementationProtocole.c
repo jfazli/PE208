@@ -139,11 +139,13 @@ void IP_ReceptionTrame(void)
 		}
 		else if(sourceEqp == ID_EQP_SL_1)
 		{
-			FrameFoyerRecu[0].PuissanceMesure =  dataReceive[0];
+			FrameFoyerRecu[0].PuissanceMesure =  dataReceive[0]*256+dataReceive[1];
+			printf("\n\r pu1:%d",FrameFoyerRecu[0].PuissanceMesure);
 		}
 		else if(sourceEqp == ID_EQP_SL_2)
 		{
-			FrameFoyerRecu[1].PuissanceMesure =  dataReceive[0];
+			FrameFoyerRecu[1].PuissanceMesure =  dataReceive[0]*256+dataReceive[1];
+			printf("\n\r pu2:%d",FrameFoyerRecu[1].PuissanceMesure);
 		}
 	}
 	

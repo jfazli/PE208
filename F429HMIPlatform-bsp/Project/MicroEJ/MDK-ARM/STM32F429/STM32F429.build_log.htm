@@ -8,45 +8,61 @@ Project File Date:  06/04/2014
 
 <h2>Output:</h2>
 Build target 'STM32F429'
-linking...
-.\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436516 RO-data=7348 RW-data=596 ZI-data=108948  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
-</pre>
-</body>
-</html>
-6 ZI-data=108948  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
- warning:  #1-D: last line of file ends without a newline
+compiling ImplementationProtocole.c...
+..\inc\PCOM_Uart.h(23): warning:  #1-D: last line of file ends without a newline
   #endif
-..\inc\SNI_nativeInterfaceJVM.h(53): warning:  #1-D: last line of file ends without a newline
+..\inc\APPLI_InteractiveCookware.h(44): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\SNI_nativeInterfaceJVM.c(65): warning:  #1-D: last line of file ends without a newline
-  }
-..\src\SNI_nativeInterfaceJVM.c: 3 warnings, 0 errors
-linking...
-.\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436484 RO-data=7348 RW-data=596 ZI-data=108932  
-Finished: 0 information, 1 warning and 0 error messages.
-FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 10 Warning(s).
-Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
-Erase Done.
-Programming Done.
-Application running ...
-   memcpy(dl_FrameInfoEm.data,pData,sizeOfData);
+..\src\ImplementationProtocole.c(55): warning:  #550-D: variable "bEnd" was set but never used
+        jchar bEnd=0;
+..\src\ImplementationProtocole.c(106): warning:  #177-D: variable "OnseshotStartDelay" was declared but never referenced
+        static uint8_t OnseshotStartDelay=0;
+..\src\ImplementationProtocole.c(111): warning:  #177-D: variable "increment" was declared but never referenced
+        uint8_t increment=0;
+..\src\ImplementationProtocole.c: 5 warnings, 0 errors
+compiling MICRO_Serial.c...
+..\src\MICRO_Serial.c(34): warning:  #188-D: enumerated type mixed with another type
+        RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART4, ENABLE);
+..\src\MICRO_Serial.c(35): warning:  #188-D: enumerated type mixed with another type
+        RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+..\src\MICRO_Serial.c(70): warning:  #188-D: enumerated type mixed with another type
+        NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;          // the UART4 interrupts are globally enabled
+..\src\MICRO_Serial.c(73): warning:  #188-D: enumerated type mixed with another type
+        USART_ITConfig(UART4,USART_IT_RXNE,ENABLE);
+..\src\MICRO_Serial.c(75): warning:  #188-D: enumerated type mixed with another type
+        USART_Cmd(UART4, ENABLE);
+..\src\MICRO_Serial.c(84): warning:  #223-D: function "PCUART_Interrupt" declared implicitly
+                PCUART_Interrupt();
+..\src\MICRO_Serial.c: 6 warnings, 0 errors
+compiling MICRO_Spi.c...
+..\src\MICRO_Spi.c(45): warning:  #188-D: enumerated type mixed with another type
+        RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI3, ENABLE);
+..\src\MICRO_Spi.c(47): warning:  #188-D: enumerated type mixed with another type
+        RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+..\src\MICRO_Spi.c(127): warning:  #188-D: enumerated type mixed with another type
+        SPI_Cmd(SPI3, ENABLE);
+..\src\MICRO_Spi.c(42): warning:  #177-D: variable "NVIC_InitStructure" was declared but never referenced
+        NVIC_InitTypeDef NVIC_InitStructure; // this is used to configure the NVIC
+..\src\MICRO_Spi.c: 4 warnings, 0 errors
+compiling MICRO_Timer.c...
+..\src\MICRO_Timer.c(43): warning:  #188-D: enumerated type mixed with another type
+        RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5,ENABLE);
+..\src\MICRO_Timer.c(49): warning:  #188-D: enumerated type mixed with another type
+        NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+..\src\MICRO_Timer.c(78): warning:  #188-D: enumerated type mixed with another type
+        TIM_ITConfig(TIM5, TIM_IT_Update, ENABLE);
+..\src\MICRO_Timer.c(80): warning:  #188-D: enumerated type mixed with another type
+        TIM_Cmd(TIM5, ENABLE);
+..\src\MICRO_Timer.c(41): warning:  #177-D: variable "PrescalerValue" was declared but never referenced
+        uint16_t PrescalerValue;
+..\src\MICRO_Timer.c(86): warning:  #177-D: variable "toggle" was declared but never referenced
+        static uint8_t toggle;
+..\src\MICRO_Timer.c: 6 warnings, 0 errors
+compiling PCOM_Communication.c...
+..\inc\PCOM_Uart.h(23): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\PCOM_Communication.c(144): warning:  #223-D: function "memcpy" declared implicitly
+          memcpy(dl_FrameInfoEm.data,pData,sizeOfData);
 ..\src\PCOM_Communication.c(145): warning:  #167-D: argument of type "volatile struct DL_FrameInfo *" is incompatible with parameter of type "struct DL_FrameInfo *"
           dl_FrameInfoEm.crc=PCDL_CalculateCRC_EM(&dl_FrameInfoEm);
 ..\src\PCOM_Communication.c(227): warning:  #167-D: argument of type "volatile struct DL_FrameInfoRcv *" is incompatible with parameter of type "struct DL_FrameInfoRcv *"
@@ -68,8 +84,13 @@ compiling PCOM_DataLink.c...
 ..\src\PCOM_DataLink.c(109): warning:  #550-D: variable "bDLEsending" was set but never used
       static uint8_t bDLEsending=0;
 ..\src\PCOM_DataLink.c: 2 warnings, 0 errors
+compiling PCOM_Gpio.c...
+..\src\PCOM_Gpio.c(22): warning:  #188-D: enumerated type mixed with another type
+        GPIO_WriteBit(PortIo, PinIO,state);
+..\src\PCOM_Gpio.c: 1 warning, 0 errors
 compiling PCOM_Spi.c...
 compiling PCOM_Time.c...
+compiling PCOM_Uart.c...
 compiling PID.c...
 ..\inc\PID.h(120): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -89,7 +110,7 @@ compiling APPLI_InteractiveCookware.c...
         static uint8_t countTemps=0;
 ..\src\APPLI_InteractiveCookware.c(104): warning:  #177-D: variable "consigneTable" was declared but never referenced
         uint16_t consigneTable;
-..\src\APPLI_InteractiveCookware.c(357): warning:  #1-D: last line of file ends without a newline
+..\src\APPLI_InteractiveCookware.c(359): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\APPLI_InteractiveCookware.c: 6 warnings, 0 errors
 compiling SNI_nativeInterfaceJVM.c...
@@ -102,10 +123,15 @@ compiling SNI_nativeInterfaceJVM.c...
 ..\src\SNI_nativeInterfaceJVM.c: 3 warnings, 0 errors
 linking...
 .\STM32F429\STM32F429.axf: Warning: L6304W: Duplicate input file .\stm32f429\system_stm32f4xx.o ignored.
-Program Size: Code=436508 RO-data=7348 RW-data=596 ZI-data=108932  
+Program Size: Code=436180 RO-data=7336 RW-data=596 ZI-data=108924  
 Finished: 0 information, 1 warning and 0 error messages.
 FromELF: creating hex file...
-".\STM32F429\STM32F429.axf" - 0 Error(s), 35 Warning(s).
+".\STM32F429\STM32F429.axf" - 0 Error(s), 46 Warning(s).
+Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
+Erase Done.
+Programming Done.
+Application running ...
+elled
 Load "C:\\Users\\jfazli\\Documents\\Projet\\_SOFTWARE\\PE208\\Microej 2.0\\PE208\\F429HMIPlatform-bsp\\Project\\MicroEJ\\MDK-ARM\\STM32F429\\STM32F429.axf" 
 Erase Done.
 Programming Done.

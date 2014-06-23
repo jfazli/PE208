@@ -22,7 +22,7 @@
 //===== INCLUDEs ================================================================
 #include <stdint.h>
 //===== DEFINEs  ================================================================
-#define DEBUG_PID
+//#define DEBUG_PID
 #define SIZE_PARAM	int16_t
 #define COEFF_MULT_1	4096
 #define COEFF_MULT_2	131072
