@@ -86,7 +86,7 @@
 //   <i> Define how long a task will execute before a task switch.
 //   <i> Default: 5
 #ifndef OS_ROBINTOUT
-#define OS_ROBINTOUT   5
+#define OS_ROBINTOUT   1 //5
 #endif
 
 // </e>

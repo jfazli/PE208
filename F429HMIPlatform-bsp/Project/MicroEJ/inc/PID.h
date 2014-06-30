@@ -38,9 +38,9 @@ struct PID_Saturateur
 
 struct PID_coefficient
 {
-	uint8_t Kp;
-	uint8_t Ki;
-	uint8_t Kd;
+	uint32_t Kp;
+	uint32_t Ki;
+	uint32_t Kd;
 };
 
 struct PID_error
@@ -110,6 +110,6 @@ extern void PID_Saturateur(struct PID_Parameter *pPIDstruct,SIZE_PARAM Min, SIZE
  * @param[in]   None
  * @return      None
  ********************************************************************************/
-extern void PID_Loop(struct PID_Parameter*  pPIDstruct,SIZE_PARAM input, SIZE_PARAM *pOutput, SIZE_PARAM consigne);
+void PID_Loop(struct PID_Parameter*  pPIDstruct,SIZE_PARAM input, SIZE_PARAM *pOutput, SIZE_PARAM consigne,uint32_t coeff);
 extern void PID_initialisationRegistre(void);
 #endif

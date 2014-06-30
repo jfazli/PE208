@@ -43,7 +43,7 @@ void IP_Initialisation(void)
 
 	PCCOM_DeclareSlaveTalk(EQP_1,GPIOB,GPIO_Pin_5,ENABLE);
 	PCCOM_DeclareSlaveSelect(EQP_1,GPIOD,GPIO_Pin_2,ENABLE);
-	/*slave 2*/
+//	/*slave 2*/
 	PCCOM_DeclareSlaveTalk(EQP_2,GPIOG,GPIO_Pin_14,ENABLE);
 	PCCOM_DeclareSlaveSelect(EQP_2,GPIOC,GPIO_Pin_9,ENABLE);
 }
@@ -127,25 +127,29 @@ void IP_ReceptionTrame(void)
 		}
 		else if(sourceEqp == ID_EQP_TABLETTE)
 		{
+			#ifndef SIMULATION_TABLETTE
 			FrameTabletteRecu.NumeroEtape=dataReceive[0];
 			FrameTabletteRecu.TempEtape= dataReceive[1];
+			
 			FrameTabletteRecu.PuissanceConsigne=dataReceive[2];
+
 			FrameTabletteRecu.TemperatureConsigne=(dataReceive[3]*256+dataReceive[4]) /*10*/;
 			FrameTabletteRecu.CoeffKp= dataReceive[5];
 			FrameTabletteRecu.CoeffKi= dataReceive[6];
 			
 			FrameTabletteEnvoie.TempsEnCours = ((FrameTabletteRecu.TempEtape)*30);
+			#endif
 			
 		}
 		else if(sourceEqp == ID_EQP_SL_1)
 		{
 			FrameFoyerRecu[0].PuissanceMesure =  dataReceive[0]*256+dataReceive[1];
-			printf("\n\r pu1:%d",FrameFoyerRecu[0].PuissanceMesure);
+//			printf("\n\r pu1:%d",FrameFoyerRecu[0].PuissanceMesure);
 		}
 		else if(sourceEqp == ID_EQP_SL_2)
 		{
 			FrameFoyerRecu[1].PuissanceMesure =  dataReceive[0]*256+dataReceive[1];
-			printf("\n\r pu2:%d",FrameFoyerRecu[1].PuissanceMesure);
+//			printf("\n\r pu2:%d",FrameFoyerRecu[1].PuissanceMesure);
 		}
 	}
 	

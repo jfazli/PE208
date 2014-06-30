@@ -23,6 +23,9 @@ uint8_t BoutonDeGrise =0;//bouton grisé lorsqu'il vaut 0
 static uint8_t startRecette;
 static struct PCTIME_Tempo t_deroulementRecette;
 static uint8_t old_Etape=0;
+
+	static int16_t consignePuissance;
+	static int16_t consignetest;
 //===== STRUCTUREs ==============================================================
 struct PCTIME_Tempo Time_StartSendingFoyer;
 struct PCTIME_Tempo Time_StartSendingTablette;
@@ -80,20 +83,43 @@ void APPLI_InitPID(void)
 //	t_pid_temperature.coefficient.b2=	4096;
 //	t_pid_temperature.coefficient.c1=	6174;
 //	t_pid_temperature.coefficient.c2=	66;
-	t_pid_temperature.coefficient.Kp=1;  
-	t_pid_temperature.coefficient.Ki=0; 
-	t_pid_temperature.coefficient.Kd=0; 
+//	t_pid_temperature.coefficient.Kp=12;  
+//	t_pid_temperature.coefficient.Ki=110; 
+//	t_pid_temperature.coefficient.Kd=0; 
 	PID_initialisation(&t_pid_temperature, TIME_100MS,0,100); //regulation temperature
-
+	PID_Parameter(&t_pid_temperature, 3000,30,0); //1er
+	/*200°C à vide kp = 3000 ki 30*/
+	PID_initialisation(&t_pid_puissance,TIME_100MS,0,100);
+	PID_Parameter(&t_pid_puissance,0,50,0);
 }
 
 int16_t APPLI_Regulation(void)
 {
 	static struct PCTIME_Tempo t_regulation;
-	static int16_t consignePuissance;
+	static struct PCTIME_Tempo Time_test;
 	int16_t temperatureconsigne= FrameTabletteRecu.TemperatureConsigne/10;
 	
-	PID_Loop(&t_pid_temperature,FramePoeleRecu.TemperatureMesure,&consignePuissance,temperatureconsigne);
+	
+//	if(FrameFoyerRecu[ChoixFoyer].PuissanceMesure>= FrameTabletteRecu.PuissanceConsigne)
+//	{
+		PID_Loop(&t_pid_puissance,FrameFoyerRecu[ChoixFoyer].PuissanceMesure,&consignetest,FrameTabletteRecu.PuissanceConsigne,1000);
+//		PCTIME_TempoStart(&Time_test,5000);
+//		if(PCTIME_TempoIsElapsed(&Time_test))
+//		{
+//			if(FrameFoyerRecu[0].PuissanceMesure< FrameTabletteRecu.PuissanceConsigne-10)
+//				consignetest++;			
+//			else if(FrameFoyerRecu[ChoixFoyer].PuissanceMesure> FrameTabletteRecu.PuissanceConsigne+10)
+//				consignetest--;
+//				
+//			if(consignetest>100) consignetest=100;
+//		}
+//	}
+//	else
+//	{
+		PID_Loop(&t_pid_temperature,FramePoeleRecu.TemperatureMesure,&consignePuissance,temperatureconsigne,1000);
+		if(consignePuissance >= consignetest)
+			consignePuissance = consignetest;
+//		}
 	
 	return consignePuissance;
 }
@@ -152,8 +178,6 @@ void APPLI_DeroulementRecette(void)
 			SelectMode =MODE_INIT;
 			old_Etape=0;
 			FrameTabletteRecu.NumeroEtape=0;
-			
-
 		}
 	}
 	
@@ -291,7 +315,11 @@ void APPLI_AppliLogiciel(void)
 			{
 				if(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton1 == 1)		//si il y appuie sur le bouton 1, incrémentation de la consigne de puissance
 				{
+					#ifndef DEBUG
 					MemorisationPuissance++;
+					#else
+					MemorisationPuissance+=33;
+					#endif
 					if(MemorisationPuissance >100)
 						MemorisationPuissance=100;
 				}	
@@ -310,7 +338,7 @@ void APPLI_AppliLogiciel(void)
 /*****************************************************************************************************/
 /****************Fonctionnement sans la tablette avec la tablette****************************/
 #else
-	#ifndef DEBUG_OUT 
+	#ifndef DEBUG
 			if(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.ChampMagnetique == 0)		//Si il y'a perte du champ magnetique
 			{
 				FrameTabletteEnvoie.recette.Bit.PresencePoele=0;
@@ -321,11 +349,10 @@ void APPLI_AppliLogiciel(void)
 	#endif
 				FrameTabletteEnvoie.recette.Bit.PresencePoele=(ChoixFoyer+1);
 				APPLI_DeroulementRecette();
-				IP_setDataSpiToSending(ChoixFoyer,1,MemorisationPuissance);		
-#ifndef DEBUG_OUT				
+				IP_setDataSpiToSending(ChoixFoyer,1,MemorisationPuissance);	
+	#ifndef DEBUG				
 			}
-#endif
-
+	#endif
 #endif
 			break;
 	}
@@ -353,10 +380,10 @@ void APPLI_ReceptionTrameUART(void)
 void APPLI_SimulationFrameTablette(void)
 {
 		FrameTabletteRecu.NumeroEtape=1;
-		FrameTabletteRecu.TempEtape= 10;
-		FrameTabletteRecu.PuissanceConsigne=0;
-		FrameTabletteRecu.TemperatureConsigne=700;
-		FrameTabletteRecu.CoeffKp= 14;
-		FrameTabletteRecu.CoeffKi= 12;	
+		FrameTabletteEnvoie.TempsEnCours= 20000;
+		FrameTabletteRecu.PuissanceConsigne=2200;
+		FrameTabletteRecu.TemperatureConsigne=2000;
+		FrameTabletteRecu.CoeffKp= 1;
+		FrameTabletteRecu.CoeffKi= 0;	
 }
 #endif

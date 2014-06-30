@@ -73,7 +73,7 @@ typedef struct{
 typedef struct{
 	uint8_t NumeroEtape;
 	uint8_t TempEtape;
-	uint8_t PuissanceConsigne; //sur 7bits
+	uint16_t PuissanceConsigne; //sur 7bits
 	uint16_t TemperatureConsigne; //la reception de la temperature est recu en 2 octet de 8 bits
 	uint8_t CoeffKp;
 	uint8_t CoeffKi;
@@ -86,6 +86,7 @@ typedef struct{
 extern t_FramePoeleRecu FramePoeleRecu;
 extern t_FrameTabletteRecu FrameTabletteRecu;
 extern t_FrameTabletteEnvoie FrameTabletteEnvoie;
+extern t_FrameFoyerRecu FrameFoyerRecu[2];
 //===== PROTOTYPEs ==============================================================
 //===== CODE ====================================================================
 void IP_Initialisation(void);
