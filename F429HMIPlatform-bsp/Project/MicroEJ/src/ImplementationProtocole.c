@@ -19,7 +19,7 @@
 //===== TYPEDEFs ================================================================
 //===== VARIABLEs ===============================================================
 uint8_t ReceptionTrameUart;
-const uint8_t SizeOfFrameTablette = 5;
+const uint8_t SizeOfFrameTablette = 6;
 //===== STRUCTUREs ==============================================================
 u_PCOM_DataReceveidFirstOctet dataFO;
 
@@ -134,14 +134,18 @@ void IP_ReceptionTrame(void)
 			FrameTabletteRecu.CoeffKp= dataReceive[5];
 			FrameTabletteRecu.CoeffKi= dataReceive[6];
 			
+			FrameTabletteEnvoie.TempsEnCours = ((FrameTabletteRecu.TempEtape)*30);
+			
 		}
 		else if(sourceEqp == ID_EQP_SL_1)
 		{
-			FrameFoyerRecu[0].PuissanceMesure =  dataReceive[0];
+			FrameFoyerRecu[0].PuissanceMesure =  dataReceive[0]*256+dataReceive[1];
+			printf("\n\r pu1:%d",FrameFoyerRecu[0].PuissanceMesure);
 		}
 		else if(sourceEqp == ID_EQP_SL_2)
 		{
-			FrameFoyerRecu[1].PuissanceMesure =  dataReceive[0];
+			FrameFoyerRecu[1].PuissanceMesure =  dataReceive[0]*256+dataReceive[1];
+			printf("\n\r pu2:%d",FrameFoyerRecu[1].PuissanceMesure);
 		}
 	}
 	
@@ -159,13 +163,16 @@ void IP_EmissionTrameTablette(void)
 {
 	uint8_t bufferData[SizeOfFrameTablette];
 	
+	FrameTabletteEnvoie.recette.Bit.NumeroEtape = FrameTabletteRecu.NumeroEtape;
 	bufferData[0] = FrameTabletteEnvoie.PuissanceTable;
 	bufferData[1] = FrameTabletteEnvoie.recette.data;
-	bufferData[2] = (uint8_t)(FrameTabletteEnvoie.Temperature>>8); //MSB
-	bufferData[3] = (uint8_t) (FrameTabletteEnvoie.Temperature & 0x00FF) ;	//LSB
-	bufferData[4] = FrameTabletteEnvoie.TempsEnCours;
+	bufferData[2] = FrameTabletteEnvoie.TempsEnCours>>8;//MSB
+	bufferData[3] = FrameTabletteEnvoie.TempsEnCours & 0x0FF;
+	bufferData[4] = (uint8_t)(FrameTabletteEnvoie.Temperature>>8); //MSB
+	bufferData[5] = (uint8_t) (FrameTabletteEnvoie.Temperature & 0x00FF) ;	//LSB
+
 	
-//	PCCOM_SendFrame(EQP_TABLETTE,bufferData,sizeof(bufferData));
+	PCCOM_SendFrame(EQP_TABLETTE,bufferData,sizeof(bufferData));
 }
 
 void IP_AcquittementTrame(void)

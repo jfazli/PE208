@@ -63,9 +63,9 @@ typedef union{
 
 
 typedef struct{
-	uint8_t PuissanceTable; //sur 7bits
+	uint16_t PuissanceTable; //sur 7bits
 	t_InfosRecette recette;
-	uint8_t TempsEnCours;
+	uint16_t TempsEnCours; //en secondes
 	uint16_t Temperature;
 }t_FrameTabletteEnvoie; //IHM qui envoie à la tablette
 

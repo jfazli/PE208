@@ -30,16 +30,18 @@ typedef uint8_t BOOLEAN;
 
 
 /////////////////Paramétre utilisateur////////////////////////////////////////////
-/*Pilotage de la plaque sans tablette et sans régulation, directement par la poele*/
-//#define TOUCH_COOK
+/*Pilotage de la plaque sans tablette et sans régulation, directement par la poele
+le bouton est aussi désactivé*/
+#define TOUCH_COOK
 /*La poele fonctionne en 9600baud, lorsque on la branche sans BLE mettre se debit à 9600*/
 #define DEBIT_BLE_9600
+
 #ifndef TOUCH_COOK
 /* Simulation d'une recette implémenter à l'init de l'appli*/
-#define SIMULATION_TABLETTE
+//#define SIMULATION_TABLETTE
 #endif
 
-#define DEBUG
+//#define DEBUG
 //#define DEBUG_OUT //test avec une pin
 //#define DEBUG_PRINTF //utilisé pour ecrire sur l'uart
 //-------------------------------------------------------------------------------

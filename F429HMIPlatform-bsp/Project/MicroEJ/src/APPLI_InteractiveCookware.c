@@ -20,7 +20,9 @@ uint8_t SelectMode;
 uint8_t ChoixFoyer;
 uint8_t MemorisationPuissance;
 uint8_t BoutonDeGrise =0;//bouton grisé lorsqu'il vaut 0 
-
+static uint8_t startRecette;
+static struct PCTIME_Tempo t_deroulementRecette;
+static uint8_t old_Etape=0;
 //===== STRUCTUREs ==============================================================
 struct PCTIME_Tempo Time_StartSendingFoyer;
 struct PCTIME_Tempo Time_StartSendingTablette;
@@ -72,8 +74,14 @@ void APPLI_StartTask(void)
 
 void APPLI_InitPID(void)
 {
-	PID_initialisation(&t_pid_temperature, TIME_100MS,0,0,0,100); //regulation temperature
-//	PID_initialisation(&t_pid_puissance, TIME_SAMPLE_PID_PUISSANCE,0,0,0,0,500);
+	t_pid_temperature.coefficient.a1=	3707;
+	t_pid_temperature.coefficient.a2=	4096;
+	t_pid_temperature.coefficient.b1=	4096;
+	t_pid_temperature.coefficient.b2=	4096;
+	t_pid_temperature.coefficient.c1=	6174;
+	t_pid_temperature.coefficient.c2=	66;
+	PID_initialisation(&t_pid_temperature, TIME_100MS,0,100); //regulation temperature
+
 }
 
 int16_t APPLI_Regulation(void)
@@ -82,26 +90,33 @@ int16_t APPLI_Regulation(void)
 	static int16_t consignePuissance;
 	int16_t temperatureconsigne= FrameTabletteRecu.TemperatureConsigne/10;
 	
-//	PID_Parameter(&t_pid_temperature,FrameTabletteRecu.CoeffKp,FrameTabletteRecu.CoeffKi);
-	PID_Parameter(&t_pid_temperature,10,4);
 	PID_Loop(&t_pid_temperature,FramePoeleRecu.TemperatureMesure,&consignePuissance,temperatureconsigne);
-	
-//	consigne= PID_Loop(&t_pid_puissance,consignePuissance,FrameTabletteRecu.PuissanceConsigne);
 	
 	return consignePuissance;
 }
 
 void APPLI_DeroulementRecette(void)
 {
-	static uint8_t startRecette;
-	static uint8_t old_Etape=0;
-	static uint8_t countTemps=0;
-	static struct PCTIME_Tempo t_deroulementRecette;
-	uint16_t consigneTable;
+
 	
-	if(FrameTabletteRecu.NumeroEtape != old_Etape)
+	static uint8_t countTemps=0;
+
+	uint16_t consigneTable;
+		
+	/***
+	* si on reçoit une nouvelle étape on récuperele temp de la nouvelle étape qui est reçu en pas de 30s.
+	***/
+	if(FrameTabletteRecu.NumeroEtape <= 0 && (startRecette >=1))
 	{
-		FrameTabletteEnvoie.TempsEnCours = (FrameTabletteRecu.TempEtape);
+		startRecette=0;
+		FrameTabletteEnvoie.TempsEnCours=0;
+		old_Etape =0;
+		PCTIME_InitialiseTempoStart( &t_deroulementRecette);
+		
+	}
+	else if(FrameTabletteRecu.NumeroEtape != old_Etape)
+	{
+//		FrameTabletteEnvoie.TempsEnCours = ((FrameTabletteRecu.TempEtape)*30);
 		old_Etape = FrameTabletteRecu.NumeroEtape;
 		startRecette=1;
 		PCTIME_InitialiseTempoStart(&t_deroulementRecette);
@@ -109,36 +124,38 @@ void APPLI_DeroulementRecette(void)
 	else if(startRecette == 1)
 	{
 		MemorisationPuissance=APPLI_Regulation();
-		PCTIME_TempoStart(&t_deroulementRecette,TIME_30S);
+		
+  	PCTIME_TempoStart(&t_deroulementRecette,TIME_1S);
 		if(PCTIME_TempoIsElapsed(&t_deroulementRecette))
-		{
-			if(FrameTabletteEnvoie.TempsEnCours <=0) 
+		{						
+			if(FrameTabletteEnvoie.TempsEnCours <= 0)
 			{
-				//Fin recette
 				startRecette=0;
 				MemorisationPuissance=0;
-				PCTIME_InitialiseTempoStart(&t_deroulementRecette);
+				PCTIME_InitialiseTempoStart(&t_deroulementRecette);	
+				FrameTabletteEnvoie.TempsEnCours=0;			
+				FrameTabletteRecu.NumeroEtape=0;				
 			}
 			else
-			{
 				FrameTabletteEnvoie.TempsEnCours--;
-				
-			}			
 		}
 	}
 	else
 	{
 		startRecette=0;
-		PCTIME_TempoStart(&t_deroulementRecette,TIME_1S);
+		PCTIME_TempoStart(&t_deroulementRecette,TIME_2S);
 		if(PCTIME_TempoIsElapsed(&t_deroulementRecette))
 		{
 			SelectMode =MODE_INIT;
 			old_Etape=0;
 			FrameTabletteRecu.NumeroEtape=0;
+			
+
 		}
 	}
 	
 }
+
 
 void APPLI_ToggleSelectFoyer(void)
 {
@@ -158,30 +175,54 @@ void APPLI_ToggleSelectFoyer(void)
 void APPLI_AppliLogiciel(void)
 {
 	/* gestion bouton appuie sur stop ou grisé*/
+#ifndef TOUCH_COOK
 	if(stateAppli != STATE_APPLI_START)
 	{
 		SelectMode=MODE_INIT;
+		FrameTabletteEnvoie.recette.Bit.MarcheAret=0;
 	}
-	
+#endif
 	switch(SelectMode)
 	{
 		case MODE_INIT :	
 #ifdef SIMULATION_TABLETTE
 			APPLI_SimulationFrameTablette();
 #endif
+			/*TODO : reinit le temps en cours et l'étape si start recette == 1*/
+			if(startRecette>0)
+			{
+				FrameTabletteEnvoie.TempsEnCours=0;
+				startRecette=0;
+				FrameTabletteRecu.NumeroEtape=0;
+				FrameTabletteEnvoie.recette.Bit.NumeroEtape=0;
+				old_Etape=0;
+			}
+			PCTIME_InitialiseTempoStart( &t_deroulementRecette);
 			MemorisationPuissance=0; //Initialisation de la puissance
 			IP_setDataSpiToSending(FOYER_FOYER1,0,0); // Mise à l'arrêt du foyer 1
 			IP_setDataSpiToSending(FOYER_FOYER2,0,0); //Mise à l'arrêt du foyer 2
 			ChoixFoyer=0;
 			PCTIME_InitialiseTempoStart(&t_toggleScrutation);
+			FrameTabletteEnvoie.recette.Bit.PresencePoele=0;
 			//Si il y a appuie sur n'importe quelle bouton ou sur les 2 en même temps
 			//alors démarrage mode scrutation
 //			if(((FramePoeleRecu.BoutonsEtChampMagnetique.Rcv_Data) & 3) != 0)
-			if(ReceptionTrameUart>=0 && stateAppli ==STATE_APPLI_START)
+			if(ReceptionTrameUart>/*=*/0)
 			{
-				SelectMode = MODE_SCRUTATION;	
-				(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton1) =0;	
-				(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton2) =0;					
+				#ifndef TOUCH_COOK
+				if(stateAppli ==STATE_APPLI_START)
+				{
+					FrameTabletteEnvoie.recette.Bit.MarcheAret=1;
+					SelectMode = MODE_SCRUTATION;	
+					(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton1) =0;	
+					(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton2) =0;			
+				}	
+				#else	
+					FrameTabletteEnvoie.recette.Bit.MarcheAret=1;
+					SelectMode = MODE_SCRUTATION;	
+					(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton1) =0;	
+					(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton2) =0;
+				#endif
 			}
   		break;
   		case MODE_SCRUTATION:
@@ -222,16 +263,16 @@ void APPLI_AppliLogiciel(void)
 					IP_setDataSpiToSending(FOYER_FOYER1,0,10);
 				}
 				/*au bout de xs on repart en init*/
-				PCTIME_TempoStart(&t_tempScrutation,TIME_2MIN );
-				if(PCTIME_TempoIsElapsed(&t_tempScrutation))
-				{
-					if(MemorisationPuissance == 0) //si la consigne de puissance vaut 0
-					{
-						MemorisationPuissance=1;		//alors gardé une consigne à 1
-					}
-					SelectMode= MODE_INIT;				//revenir au mode init
-					PCTIME_InitialiseTempoStart(&t_tempScrutation);
-				}
+//				PCTIME_TempoStart(&t_tempScrutation,TIME_2MIN );
+//				if(PCTIME_TempoIsElapsed(&t_tempScrutation))
+//				{
+//					if(MemorisationPuissance == 0) //si la consigne de puissance vaut 0
+//					{
+//						MemorisationPuissance=1;		//alors gardé une consigne à 1
+//					}
+//					SelectMode= MODE_INIT;				//revenir au mode init
+//					PCTIME_InitialiseTempoStart(&t_tempScrutation);
+//				}
 			}
 			break;
 		case MODE_FONCTIONNEMENT:
@@ -259,21 +300,29 @@ void APPLI_AppliLogiciel(void)
 				}
 				FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton1= 0;//réinit les appuie boutons	
 				FramePoeleRecu.BoutonsEtChampMagnetique.Bit.Bouton2= 0;//réinit les appuie boutons
-				
+
 				IP_setDataSpiToSending(ChoixFoyer,1,MemorisationPuissance);
+	
 			}
 /*****************************************************************************************************/
 /****************Fonctionnement sans la tablette avec la tablette****************************/
 #else
+	#ifndef DEBUG_OUT 
 			if(FramePoeleRecu.BoutonsEtChampMagnetique.Bit.ChampMagnetique == 0)		//Si il y'a perte du champ magnetique
 			{
+				FrameTabletteEnvoie.recette.Bit.PresencePoele=0;
 				SelectMode = MODE_SCRUTATION;	//repart en mode scrutation
 			}
 			else
 			{
+	#endif
+				FrameTabletteEnvoie.recette.Bit.PresencePoele=(ChoixFoyer+1);
 				APPLI_DeroulementRecette();
-				IP_setDataSpiToSending(ChoixFoyer,1,MemorisationPuissance);			
+				IP_setDataSpiToSending(ChoixFoyer,1,MemorisationPuissance);		
+#ifndef DEBUG_OUT				
 			}
+#endif
+
 #endif
 			break;
 	}
@@ -293,6 +342,9 @@ void APPLI_ReceptionTrameUART(void)
 		}
 	}
 }
+
+
+
 
 #ifdef SIMULATION_TABLETTE
 void APPLI_SimulationFrameTablette(void)
